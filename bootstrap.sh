@@ -1,5 +1,7 @@
 #git configuration
-git config git config --global push.default simple
+git config --global push.default simple
+git config --global user.name "Steven Weber"
+git config --global user.email steven.weber@coxautoinc.com
 
 #vim configuration
 cp ~/boostrap/.vimrc ~/.vimrc
