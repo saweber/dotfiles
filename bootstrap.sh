@@ -1,3 +1,10 @@
+#zsh configuration
+#chsh -s $(which zsh) can't change perm by default right now
+
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" installed already
+
+cp ~/bootstrap/.zshrc ~/.zshrc
+
 #git configuration
 git config --global push.default simple
 git config --global user.name "Steven Weber"
