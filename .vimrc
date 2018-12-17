@@ -58,3 +58,5 @@ noremap <right> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
+" nerdtree
+autocmd vimenter * NERDTree
