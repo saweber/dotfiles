@@ -5,6 +5,8 @@
 
 cp -u ~/bootstrap/.zshrc ~/.zshrc
 
+alias python=python3
+
 #git configuration
 git config --global push.default simple
 git config --global user.name "Steven Weber"
