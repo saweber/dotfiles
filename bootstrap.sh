@@ -5,12 +5,17 @@
 
 cp -u ~/bootstrap/.zshrc ~/.zshrc
 
-alias python=python3
+#upgrade pip and default to python 3.6.7
+pip install --upgrade pip
+
+pyenv install 3.6.7
+pyenv global 3.6.7
+
+#install java
+sudo apt-get install default-jre
 
 #git configuration
 git config --global push.default simple
-git config --global user.name "Steven Weber"
-git config --global user.email steven.weber@coxautoinc.com
 
 #vim configuration
 cp -u ~/bootstrap/.vimrc ~/.vimrc
