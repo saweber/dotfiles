@@ -13,6 +13,7 @@ pyenv global 3.6.7
 
 #install java
 sudo apt-get install default-jre
+export _JAVA_OPTIONS="-Xmx6g"
 
 #git configuration
 git config --global push.default simple
