@@ -59,4 +59,4 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 
 " nerdtree
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
