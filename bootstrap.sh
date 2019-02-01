@@ -3,6 +3,8 @@ sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zs
 
 cp -u ~/bootstrap/.zshrc ~/.zshrc
 
+sudo chsh -s /bin/zsh ubuntu
+
 # upgrade pip and default to python 3.6.7
 pip install --upgrade pip
 
