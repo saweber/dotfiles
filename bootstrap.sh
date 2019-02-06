@@ -3,6 +3,8 @@ sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zs
 
 cp -f ~/bootstrap/.zshrc ~/.zshrc
 
+sudo chsh -s /bin/zsh ubuntu
+
 # upgrade pip and default to python 3.6.7
 echo Upgrading pip and installing pyenv 3.6.7...
 pip install --upgrade pip
