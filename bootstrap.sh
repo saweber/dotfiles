@@ -43,3 +43,9 @@ echo Updating brew...
 brew update
 echo Installing avro and parquet tools and apache-spark...
 brew install avro-tools parquet-tools apache-spark
+
+# npm eslint and jest
+sudo npm install -g eslint
+sudo npm install -g eslint-config-airbnb-base
+sudo npm install -g eslint-plugin-import
+sudo npm install -g jest
