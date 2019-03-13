@@ -1,9 +1,8 @@
 # zsh configuration
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
-
+echo Configuring zsh...
+sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
 cp -f ~/bootstrap/.zshrc ~/.zshrc;
-
-chsh -s /bin/zsh ubuntu;
+sudo chsh -s /bin/zsh ubuntu;
 
 # upgrade pip and default to python 3.6.7
 echo Upgrading pip and installing pyenv 3.7.0...
@@ -46,5 +45,5 @@ brew install avro-tools parquet-tools apache-spark;
 
 # npm eslint and jest
 echo Installing eslint and jest...
-npm install -g jest eslint eslint-config-airbnb-base eslint-plugin-import;
+sudo npm install -g jest eslint eslint-config-airbnb-base eslint-plugin-import;
 
