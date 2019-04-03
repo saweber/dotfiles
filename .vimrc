@@ -46,17 +46,5 @@ filetype on
 filetype plugin on
 filetype indent on
 
-" no direction keys
-noremap <up> <nop>
-inoremap <up> <nop>
-
-noremap <down> <nop>
-inoremap <down> <nop>
-
-noremap <left> <nop>
-noremap <right> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-
 " nerdtree
 " autocmd vimenter * NERDTree
