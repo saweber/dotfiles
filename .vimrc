@@ -36,7 +36,7 @@ syntax enable
 
 " Solarized Dark
 set background=dark
-colorscheme solarized
+colorscheme monokai
 
 " Fonts
 set antialias
@@ -47,4 +47,4 @@ filetype plugin on
 filetype indent on
 
 " nerdtree
-" autocmd vimenter * NERDTree
+autocmd vimenter * NERDTree

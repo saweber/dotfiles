@@ -24,18 +24,21 @@ read git_email;
 git config --global user.email $git_email;
 
 # vim configuration
-#echo Configuring vim...
-#cp -u ~/bootstrap/.vimrc ~/.vimrc;
+echo Configuring vim...
+cp -u ~/bootstrap/.vimrc ~/.vimrc;
 
-#mkdir -p ~/.vim/bundle ~/.vim/autoload;
-#curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim;
+mkdir -p ~/.vim/bundle ~/.vim/autoload;
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim;
 
-#if [ ! -d "/home/ubuntu/.vim/bundle/solarized" ]; then
-#  git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/solarized;
-#fi
-#if [ ! -d "/home/ubuntu/.vim/bundle/nerdtree" ]; then
-#  git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree;
-#fi
+if [ ! -d "/home/ubuntu/.vim/bundle/solarized" ]; then
+  git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/solarized;
+fi
+if [ ! -d "/home/ubuntu/.vim/bundle/nerdtree" ]; then
+  git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree;
+fi
+if [ ! -d "/home/ubuntu/.vim/bundle/monokai" ]; then
+  git clone https://github.com/sickill/vim-monokai.git ~/.vim/bundle/monokai;
+fi
 
 # homebrew
 echo Updating brew...
