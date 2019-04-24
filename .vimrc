@@ -36,7 +36,7 @@ syntax enable
 
 " Solarized Dark
 set background=dark
-colorscheme monokai
+colorscheme gruvbox
 
 " Fonts
 set antialias

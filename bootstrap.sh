@@ -1,7 +1,19 @@
 # zsh configuration
-#echo Configuring zsh...
-#sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
-#cp -f ~/bootstrap/.zshrc ~/.zshrc;
+echo Configuring zsh...
+sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
+cp -f ~/bootstrap/.zshrc ~/.zshrc;
+
+if [ !d "/home/ubuntu/.oh-my-zsh/custom/themes/powerlevel9k" ]; then
+  git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+fi
+
+if [!d "/home/ubuntu/.oh-my-zsh/plugins/zsh-syntax-highlighting" ]; then
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
+fi
+
+if [!d "/home/ubuntu/.oh-my-zsh/plugins/zsh-autosuggestions"]; then
+  git clone https://github.com/zsh-users/zsh-autosuggestions /home/ubuntu/.oh-my-zsh/plugins/zsh-autosuggestions
+fi
 #sudo chsh -s /bin/zsh ubuntu;
 
 # upgrade pip and default to python 3.6.7
@@ -30,21 +42,18 @@ cp -u ~/bootstrap/.vimrc ~/.vimrc;
 mkdir -p ~/.vim/bundle ~/.vim/autoload;
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim;
 
-if [ ! -d "/home/ubuntu/.vim/bundle/solarized" ]; then
-  git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/solarized;
+if [ ! -d "/home/ubuntu/.vim/bundle/gruvbox" ]; then
+  git clone https://github.com/morhetz/gruvbox.git ~/.vim/bundle/gruvbox;
 fi
 if [ ! -d "/home/ubuntu/.vim/bundle/nerdtree" ]; then
   git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree;
-fi
-if [ ! -d "/home/ubuntu/.vim/bundle/monokai" ]; then
-  git clone https://github.com/sickill/vim-monokai.git ~/.vim/bundle/monokai;
 fi
 
 # homebrew
 echo Updating brew...
 brew update;
-echo Installing avro-tools, parquet-tools, apache-spark, neovim, tmux...
-brew install avro-tools parquet-tools apache-spark neovim tmux;
+echo Installing avro-tools, parquet-tools, apache-spark...
+brew install avro-tools parquet-tools apache-spark;
 
 # npm eslint and jest
 #echo Installing eslint and jest...
