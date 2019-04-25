@@ -3,6 +3,18 @@ export ZSH="/home/ubuntu/.oh-my-zsh"
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+
+# Add a space in the first prompt
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%f"
+
+# Visual customisation of the second prompt line
+local user_symbol="$"
+if [[ $(print -P "%#") =~ "#" ]]; then
+     user_symbol = "#"
+fi
+     POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%F{black}%K{yellow}%} $user_symbol%{%b%f%k%F{yellow}%} %{%f%}"
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
