@@ -3,16 +3,20 @@ echo Configuring zsh...
 sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
 cp -f ~/bootstrap/.zshrc ~/.zshrc;
 
-if [ !d "/home/ubuntu/.oh-my-zsh/custom/themes/powerlevel9k" ]; then
+if [ !d "~/.oh-my-zsh/custom/themes/powerlevel9k" ]; then
   git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 fi
 
-if [!d "/home/ubuntu/.oh-my-zsh/plugins/zsh-syntax-highlighting" ]; then
+if [ !d "~/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
+  git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
+fi
+
+if [!d "~/.oh-my-zsh/plugins/zsh-syntax-highlighting" ]; then
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
 fi
 
-if [!d "/home/ubuntu/.oh-my-zsh/plugins/zsh-autosuggestions"]; then
-  git clone https://github.com/zsh-users/zsh-autosuggestions /home/ubuntu/.oh-my-zsh/plugins/zsh-autosuggestions
+if [!d "~/.oh-my-zsh/plugins/zsh-autosuggestions"]; then
+  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
 fi
 #sudo chsh -s /bin/zsh ubuntu;
 
