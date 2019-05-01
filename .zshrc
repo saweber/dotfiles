@@ -3,6 +3,8 @@ export ZSH="/home/ubuntu/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=10
+
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 # Add a space in the first prompt
