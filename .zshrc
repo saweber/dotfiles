@@ -1,4 +1,4 @@
-export PATH=/home/ubuntu/.linuxbrew/`bin`:/home/ubuntu/.pyenv/shims:/home/ubuntu/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export PATH=/home/ubuntu/.linuxbrew/bin:/home/ubuntu/.pyenv/shims:/home/ubuntu/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 export ZSH="/home/ubuntu/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
