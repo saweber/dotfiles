@@ -8,7 +8,7 @@ if [ !d "~/.oh-my-zsh/custom/themes/powerlevel9k" ]; then
 fi
 
 if [ !d "~/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
-  git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
+  git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
 fi
 
 if [!d "~/.oh-my-zsh/plugins/zsh-syntax-highlighting" ]; then
