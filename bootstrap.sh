@@ -1,3 +1,15 @@
+# git configuration
+echo Configuring git...
+git config --global push.default simple;
+
+echo git username:
+read git_username;
+git config --global user.name $git_username;
+
+echo git email:
+read git_email;
+git config --global user.email $git_email;
+
 # zsh configuration
 echo Configuring zsh...
 sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
@@ -18,20 +30,6 @@ fi
 if [ ! -d "~/.oh-my-zsh/plugins/zsh-autosuggestions"]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions;
 fi
-#sudo chsh -s /bin/zsh ubuntu;
-#sudo chown -R $(whoami) /home/ubuntu/
-
-# git configuration
-echo Configuring git...
-git config --global push.default simple;
-
-echo git username:
-read git_username;
-git config --global user.name $git_username;
-
-echo git email:
-read git_email;
-git config --global user.email $git_email;
 
 # vim configuration
 echo Configuring vim...
@@ -53,7 +51,11 @@ fi
 #echo Installing avro-tools, parquet-tools, apache-spark...
 #brew install avro-tools parquet-tools apache-spark;
 
+# change default shell
+#sudo chsh -s /bin/zsh ubuntu;
+# change file ownership
+#sudo chown -R $(whoami) /home/ubuntu/
+
 # npm eslint and jest
 #echo Installing eslint and jest...
 #sudo npm install -g jest eslint eslint-config-airbnb-base eslint-plugin-import;
-
