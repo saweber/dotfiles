@@ -3,29 +3,23 @@ echo Configuring zsh...
 sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
 cp -f ~/bootstrap/.zshrc ~/.zshrc;
 
-if [ !d "~/.oh-my-zsh/custom/themes/powerlevel9k" ]; then
-  git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+if [ ! -d "~/.oh-my-zsh/custom/themes/powerlevel9k" ]; then
+  git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k;
 fi
 
-if [ !d "~/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
-  git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
+if [ ! -d "~/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
+  git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k;
 fi
 
-if [!d "~/.oh-my-zsh/plugins/zsh-syntax-highlighting" ]; then
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
+if [ ! -d "~/.oh-my-zsh/plugins/zsh-syntax-highlighting" ]; then
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting;
 fi
 
-if [!d "~/.oh-my-zsh/plugins/zsh-autosuggestions"]; then
-  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
+if [ ! -d "~/.oh-my-zsh/plugins/zsh-autosuggestions"]; then
+  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions;
 fi
 #sudo chsh -s /bin/zsh ubuntu;
-
-# upgrade pip and default to python 3.6.7
-#echo Upgrading pip and installing pyenv 3.7.0...
-#pip install --upgrade pip;
-
-#pyenv install 3.7.0;
-#pyenv global 3.7.0;
+#sudo chown -R $(whoami) /home/ubuntu/
 
 # git configuration
 echo Configuring git...
@@ -54,10 +48,10 @@ if [ ! -d "/home/ubuntu/.vim/bundle/nerdtree" ]; then
 fi
 
 # homebrew
-echo Updating brew...
-brew update;
-echo Installing avro-tools, parquet-tools, apache-spark...
-brew install avro-tools parquet-tools apache-spark;
+#echo Updating brew...
+#brew update;
+#echo Installing avro-tools, parquet-tools, apache-spark...
+#brew install avro-tools parquet-tools apache-spark;
 
 # npm eslint and jest
 #echo Installing eslint and jest...
