@@ -45,6 +45,8 @@ plugins=(
 )
 
 bindkey '^ ' autosuggest-accept
+bindkey '^B' backward-word
+bindkey '^N' forward-word
 
 # fix permissions issue
 ZSH_DISABLE_COMPFIX=true
@@ -81,3 +83,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias python=python3
 alias pip=pip3
+
+export PYSPARK_PYTHON=python3
+export PYSPARK_DRIVER_PYTHON=python3
