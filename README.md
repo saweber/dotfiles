@@ -1,4 +1,4 @@
-# bootstrap
-Personal setup for new linux machine
+# dotfiles
+Personal setup for linux machines
 
 `./boostrap.sh`
