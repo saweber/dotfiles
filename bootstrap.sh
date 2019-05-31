@@ -15,9 +15,9 @@ echo Configuring zsh...
 sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
 cp -f ~/bootstrap/.zshrc ~/.zshrc;
 
-if [ ! -d "~/.oh-my-zsh/custom/themes/powerlevel9k" ]; then
-  git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k;
-fi
+# if [ ! -d "~/.oh-my-zsh/custom/themes/powerlevel9k" ]; then
+#  git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k;
+# fi
 
 if [ ! -d "~/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
   git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k;
@@ -30,6 +30,8 @@ fi
 if [ ! -d "~/.oh-my-zsh/plugins/zsh-autosuggestions"]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions;
 fi
+
+curl -LSso ~/.purepower https://raw.githubusercontent.com/romkatv/dotfiles-public/master/.purepower;
 
 # vim configuration
 echo Configuring vim...

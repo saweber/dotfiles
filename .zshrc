@@ -1,21 +1,21 @@
 export PATH=/home/ubuntu/.linuxbrew/bin:/home/ubuntu/.pyenv/shims:/home/ubuntu/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 export ZSH="/home/ubuntu/.oh-my-zsh"
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=10
+# POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
 
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+# POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 # Add a space in the first prompt
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%f"
+# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%f"
 
 # Visual customisation of the second prompt line
-local user_symbol="$"
-if [[ $(print -P "%#") =~ "#" ]]; then
-     user_symbol = "#"
-fi
-     POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%F{black}%K{yellow}%} $user_symbol%{%b%f%k%F{yellow}%} %{%f%}"
+# local user_symbol="$"
+# if [[ $(print -P "%#") =~ "#" ]]; then
+#     user_symbol = "#"
+# fi
+#     POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%F{black}%K{yellow}%} $user_symbol%{%b%f%k%F{yellow}%} %{%f%}"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -31,7 +31,7 @@ fi
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+# COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -86,3 +86,18 @@ alias pip=pip3
 
 export PYSPARK_PYTHON=python3
 export PYSPARK_DRIVER_PYTHON=python3
+
+# # nvm
+# [ -s ~/.nvm_profile ] && source ~/.nvm_profile
+
+# # ssh / keyme block
+# SOCK="/tmp/ssh-agent-$USER-screen"
+# if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]
+# then
+#   rm -f /tmp/ssh-agent-$USER-screen
+#   ln -sf $SSH_AUTH_SOCK $SOCK
+#   export SSH_AUTH_SOCK=$SOCK
+# fi
+# alias keyme='export SSH_AUTH_SOCK=/tmp/ssh-agent-$USER-screen'
+
+source ~/.purepower
