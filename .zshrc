@@ -3,20 +3,6 @@ export ZSH="/home/ubuntu/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
-
-# POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-
-# Add a space in the first prompt
-# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%f"
-
-# Visual customisation of the second prompt line
-# local user_symbol="$"
-# if [[ $(print -P "%#") =~ "#" ]]; then
-#     user_symbol = "#"
-# fi
-#     POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%F{black}%K{yellow}%} $user_symbol%{%b%f%k%F{yellow}%} %{%f%}"
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -28,7 +14,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -45,8 +31,8 @@ plugins=(
 )
 
 bindkey '^ ' autosuggest-accept
-bindkey '^B' backward-word
-bindkey '^N' forward-word
+bindkey '^A' backward-word
+bindkey '^D' forward-word
 
 # fix permissions issue
 ZSH_DISABLE_COMPFIX=true
@@ -67,9 +53,6 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
@@ -77,13 +60,10 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias python=python3
 alias pip=pip3
 
+export TERM=xterm-256color
 export PYSPARK_PYTHON=python3
 export PYSPARK_DRIVER_PYTHON=python3
 
