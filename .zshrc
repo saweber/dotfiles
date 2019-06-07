@@ -38,6 +38,7 @@ bindkey '^D' forward-word
 ZSH_DISABLE_COMPFIX=true
 
 source $ZSH/oh-my-zsh.sh
+source ~/.purepower
 
 # User configuration
 
@@ -46,15 +47,13 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+export EDITOR='vim'
+export TERM=xterm-256color
+export PYSPARK_PYTHON=python3
+export PYSPARK_DRIVER_PYTHON=python3
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -62,10 +61,6 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 alias python=python3
 alias pip=pip3
-
-export TERM=xterm-256color
-export PYSPARK_PYTHON=python3
-export PYSPARK_DRIVER_PYTHON=python3
 
 # # nvm
 # [ -s ~/.nvm_profile ] && source ~/.nvm_profile
@@ -80,4 +75,3 @@ export PYSPARK_DRIVER_PYTHON=python3
 # fi
 # alias keyme='export SSH_AUTH_SOCK=/tmp/ssh-agent-$USER-screen'
 
-source ~/.purepower
