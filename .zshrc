@@ -25,14 +25,15 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  aws
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
 
 bindkey '^ ' autosuggest-accept
-bindkey '^A' backward-word
-bindkey '^D' forward-word
+bindkey '^H' backward-word
+bindkey '^L' forward-word
 
 # fix permissions issue
 ZSH_DISABLE_COMPFIX=true
