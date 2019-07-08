@@ -13,7 +13,7 @@ git config --global user.email $git_email;
 # zsh configuration
 echo Configuring zsh...
 sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
-cp -f ~/bootstrap/.zshrc ~/.zshrc;
+cp -f ~/dotfiles/.zshrc ~/.zshrc;
 
 if [ ! -d "~/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
   git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k;
@@ -24,7 +24,7 @@ if [ ! -d "~/.oh-my-zsh/plugins/zsh-syntax-highlighting" ]; then
 fi
 
 if [ ! -d "~/.oh-my-zsh/plugins/zsh-autosuggestions"]; then
-  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions;
+  git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions;
 fi
 
 curl -LSso ~/.purepower https://raw.githubusercontent.com/romkatv/dotfiles-public/master/.purepower;
@@ -33,7 +33,7 @@ source ~/.zshrc;
 
 # vim configuration
 echo Configuring vim...
-cp -u ~/bootstrap/.vimrc ~/.vimrc;
+cp -u ~/dotfiles/.vimrc ~/.vimrc;
 
 mkdir -p ~/.vim/bundle ~/.vim/autoload;
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim;
