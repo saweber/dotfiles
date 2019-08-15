@@ -40,7 +40,9 @@ ZSH_DISABLE_COMPFIX=true
 
 source $ZSH/oh-my-zsh.sh
 source ~/.purepower
-
+source ~/.nvm_profile
+source ~/.linuxbrew_profile
+source ~/.pyenv_profile
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -62,9 +64,7 @@ export PYSPARK_DRIVER_PYTHON=python3
 # For a full list of active aliases, run `alias`.
 alias python=python3
 alias pip=pip3
-
-# # nvm
-# [ -s ~/.nvm_profile ] && source ~/.nvm_profile
+alias keyme='export SSH_AUTH_SOCK=/tmp/ssh-agent-$USER-screen'
 
 # # ssh / keyme block
 # SOCK="/tmp/ssh-agent-$USER-screen"
@@ -74,5 +74,4 @@ alias pip=pip3
 #   ln -sf $SSH_AUTH_SOCK $SOCK
 #   export SSH_AUTH_SOCK=$SOCK
 # fi
-# alias keyme='export SSH_AUTH_SOCK=/tmp/ssh-agent-$USER-screen'
 
