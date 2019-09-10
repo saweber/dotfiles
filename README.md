@@ -1,4 +1,5 @@
 # dotfiles
 Personal setup for linux machines
 
-`./boostrap.sh`
+1. `sudo ./sudo.sh`
+2. `./boostrap.sh`

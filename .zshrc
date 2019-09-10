@@ -39,7 +39,6 @@ bindkey '^L' forward-word
 ZSH_DISABLE_COMPFIX=true
 
 source $ZSH/oh-my-zsh.sh
-source ~/.purepower
 source ~/.nvm_profile
 source ~/.linuxbrew_profile
 source ~/.pyenv_profile

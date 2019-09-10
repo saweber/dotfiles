@@ -27,8 +27,6 @@ if [ ! -d "~/.oh-my-zsh/plugins/zsh-autosuggestions"]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/plugins/zsh-autosuggestions;
 fi
 
-curl -LSso ~/.purepower https://raw.githubusercontent.com/romkatv/dotfiles-public/master/.purepower;
-
 source ~/.zshrc;
 
 # vim configuration
@@ -54,9 +52,3 @@ brew install avro-tools parquet-tools apache-spark tmux;
 
 # change default shell
 #sudo chsh -s /bin/zsh ubuntu;
-# change file ownership
-#sudo chown -R $(whoami) /home/ubuntu/
-
-# npm eslint and jest
-#echo Installing eslint and jest...
-#sudo npm install -g jest eslint eslint-config-airbnb-base eslint-plugin-import;
