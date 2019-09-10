@@ -1,3 +1,4 @@
+#!/bin/bash
 # git configuration
 echo Configuring git...
 git config --global push.default simple;

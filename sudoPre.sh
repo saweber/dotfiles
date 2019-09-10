@@ -1,3 +1,4 @@
+#!/bin/bash
 #change file ownership
 chown -R $(whoami) /home/ubuntu/
 #echo Installing eslint and jest...
