@@ -1,5 +1,4 @@
-export PATH=/home/ubuntu/.linuxbrew/bin:/home/ubuntu/.pyenv/shims:/home/ubuntu/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-export ZSH="/home/ubuntu/.oh-my-zsh"
+export ZSH="/Users/sweber/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -10,20 +9,23 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
+
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
 
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
 plugins=(
   aws
   git
@@ -35,13 +37,10 @@ bindkey '^ ' autosuggest-accept
 bindkey '^H' backward-word
 bindkey '^L' forward-word
 
-# fix permissions issue
-ZSH_DISABLE_COMPFIX=true
-
 source $ZSH/oh-my-zsh.sh
 source ~/.nvm_profile
-source ~/.linuxbrew_profile
-source ~/.pyenv_profile
+source ~/.credentials
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -49,28 +48,28 @@ source ~/.pyenv_profile
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
-export EDITOR='vim'
-export TERM=xterm-256color
-export PYSPARK_PYTHON=python3
-export PYSPARK_DRIVER_PYTHON=python3
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-alias python=python3
-alias pip=pip3
-alias keyme='export SSH_AUTH_SOCK=/tmp/ssh-agent-$USER-screen'
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# # ssh / keyme block
-# SOCK="/tmp/ssh-agent-$USER-screen"
-# if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]
-# then
-#   rm -f /tmp/ssh-agent-$USER-screen
-#   ln -sf $SSH_AUTH_SOCK $SOCK
-#   export SSH_AUTH_SOCK=$SOCK
-# fi
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
