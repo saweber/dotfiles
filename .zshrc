@@ -29,6 +29,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   aws
   git
+  ssh-agent
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
@@ -66,6 +67,8 @@ source ~/.credentials
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+ssh-add -K ~/.ssh/bluebeam_mac
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
