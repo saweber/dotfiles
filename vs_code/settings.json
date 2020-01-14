@@ -1,0 +1,10 @@
+{
+    "editor.fontSize": 16,
+    "vsnotes.defaultNotePath": "~/OneDrive - Bluebeam, Inc/notes",
+    "editor.fontFamily": "Fira Mono for Powerline, Inconsolata for Powerline, Menlo, Monaco, 'Courier New', monospace",
+    "vsnotes.defaultNoteTitle": "{title}.{ext}",
+    "workbench.colorTheme": "Monokai",
+    "window.zoomLevel": 0,
+    "editor.tabSize": 2,
+    "files.autoSave": "afterDelay"
+}

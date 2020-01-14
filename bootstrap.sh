@@ -43,13 +43,3 @@ fi
 if [ ! -d "/home/ubuntu/.vim/bundle/nerdtree" ]; then
   git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree;
 fi
-
-# homebrew
-echo Updating brew...
-brew update;
-echo Installing avro-tools, parquet-tools, apache-spark, tmux...
-echo This will take a few moments...
-brew install avro-tools parquet-tools apache-spark tmux;
-
-# change default shell
-#sudo chsh -s /bin/zsh ubuntu;
