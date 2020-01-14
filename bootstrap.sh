@@ -14,7 +14,8 @@ git config --global user.email $git_email;
 # zsh configuration
 echo Configuring zsh...
 sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
-cp -f ~/dotfiles/.zshrc ~/.zshrc;
+cp -f .zshrc ~/.zshrc;
+cp -f .p10k.zsh ~/.p10k.zsh;
 
 if [ ! -d "~/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
   git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k;
@@ -31,15 +32,15 @@ fi
 source ~/.zshrc;
 
 # vim configuration
-echo Configuring vim...
-cp -u ~/dotfiles/.vimrc ~/.vimrc;
+# echo Configuring vim...
+# cp -u ~/dotfiles/.vimrc ~/.vimrc;
 
-mkdir -p ~/.vim/bundle ~/.vim/autoload;
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim;
+# mkdir -p ~/.vim/bundle ~/.vim/autoload;
+# curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim;
 
-if [ ! -d "/home/ubuntu/.vim/bundle/gruvbox" ]; then
-  git clone https://github.com/morhetz/gruvbox.git ~/.vim/bundle/gruvbox;
-fi
-if [ ! -d "/home/ubuntu/.vim/bundle/nerdtree" ]; then
-  git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree;
-fi
+# if [ ! -d "/home/ubuntu/.vim/bundle/gruvbox" ]; then
+#  git clone https://github.com/morhetz/gruvbox.git ~/.vim/bundle/gruvbox;
+# fi
+# if [ ! -d "/home/ubuntu/.vim/bundle/nerdtree" ]; then
+#  git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree;
+# fi
