@@ -30,6 +30,7 @@ plugins=(
   aws
   git
   ssh-agent
+  vi-mode
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
