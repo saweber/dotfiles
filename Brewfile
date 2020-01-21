@@ -8,7 +8,7 @@ brew 'git'
 brew 'python'
 brew 'tmux'
 brew 'vim'
-# casks
+# install applications
 cask 'alfred'
 cask 'dashlane'
 cask 'docker'

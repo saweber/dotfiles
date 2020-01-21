@@ -35,10 +35,6 @@ plugins=(
   zsh-syntax-highlighting
 )
 
-bindkey '^ ' autosuggest-accept
-bindkey '^H' backward-word
-bindkey '^L' forward-word
-
 source $ZSH/oh-my-zsh.sh
 source ~/.nvm_profile
 source ~/.credentials
