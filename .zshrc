@@ -28,8 +28,13 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
   aws
+  docker
+  dotnet
   git
+  osx
   ssh-agent
+  node
+  npm
   vi-mode
   zsh-autosuggestions
   zsh-syntax-highlighting
