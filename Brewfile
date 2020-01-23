@@ -5,6 +5,7 @@ cask_args appdir: '/Applications'
 # install packages
 brew 'awscli'
 brew 'git'
+brew 'minikube'
 brew 'python'
 brew 'tmux'
 brew 'vim'
