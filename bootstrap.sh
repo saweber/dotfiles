@@ -32,7 +32,8 @@ fi
 source ~/.zshrc;
 
 # tmux configuration
-cp -f .tmux.conf ~/.tmux.conf
+cp -f .tmux.conf ~/.tmux.conf;
+git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack;
 
 # vim configuration
 echo Configuring vim...
