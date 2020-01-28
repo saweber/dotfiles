@@ -1,10 +1,7 @@
-"VIM Configuration
+" VIM Configuration
 
 " add vim features
 set nocompatible
-
-" activate plugins
-execute pathogen#infect()
 
 " Display
 set title			" update title window of terminal
@@ -12,8 +9,8 @@ set number			" display line numbers
 set ruler			" display cursor position
 set wrap			" wrap lines
 
-set scrolloff=3			"display at least 3 lines around cursor
-set guioptions=T		"enable toolbar
+set scrolloff=3			" display at least 3 lines around cursor
+set guioptions=T		" enable toolbar
 
 " search
 set ignorecase			" ignore case when searching
@@ -34,10 +31,6 @@ set hidden
 " Enable syntax highlighting
 syntax enable
 
-" Solarized Dark
-set background=dark
-colorscheme gruvbox
-
 " Fonts
 set antialias
 
@@ -45,6 +38,3 @@ set antialias
 filetype on
 filetype plugin on
 filetype indent on
-
-" nerdtree
-autocmd vimenter * NERDTree
