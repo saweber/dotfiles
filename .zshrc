@@ -71,6 +71,7 @@ bindkey '^ ' autosuggest-accept
 
 ssh-add -K ~/.ssh/bluebeam_mac
 
+export CONNECTION_STRING=Host=localhost;Port=1433;Database=master;Username=sa;Password=Testing1!;
 export TERM=xterm-256color
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
