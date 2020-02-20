@@ -1,5 +1,11 @@
 #!/bin/bash
-# git configuration
+
+echo Installing brew...
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
+
+echo Installing brew packages from Brewfile...
+brew bundle;
+
 echo Configuring git...
 git config --global push.default simple;
 
@@ -11,11 +17,12 @@ echo git email:
 read git_email;
 git config --global user.email $git_email;
 
-# zsh configuration
-echo Configuring zsh...
-cp -f .zshrc ~/.zshrc;
-cp -f .p10k.zsh ~/.p10k.zsh;
-sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
+echo Installing zsh...
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
+sh -s /bin/zsh;
+
+cp -f ~/dotfiles/.zshrc ~/.zshrc;
+cp -f ~/dotfiles/.p10k.zsh ~/.p10k.zsh;
 
 if [ ! -d "~/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
   git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k;
@@ -31,14 +38,13 @@ fi
 
 source ~/.zshrc;
 
-# tmux configuration
+echo Configuring tmux...
 cp -f .tmux.conf ~/.tmux.conf;
 git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack;
 
-# vim configuration
 echo Configuring vim...
 cp -u ~/dotfiles/.vimrc ~/.vimrc;
 
-# if [ ! -d "/home/ubuntu/.vim/bundle/nerdtree" ]; then
-#  git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree;
-# fi
+echo Installing nvm...
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash;
+
