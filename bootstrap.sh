@@ -17,6 +17,8 @@ echo git email:
 read git_email;
 git config --global user.email $git_email;
 
+git config --global core.autocrlf input;
+
 echo Installing zsh...
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
 sh -s /bin/zsh;
