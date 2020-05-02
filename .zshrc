@@ -19,8 +19,12 @@ plugins=(
   ssh-agent
   node
   npm
+  nvm
+  sudo
   vi-mode
+  wd
   zsh-autosuggestions
+  zsh-completions
   zsh-syntax-highlighting
 )
 

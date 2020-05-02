@@ -1,7 +1,9 @@
 # taps
 tap 'homebrew/cask-fonts'
+
 # specify a directory to install
 cask_args appdir: '/Applications'
+
 # install packages
 brew 'awscli'
 brew 'git'
@@ -10,6 +12,11 @@ brew 'minikube'
 brew 'python'
 brew 'tmux'
 brew 'vim'
+
+#install fonts
+cask 'font-jetbrains-mono'
+cask 'font-jetbrainsmono-nerd-font'
+
 # install applications
 cask 'alfred'
 cask 'dashlane'
@@ -18,8 +25,6 @@ cask 'dotnet-sdk'
 cask 'dozer'
 cask 'firefox'
 cask 'flux'
-cask 'font-fira-code'
-cask 'font-jetbrains-mono'
 cask 'iterm2'
 cask 'jetbrains-toolbox'
 cask 'postman'
