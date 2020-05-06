@@ -1,7 +1,6 @@
 export ZSH="/Users/sweber/.oh-my-zsh"
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
+# Otherwise no autocompletions
 ZSH_AUTOSUGGEST_STRATEGY=(
   history
   completion
@@ -12,6 +11,7 @@ ZSH_AUTOSUGGEST_STRATEGY=(
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+# oh-my-zsh managed
 plugins=(
   aws
   docker
@@ -24,12 +24,23 @@ plugins=(
   sudo
   vi-mode
   wd
-  zsh-autosuggestions
-  zsh-completions
-  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
+
+# homebrew managed
+source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# zsh completions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
 source ~/.nvm_profile
 source ~/.credentials
 
@@ -39,13 +50,12 @@ ssh-add -K ~/.ssh/bluebeam_mac
 
 export CONNECTION_STRING=Host=localhost;Port=1433;Database=master;Username=sa;Password=Testing1!;
 
-# so colors work in tmux
+# for tmux colors
 export TERM=xterm-256color
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
 
 # powerlevel10k - To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

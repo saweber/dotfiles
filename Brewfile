@@ -1,5 +1,6 @@
 # taps
 tap 'homebrew/cask-fonts'
+tap 'romkatv/powerlevel10k'
 
 # application install directory 
 cask_args appdir: '/Applications'
@@ -9,12 +10,19 @@ brew 'awscli'
 brew 'git'
 brew 'htop'
 brew 'minikube'
+brew 'nvm'
 brew 'python'
 brew 'tmux'
 brew 'vim'
 
-# terminal ui
+# zsh themes
 brew 'starship' 
+brew 'romkatv/powerlevel10k/powerlevel10k'
+
+# zsh plugins
+brew 'zsh-autosuggestions'
+brew 'zsh-completions'
+brew 'zsh-syntax-highlighting'
 
 # fonts
 cask 'font-jetbrains-mono'
