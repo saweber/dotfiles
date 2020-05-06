@@ -1,10 +1,10 @@
 # taps
 tap 'homebrew/cask-fonts'
 
-# specify a directory to install
+# application install directory 
 cask_args appdir: '/Applications'
 
-# install packages
+# packages
 brew 'awscli'
 brew 'git'
 brew 'htop'
@@ -13,11 +13,14 @@ brew 'python'
 brew 'tmux'
 brew 'vim'
 
-#install fonts
+# terminal ui
+brew 'starship' 
+
+# fonts
 cask 'font-jetbrains-mono'
 cask 'font-jetbrainsmono-nerd-font'
 
-# install applications
+# applications
 cask 'alfred'
 cask 'dashlane'
 cask 'docker'
