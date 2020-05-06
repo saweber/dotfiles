@@ -15,6 +15,7 @@ ZSH_AUTOSUGGEST_STRATEGY=(
 plugins=(
   aws
   docker
+  docker-compose
   dotnet
   git
   osx
