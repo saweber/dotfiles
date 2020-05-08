@@ -46,6 +46,11 @@ source ~/.nvm_profile
 source ~/.credentials
 
 bindkey '^ ' autosuggest-accept
+bindkey '^b' backward-word
+bindkey '^f' forward-word
+bindkey '^j' backward-kill-line
+bindkey '^u' kill-whole-line
+bindkey '^k' kill-line
 
 ssh-add -K ~/.ssh/bluebeam_mac
 
