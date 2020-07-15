@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- Install Homewbrew + bundle
+- Install XCode
 
 ## iterm2 theme switcher
 
