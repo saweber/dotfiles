@@ -33,7 +33,7 @@ brew 'zsh-syntax-highlighting'
 
 # fonts
 cask 'font-jetbrains-mono'
-cask 'font-jetbrainsmono-nerd-font'
+cask 'font-fira-code'
 
 # applications
 cask 'alfred'
