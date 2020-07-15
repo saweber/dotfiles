@@ -12,6 +12,9 @@ export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+# oh-my-zsh - for faster pasting - turns off bracketed-paste-magic and url-quote-magic
+export DISABLE_MAGIC_FUNCTIONS=true
+
 # oh-my-zsh managed
 plugins=(
   aws
@@ -67,7 +70,7 @@ eval "$(starship init zsh)"
 #export NVM_DIR="$HOME/.nvm"
 #[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
 
-# android simulator
+# begin android simulator
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
@@ -75,6 +78,7 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export GRADLE_HOME="$HOME/.gradle"
+# end android simulator
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"

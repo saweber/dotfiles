@@ -23,9 +23,8 @@ brew 'wget'
 brew 'yarn'
 brew 'zsh'
 
-# zsh themes
-brew 'starship' 
-brew 'romkatv/powerlevel10k/powerlevel10k'
+# zsh theme
+brew 'starship'
 
 # zsh plugins
 brew 'zsh-autosuggestions'
@@ -52,7 +51,9 @@ cask 'rescuetime'
 cask 'spotify'
 cask 'visual-studio-code'
 
-# react native / mobile
+# react native / mobile development
 cask 'adoptopenjdk11'
+brew 'gradle'
+brew 'watchman'
 cask 'android-studio'
 brew 'applesimutils'
