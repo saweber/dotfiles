@@ -2,7 +2,7 @@ export ZSH="/Users/sweber/.oh-my-zsh"
 
 export NVM_DIR="$HOME/.nvm"
 # For zsh-nvm - faster zsh loading
-# export NVM_LAZY_LOAD=true
+#export NVM_LAZY_LOAD=true
 export NVM_AUTO_USE=true
 export NVM_COMPLETION=true # too slow
 
@@ -19,7 +19,7 @@ export DISABLE_MAGIC_FUNCTIONS=true
 
 # oh-my-zsh managed
 plugins=(
-  # zsh-nvm # custom plugin
+  zsh-nvm # custom plugin
   aws
   docker
   docker-compose
@@ -28,7 +28,7 @@ plugins=(
   osx
   node
   npm
-  nvm
+  # nvm
   sudo
   vi-mode
   wd
@@ -69,7 +69,7 @@ export TERM=xterm-256color
 eval "$(starship init zsh)"
 
 # nvm - using zsh-nvm instead
-[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
+#[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
 
 # begin android simulator
 export ANDROID_HOME=$HOME/Library/Android/sdk
