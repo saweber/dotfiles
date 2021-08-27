@@ -6,4 +6,4 @@
 
 ## iterm2 theme switcher
 
-- Copy to ~/Library/Application Support/iTerm2/Scripts/AutoLaunch
+- Copy ./theme/ to ~/Library/Application Support/iTerm2/Scripts/AutoLaunch
