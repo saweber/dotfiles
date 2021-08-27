@@ -31,9 +31,11 @@ brew "wget"
 
 # useful macOS utilities
 cask "alfred"
-cask "dozer"
+cask "dozer" 
+cask "flux" # Night Shift does not work for multiple monitors
 cask "monitorcontrol"
 cask "rectangle"
+
 
 # software dev applications
 cask "docker"
@@ -42,8 +44,11 @@ cask "jetbrains-toolbox"
 cask "postman"
 cask "visual-studio-code"
 
-# other macOS applications
+# good web browsers
 cask "firefox"
+cask "google-chrome"
+
+# other macOS applications
 cask "spotify"
 
 # golang
