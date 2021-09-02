@@ -23,6 +23,7 @@ brew "awscli"
 brew "git"
 brew "htop"
 brew "jq"
+brew "session-manager-plugin" # AWS session manager
 brew "tig" # git history cli
 brew "tmux" 
 brew "tree" # for showing recursive directory structure
@@ -35,7 +36,6 @@ cask "dozer"
 cask "flux" # Night Shift does not work for multiple monitors
 cask "monitorcontrol"
 cask "rectangle"
-
 
 # software dev applications
 cask "docker"
