@@ -17,6 +17,9 @@ export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 # oh-my-zsh - for faster pasting - turns off bracketed-paste-magic and url-quote-magic
 export DISABLE_MAGIC_FUNCTIONS=true
 
+# remove <aws:alias> from right side
+export SHOW_AWS_PROMPT=false
+
 # oh-my-zsh managed zsh plugins
 plugins=(
   # zsh-nvm # custom plugin
@@ -53,8 +56,8 @@ fi
 
 # keybindings
 bindkey '^ ' autosuggest-accept
-#bindkey '^b' backward-word
-#bindkey '^f' forward-word
+bindkey '^b' backward-word
+bindkey '^f' forward-word
 #bindkey '^j' backward-kill-line
 #bindkey '^k' kill-line
 #bindkey '^l' list-choices
@@ -88,5 +91,7 @@ export GOPRIVATE="scm.bluebeam.com"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-export AWS_PROFILE="sandbox"
+export AWS_PROFILE="dev"
 source ~/.credentials
+
+alias token="go run ~/src/rover/token-client/main.go | pbcopy"
