@@ -20,9 +20,11 @@ cask "font-jetbrains-mono"
 
 # cli tools
 brew "awscli"
+brew "fzf"
 brew "git"
 brew "htop"
 brew "jq"
+brew "neovim"
 brew "session-manager-plugin" # AWS session manager
 brew "tig" # git history cli
 brew "tmux" 
@@ -32,10 +34,12 @@ brew "wget"
 
 # useful macOS utilities
 cask "alfred"
+cask "bettertouchtool"
 cask "dozer" 
 cask "flux" # Night Shift does not work for multiple monitors
 cask "monitorcontrol"
 cask "rectangle"
+cask "witch"
 
 # software dev applications
 cask "docker"

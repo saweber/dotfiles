@@ -20,6 +20,10 @@ export DISABLE_MAGIC_FUNCTIONS=true
 # remove <aws:alias> from right side
 export SHOW_AWS_PROMPT=false
 
+# vim
+export VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+export VI_MODE_SET_CURSOR=true
+
 # oh-my-zsh managed zsh plugins
 plugins=(
   # zsh-nvm # custom plugin
@@ -34,7 +38,7 @@ plugins=(
   npm
   # nvm
   sudo
-  # vi-mode
+  vi-mode
   wd
   golang
   # python
@@ -56,11 +60,11 @@ fi
 
 # keybindings
 bindkey '^ ' autosuggest-accept
-bindkey '^b' backward-word
-bindkey '^f' forward-word
-#bindkey '^j' backward-kill-line
-#bindkey '^k' kill-line
-#bindkey '^l' list-choices
+# bindkey '^b' backward-word
+# bindkey '^f' forward-word
+# bindkey '^j' backward-kill-line
+# bindkey '^k' kill-line
+# bindkey '^l' list-choices
 
 # tmux colors
 export TERM=xterm-256color
@@ -69,7 +73,7 @@ export TERM=xterm-256color
 eval "$(starship init zsh)"
 
 # nvm
-#[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
+# [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
 
 # jvm
 # export GRADLE_HOME="$HOME/.gradle"
@@ -84,14 +88,16 @@ eval "$(starship init zsh)"
 # go
 export GOHOME="$HOME/go"
 export GOPATH="$HOME/go"
-export PATH="$PATH:$GOPATH/bin"
 export GOBIN="$GOPATH/bin"
 export GOPRIVATE="scm.bluebeam.com"
 
+# export PATH="$PATH:$GOPATH/bin"
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# export PATH="$PATH:$HOME/.rvm/bin"
 
 export AWS_PROFILE="dev"
 source ~/.credentials
 
+alias vim="nvim"
 alias token="go run ~/src/rover/token-client/main.go | pbcopy"
