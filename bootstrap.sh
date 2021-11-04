@@ -1,16 +1,10 @@
-#!/bin/bash
+#!/bin/zsh
 
 echo git username:
 read git_username;
 
 echo git email:
 read git_email;
-
-echo Copy .zshrc? [Y/n]:
-read copy_zshrc;
-
-echo Copy .vimrc? [Y/n]:
-read copy_vimrc;
 
 echo Checking for brew...
 if ! command -v COMMAND &> /dev/null
@@ -29,31 +23,36 @@ git config --global core.autocrlf input;
 git config --global user.name $git_username;
 git config --global user.email $git_email;
 
-
 if [ ! -d "~/.oh-my-zsh" ]; then
   echo Installing oh my zsh...
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
 fi
 
-if [ ! -d "~/.oh-my-zsh/custom/plugins/zsh-nvm" ]; then
-  echo Installing zsh-nvm...
-  git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm;
-fi
+echo Downloading wd Plugin...
+mkdir -p ~/.zsh_plugins/wd;
+git clone git@github.com:mfaerevaag/wd.git ~/.zsh_plugins/wd --depth 1;
 
-case $copy_zshrc in [yY][eE][sS]|[yY])
-  echo Moving .zshrc to .zsrhc.pre_bootstrap...
-  mv ~/.zshrc ~/.zshrc.pre_bootstrap;
-  echo Copying .zshrc...
-  cp -f .zshrc ~/.zshrc;
-  ;;
-esac
+echo Installing fzf...
+fzf install - $(brew --prefix)/opt/fzf/install;
 
-case $copy_vimrc in [yY][eE][sS]|[yY])
-  echo Moving .vimrc to .vimrc.pre_bootstrap...
-  mv ~/.vimrc ~/.vimrc.pre_bootstrap;
-  echo Copying .vimrc...
-  cp -f .vimrc ~/.vimrc;
-  ;;
-esac
+echo Moving .tmux.conf to .tmux_conf.pre_bootstrap...
+mv ~/.tmux.conf ~/.tmux_conf.pre_bootstrap;
+echo Copying .tmux.conf...
+cp -f .tmux.conf ~/.tmux.conf;
+
+echo Moving .zshrc to .zsrhc.pre_bootstrap...
+mv ~/.zshrc ~/.zshrc.pre_bootstrap;
+echo Copying .zshrc...
+cp -f .zshrc ~/.zshrc;
+
+echo Moving .p10k.zsh to .p10k_zsh.pre_bootstrap...
+mv ~/.p10k.zsh ~/.p10k_zsh.pre_bootstrap;
+echo Copying .p10k.zsh...
+cp -f .p10k.zsh ~/.p10k.zsh
+
+echo Moving .vimrc to .vimrc.pre_bootstrap...
+mv ~/.vimrc ~/.vimrc.pre_bootstrap;
+echo Copying .vimrc...
+cp -f .vimrc ~/.vimrc;
 
 echo Done. Run "source ~/.zshrc" or open a new terminal.

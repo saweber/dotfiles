@@ -7,7 +7,7 @@ tap "homebrew/core"
 cask_args appdir: "~/Applications", require_sha: true
 
 # zsh
-brew "starship"
+brew "romkatv/powerlevel10k/powerlevel10k"
 brew "zsh"
 brew "zsh-autosuggestions"
 brew "zsh-completions"
@@ -29,7 +29,6 @@ brew "session-manager-plugin" # AWS session manager
 brew "tig" # git history cli
 brew "tmux" 
 brew "tree" # for showing recursive directory structure
-brew "vim"
 brew "wget"
 
 # useful macOS utilities
@@ -59,7 +58,7 @@ cask "spotify"
 brew "go"
 
 # node
-brew "nvm"
+brew "node@16"
 brew "yarn"
 
 # python
