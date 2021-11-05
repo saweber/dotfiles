@@ -29,9 +29,15 @@ if [ ! -d "~/.oh-my-zsh" ]; then
 fi
 
 echo Downloading wd Plugin...
-mkdir -p ~/.zsh_plugins/wd;
-git clone git@github.com:mfaerevaag/wd.git ~/.zsh_plugins/wd --depth 1;
+mkdir -p ~/.zsh/wd;
+git clone git@github.com:mfaerevaag/wd.git ~/.zsh/wd --depth 1;
 
+echo Downloading docker completions...
+curl -L https://raw.githubusercontent.com/docker/compose/1.29.2/contrib/completion/zsh/_docker-compose -o ~/.zsh/docker/_docker-compose
+curl -L  https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker -o ~/.zsh/docker/_docker
+
+echo Downloading git completions...
+curl -L https://github.com/git/git/blob/master/contrib/completion/git-completion.zsh -o ~/.zsh/git/_git
 echo Installing fzf...
 fzf install - $(brew --prefix)/opt/fzf/install;
 

@@ -11,35 +11,28 @@ export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 # For pasting into zsh - turns off bracketed-paste-magic and url-quote-magic
 export DISABLE_MAGIC_FUNCTIONS=true
 
-# plugins=(
-#   docker
-#   docker-compose
-#   git
-#   kubectl
-#   node
-#   npm
-#   golang
-#   yarn
-# )
-
-# export ZSH="/Users/$USER/.oh-my-zsh"
-# source $ZSH/oh-my-zsh.sh
-
 # homebrew managed zsh plugins
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# loads zsh-completions, aws completions
-export FPATH="/usr/local/share/zsh-completions:/usr/local/share/zsh/site-functions:/usr/share/zsh/site-functions:/usr/share/zsh/5.7.1/functions:~/.zsh_plugins/wd"
+# wd plugin
+source /Users/${USER}/.zsh/wd/wd.plugin.zsh
+
+# loads completions
+export FPATH="/usr/local/share/zsh-completions:/usr/local/share/zsh/site-functions:/usr/share/zsh/site-functions:/usr/share/zsh/5.7.1/functions:$(brew --prefix)/share/zsh-completions/src:/Users/$USER/.zsh/wd:/Users/$USER/.zsh/git:/Users/$USER/.zsh/docker"
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
+
+# kubectl completions
+source <(kubectl completion zsh)
+alias k="kubectl"
+
+# aws cli completions
 complete -C '/usr/local/bin/aws_completer' aws
 
-# wd plugin
-wd() {
-  . ~/.zsh_plugins/wd/wd.sh
-}
+# git completions
+compdef git gitk
 
 # keybindings
 bindkey '^ ' autosuggest-accept
@@ -53,15 +46,17 @@ export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 export GOPRIVATE="scm.bluebeam.com"
 
+# credentials
 export AWS_PROFILE="dev"
 source ~/.credentials
 
+# cli aliases
 alias vim="nvim"
 alias token="go run ~/src/rover/token-client/main.go | pbcopy"
 
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# eval "$(starship init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
