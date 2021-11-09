@@ -25,6 +25,7 @@ brew "git"
 brew "htop"
 brew "jq"
 brew "neovim"
+brew "rlwrap" # for cht.sh
 brew "session-manager-plugin" # AWS session manager
 brew "tig" # git history cli
 brew "tmux" 

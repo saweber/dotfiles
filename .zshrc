@@ -20,7 +20,7 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /Users/${USER}/.zsh/wd/wd.plugin.zsh
 
 # loads completions
-export FPATH="/usr/local/share/zsh-completions:/usr/local/share/zsh/site-functions:/usr/share/zsh/site-functions:/usr/share/zsh/5.7.1/functions:$(brew --prefix)/share/zsh-completions/src:/Users/$USER/.zsh/wd:/Users/$USER/.zsh/git:/Users/$USER/.zsh/docker"
+export FPATH="/usr/local/share/zsh-completions:/usr/local/share/zsh/site-functions:/usr/share/zsh/site-functions:/usr/share/zsh/5.7.1/functions:$(brew --prefix)/share/zsh-completions/src:/Users/$USER/.zsh/wd:/Users/$USER/.zsh/docker:/Users/$USER/.zsh"
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 
@@ -53,6 +53,7 @@ source ~/.credentials
 # cli aliases
 alias vim="nvim"
 alias token="go run ~/src/rover/token-client/main.go | pbcopy"
+alias cht="cht.sh"
 
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
