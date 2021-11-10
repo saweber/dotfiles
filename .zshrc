@@ -11,18 +11,16 @@ export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 # For pasting into zsh - turns off bracketed-paste-magic and url-quote-magic
 export DISABLE_MAGIC_FUNCTIONS=true
 
-# homebrew managed zsh plugins
+# zsh autosuggestions
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^ ' autosuggest-accept
 
+# zsh syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# wd plugin
-source /Users/${USER}/.zsh/wd/wd.plugin.zsh
-
 # loads completions
-export FPATH="/usr/local/share/zsh-completions:/usr/local/share/zsh/site-functions:/usr/share/zsh/site-functions:/usr/share/zsh/5.7.1/functions:$(brew --prefix)/share/zsh-completions/src:/Users/$USER/.zsh/wd:/Users/$USER/.zsh"
+export FPATH="/usr/local/share/zsh-completions:/usr/local/share/zsh/site-functions:/usr/share/zsh/site-functions:/usr/share/zsh/5.7.1/functions:$(brew --prefix)/share/zsh-completions/src:/Users/$USER/.zsh"
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 
@@ -33,18 +31,24 @@ alias k="kubectl"
 # aws cli completions
 complete -C '/usr/local/bin/aws_completer' aws
 
+# switch aws profiles
+alias awsd="export AWS_PROFILE=dev"
+alias awsq="export AWS_PROFILE=qa"
+alias awsp="export AWS_PROFILE=prod"
+alias awss="export AWS_PROFILE=sandbox"
+
 # git completions
 compdef git gitk
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# directory search
-d() {
+#goto directory
+g() {
   cd $(find ~ ~/src ~/src/classes ~/src/notes ~/src/personal ~/src/rover -type d -maxdepth 1 | grep -v "/\." | fzf);
 }
-zle -N d d
-bindkey -s '^g' 'd\n'
+zle -N g g
+bindkey -s '^g' 'g\n'
 
 # tmux colors
 export TERM=xterm-256color
@@ -64,7 +68,6 @@ alias vim="nvim"
 alias token="go run ~/src/rover/token-client/main.go | pbcopy"
 alias cht="cht.sh"
 
+# powerlevel10k theme
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# eval "$(starship init zsh)"

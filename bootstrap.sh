@@ -28,10 +28,6 @@ if [ ! -d "~/.oh-my-zsh" ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
 fi
 
-echo Downloading wd Plugin...
-mkdir -p ~/.zsh/wd;
-git clone git@github.com:mfaerevaag/wd.git ~/.zsh/wd --depth 1;
-
 echo Downloading docker completions...
 curl -L https://raw.githubusercontent.com/docker/compose/1.29.2/contrib/completion/zsh/_docker-compose -o ~/.zsh/_docker-compose;
 curl -L  https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker -o ~/.zsh/_docker;
