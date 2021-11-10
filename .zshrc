@@ -22,7 +22,7 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /Users/${USER}/.zsh/wd/wd.plugin.zsh
 
 # loads completions
-export FPATH="/usr/local/share/zsh-completions:/usr/local/share/zsh/site-functions:/usr/share/zsh/site-functions:/usr/share/zsh/5.7.1/functions:$(brew --prefix)/share/zsh-completions/src:/Users/$USER/.zsh/wd:/Users/$USER/.zsh/docker:/Users/$USER/.zsh"
+export FPATH="/usr/local/share/zsh-completions:/usr/local/share/zsh/site-functions:/usr/share/zsh/site-functions:/usr/share/zsh/5.7.1/functions:$(brew --prefix)/share/zsh-completions/src:/Users/$USER/.zsh/wd:/Users/$USER/.zsh"
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 
@@ -40,11 +40,11 @@ compdef git gitk
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # directory search
-s() {
+d() {
   cd $(find ~ ~/src ~/src/classes ~/src/notes ~/src/personal ~/src/rover -type d -maxdepth 1 | grep -v "/\." | fzf);
 }
-zle -N s s
-bindkey '^g' s
+zle -N d d
+bindkey -s '^g' 'd\n'
 
 # tmux colors
 export TERM=xterm-256color
