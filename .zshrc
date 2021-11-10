@@ -14,6 +14,8 @@ export DISABLE_MAGIC_FUNCTIONS=true
 # homebrew managed zsh plugins
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey '^ ' autosuggest-accept
+
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # wd plugin
@@ -34,8 +36,15 @@ complete -C '/usr/local/bin/aws_completer' aws
 # git completions
 compdef git gitk
 
-# keybindings
-bindkey '^ ' autosuggest-accept
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# directory search
+s() {
+  cd $(find ~ ~/src ~/src/classes ~/src/notes ~/src/personal ~/src/rover -type d -maxdepth 1 | grep -v "/\." | fzf);
+}
+zle -N s s
+bindkey '^g' s
 
 # tmux colors
 export TERM=xterm-256color
@@ -59,5 +68,3 @@ source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # eval "$(starship init zsh)"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
