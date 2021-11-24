@@ -36,6 +36,7 @@ alias awsd="export AWS_PROFILE=dev"
 alias awsq="export AWS_PROFILE=qa"
 alias awsp="export AWS_PROFILE=prod"
 alias awss="export AWS_PROFILE=sandbox"
+alias awst="export AWS_PROFILE=test"
 
 # git completions
 compdef git gitk
@@ -50,6 +51,8 @@ g() {
 zle -N g g
 bindkey -s '^g' 'g\n'
 
+bindkey -s '^t' '~/tmux-sessionizer.sh\n'
+
 # tmux colors
 export TERM=xterm-256color
 
@@ -60,7 +63,7 @@ export GOBIN="$GOPATH/bin"
 export GOPRIVATE="scm.bluebeam.com"
 
 # credentials
-export AWS_PROFILE="dev"
+export AWS_PROFILE="test"
 source ~/.credentials
 
 # cli aliases

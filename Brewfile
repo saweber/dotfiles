@@ -60,7 +60,8 @@ cask "spotify"
 brew "go"
 
 # node
-brew "node@16"
+brew "node@14"
+brew "volta"
 brew "yarn"
 
 # python
