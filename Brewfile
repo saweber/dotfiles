@@ -26,12 +26,12 @@ brew "htop"
 brew "jq"
 brew "neovim"
 brew "rlwrap" # for cht.sh
-brew "session-manager-plugin" # AWS session manager
 brew "tig" # git history cli
 brew "tldr"
 brew "tmux" 
 brew "tree" # for showing recursive directory structure
 brew "wget"
+cask "session-manager-plugin" # AWS session manager
 
 # useful macOS utilities
 cask "alfred"
