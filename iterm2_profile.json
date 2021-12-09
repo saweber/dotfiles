@@ -1,5 +1,11 @@
 {
-  "Thin Strokes" : 3,
+  "Ansi 5 Color" : {
+    "Red Component" : 0.78977584838867188,
+    "Color Space" : "Calibrated",
+    "Blue Component" : 0.99925696849822998,
+    "Alpha Component" : 1,
+    "Green Component" : 0.68177640438079834
+  },
   "Working Directory" : "\/Users\/sweber",
   "Prompt Before Closing 2" : false,
   "Selected Text Color" : {
@@ -66,8 +72,8 @@
             "path" : "path",
             "maxwidth" : 1.7976931348623157e+308,
             "base: priority" : 5,
-            "minwidth" : 0,
             "base: compression resistance" : 1,
+            "minwidth" : 0,
             "shared text color" : {
               "Red Component" : 0.5,
               "Color Space" : "sRGB",
@@ -461,11 +467,11 @@
     "Green Component" : 0.89572525024414062
   },
   "Ansi 8 Color" : {
-    "Red Component" : 0.33333333333333331,
+    "Red Component" : 0.3333333432674408,
     "Color Space" : "Calibrated",
-    "Blue Component" : 0.33333333333333331,
+    "Blue Component" : 0.3333333432674408,
     "Alpha Component" : 1,
-    "Green Component" : 0.33333333333333331
+    "Green Component" : 0.3333333432674408
   },
   "Badge Color" : {
     "Red Component" : 1,
@@ -486,8 +492,8 @@
     "Green Component" : 0.11364022642374039
   },
   "Blur" : false,
+  "Vertical Spacing" : 1.05,
   "Normal Font" : "JetBrainsMono-Regular 12",
-  "Vertical Spacing" : 1,
   "Ansi 7 Color" : {
     "Red Component" : 0.73333334922790527,
     "Color Space" : "Calibrated",
@@ -542,12 +548,6 @@
   "Use Tab Color" : false,
   "Visual Bell" : false,
   "ASCII Ligatures" : true,
-  "Ansi 5 Color" : {
-    "Red Component" : 0.78977584838867188,
-    "Color Space" : "Calibrated",
-    "Blue Component" : 0.99925696849822998,
-    "Alpha Component" : 1,
-    "Green Component" : 0.68177640438079834
-  },
-  "Custom Directory" : "No"
+  "Custom Directory" : "No",
+  "Thin Strokes" : 3
 }

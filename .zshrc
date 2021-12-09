@@ -20,7 +20,11 @@ bindkey '^ ' autosuggest-accept
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # loads completions
-export FPATH="/usr/local/share/zsh-completions:/usr/local/share/zsh/site-functions:/usr/share/zsh/site-functions:/usr/share/zsh/5.7.1/functions:$(brew --prefix)/share/zsh-completions/src:/Users/$USER/.zsh"
+#export FPATH="/usr/local/share/zsh-completions:/usr/local/share/zsh/site-functions:/usr/share/zsh/site-functions:/usr/share/zsh/5.7.1/functions:$(brew --prefix)/share/zsh-completions/src:/Users/$USER/.zsh"
+fpathCompletions="$(brew --prefix)/share/zsh-completions/src:/Users/$USER/.zsh"
+if ! grep -q "$fpathCompletions" <<< "$FPATH"; then
+  export FPATH="$FPATH:$fpathCompletions";
+fi
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 
@@ -63,7 +67,7 @@ export GOBIN="$GOPATH/bin"
 export GOPRIVATE="scm.bluebeam.com"
 
 # credentials
-export AWS_PROFILE="test"
+export AWS_PROFILE="sandbox"
 source ~/.credentials
 
 # cli aliases
@@ -74,3 +78,9 @@ alias cht="cht.sh"
 # powerlevel10k theme
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export VOLTA_HOME="$HOME/.volta"
+
+if ! grep -q "$VOLTA_HOME/bin" <<< "$PATH"; then
+  export PATH="$VOLTA_HOME/bin:$PATH"
+fi

@@ -21,6 +21,7 @@ echo Copying iterm2 theme switcher...
 cp -r ./iterm2-scripts/theme/ ~/Library/Application Support/iTerm2/Scripts/AutoLaunch/
 
 echo Configuring git...
+git config --global core.editor nvim;
 git config --global push.default simple;
 git config --global core.autocrlf input;
 git config --global user.name $git_username;

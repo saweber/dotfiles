@@ -8,7 +8,7 @@ cask_args appdir: "~/Applications", require_sha: true
 
 # zsh
 brew "romkatv/powerlevel10k/powerlevel10k"
-brew "zsh"
+brew "zsh" # macOS ships with an ancient version by default
 brew "zsh-autosuggestions"
 brew "zsh-completions"
 brew "zsh-syntax-highlighting"
@@ -26,12 +26,12 @@ brew "htop"
 brew "jq"
 brew "neovim"
 brew "rlwrap" # for cht.sh
-brew "session-manager-plugin" # AWS session manager
 brew "tig" # git history cli
 brew "tldr"
 brew "tmux" 
 brew "tree" # for showing recursive directory structure
 brew "wget"
+cask "session-manager-plugin" # AWS session manager
 
 # useful macOS utilities
 cask "alfred"
@@ -39,7 +39,6 @@ cask "bettertouchtool"
 cask "dozer" 
 cask "flux" # Night Shift does not work for multiple monitors
 cask "monitorcontrol"
-cask "rectangle"
 cask "witch"
 
 # software dev applications
@@ -60,9 +59,9 @@ cask "spotify"
 brew "go"
 
 # node
-brew "node@14"
+# brew "node"
 brew "volta"
-brew "yarn"
+# brew "yarn"
 
 # python
 brew "pyenv"

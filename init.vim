@@ -1,4 +1,4 @@
-" VIM Configuration
+" Configuration
 
 " Ensure 8 lines are visible
 set scrolloff=8
@@ -32,4 +32,5 @@ nnoremap <Leader>pt :Vex<CR>
 nnoremap <Leader><CR> :source ~/.config/nvim/init.vim<CR>
 nnoremap <C-p> :GFiles<CR>
 nnoremap <Leader>pf :Files<CR>
-
+nnoremap <Leader>lt :colorscheme morning<CR>
+nnoremap <Leader>dt :colorscheme ayu<CR>
