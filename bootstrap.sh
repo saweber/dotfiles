@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 echo git username:
 read git_username;
@@ -6,19 +6,32 @@ read git_username;
 echo git email:
 read git_email;
 
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  sudo apt-get install zsh;
+  chsh -s /bin/zsh;
+fi
+
 echo Checking for brew...
 if ! command -v brew &> /dev/null
 then
   echo Installing brew...
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
-  exit
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
+  if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.zprofile; 
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)";
+  elif [[ "$OSTYPE" == "darwin"* ]]; then
+  fi
 fi
 
 echo Installing brew packages from Brewfile...
 brew bundle;
 
-echo Copying iterm2 theme switcher...
-cp -r ./iterm2-scripts/theme/ ~/Library/Application Support/iTerm2/Scripts/AutoLaunch/
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  brew bundle --file=Brewfile-Mac;
+  echo Copying iterm2 theme switcher...
+  cp -r ./iterm2-scripts/theme/ ~/Library/Application Support/iTerm2/Scripts/AutoLaunch/
+fi
+
 
 echo Configuring git...
 git config --global core.editor nvim;
@@ -38,8 +51,8 @@ echo Downloading vim-plug...
 curl -L https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -o "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs;
 
 echo Downloading cht.sh with completions...
-curl https://cht.sh/:cht.sh > /usr/local/bin/cht.sh
-chmod +x /usr/local/bin/cht.sh
+sudo curl https://cht.sh/:cht.sh > /usr/local/bin
+sudo chmod +x /usr/local/bin/cht.sh
 curl https://cheat.sh/:zsh > ~/.zsh/_cht;
 
 echo Installing fzf...
@@ -63,7 +76,8 @@ ln .p10k.zsh ~/.p10k.zsh
 echo Moving .init.vim to .init_vim.pre_bootstrap...
 mv ~/.config/nvim/init.vim ~/.init_vim.pre_bootstrap;
 echo Linking init.vim for neovim...
-ln .init.vim ~/.config/nvim/.init.vim;
+mkdir -p ~/.config/nvim;
+ln init.vim ~/.config/nvim/init.vim;
 
 echo Linking tmux-sessionizer...
 ln tmux-sessionizer.sh ~/.tmux-sessionizer;

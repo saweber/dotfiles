@@ -1,0 +1,65 @@
+# homebrew taps
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
+
+# set arguments for all 'brew install --cask' commands
+cask_args appdir: "~/Applications", require_sha: true
+
+# fonts
+tap "homebrew/cask-fonts"
+cask "font-fira-code"
+cask "font-jetbrains-mono"
+
+# cli tools
+cask "session-manager-plugin" # AWS session manager
+
+# useful macOS utilities
+cask "alfred"
+cask "bettertouchtool"
+cask "dozer" 
+cask "flux" # Night Shift does not work for multiple monitors
+cask "monitorcontrol"
+cask "witch"
+
+# software dev applications
+cask "docker"
+cask "iterm2"
+cask "jetbrains-toolbox"
+cask "postman"
+cask "visual-studio-code"
+
+# good web browsers
+cask "firefox"
+cask "google-chrome"
+
+# other macOS applications
+cask "spotify"
+
+# jmeter
+# brew "jmeter"
+
+# k8s
+# tap "derailed/k9s"
+# tap "derailed/popeye"
+# tap "tilt-dev/tap"
+# brew "aws-iam-authenticator"
+# brew "derailed/k9s/k9s"
+# brew "derailed/popeye/popeye"
+# brew "helm"
+# brew "kind"
+# brew "kubernetes-cli"
+# brew "minikube"
+# brew "skaffold"
+# brew "stern"
+# brew "tilt-dev/tap/tilt"
+# cask "kubernetic"
+
+# infrastructure
+# brew "opa"
+# brew "terraform"
+# brew "terragrunt"
+
+# grpc
+# brew "grpc"
+# brew "protobuf"

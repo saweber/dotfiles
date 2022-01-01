@@ -16,7 +16,7 @@ set smartindent
 " Syntax Highlighting
 syntax enable
 
-call plug#begin('~/.vim/plugged')
+call plug#begin(stdpath('config') . '/plugged')
 Plug 'ayu-theme/ayu-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'

@@ -19,9 +19,11 @@ bindkey '^ ' autosuggest-accept
 # zsh syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# zsh vi mode
+source $(brew --prefix)/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
 # loads completions
-#export FPATH="/usr/local/share/zsh-completions:/usr/local/share/zsh/site-functions:/usr/share/zsh/site-functions:/usr/share/zsh/5.7.1/functions:$(brew --prefix)/share/zsh-completions/src:/Users/$USER/.zsh"
-fpathCompletions="$(brew --prefix)/share/zsh-completions/src:/Users/$USER/.zsh"
+fpathCompletions="$(brew --prefix)/share/zsh-completions/src:/Users/$USER/.zsh:/home/$USER/.zsh"
 if ! grep -q "$fpathCompletions" <<< "$FPATH"; then
   export FPATH="$FPATH:$fpathCompletions";
 fi
@@ -29,11 +31,13 @@ autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 
 # kubectl completions
-source <(kubectl completion zsh)
-alias k="kubectl"
+if command -v kubectl &> /dev/null; then
+  source <(kubectl completion zsh)
+  alias k="kubectl"
+fi
 
 # aws cli completions
-complete -C '/usr/local/bin/aws_completer' aws
+complete -C "$(brew --prefix)/bin/aws_completer" aws
 
 # switch aws profiles
 alias awsd="export AWS_PROFILE=dev"
@@ -50,7 +54,7 @@ compdef git gitk
 
 #goto directory
 g() {
-  cd $(find ~ ~/src ~/src/classes ~/src/notes ~/src/personal ~/src/rover -type d -maxdepth 1 | grep -v "/\." | fzf);
+  cd $(find ~ ~/src  -maxdepth 2 -type d | grep -v "/\." | fzf);
 }
 zle -N g g
 bindkey -s '^g' 'g\n'
@@ -76,7 +80,7 @@ alias token="go run ~/src/rover/token-client/main.go | pbcopy"
 alias cht="cht.sh"
 
 # powerlevel10k theme
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export VOLTA_HOME="$HOME/.volta"

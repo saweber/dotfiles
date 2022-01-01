@@ -1,19 +1,23 @@
 # dotfiles
 
-## Prerequisites
+## MacOS
+
+- Run ./boostrap.sh
+
+### Prerequisites
 
 - Install XCode
 
-## iterm2 theme switcher
+### iterm2 theme switcher
 
 - cp -r ./iterm2-scripts/theme/ ~/Library/Application Support/iTerm2/Scripts/AutoLaunch/
 
-## Manual Imports
+### Manual Imports
 
 - BetterTouchTool - `Default.bttpreset`
 - Iterm2 - `iterm2_profile.json`
 
-## Recommended MacOS Settings changes
+### Recommended MacOS Settings changes
 
 - `defaults write com.apple.dock no-bouncing -bool TRUE`
   - turns off dock bouncing
@@ -27,3 +31,8 @@
   - Use Alfred instead
 - Accessibility -> Display -> Reduce Motion
   - faster transitions between spaces
+
+## WSL2 Ubuntu
+
+- Run ./boostrap.sh
+
