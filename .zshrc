@@ -49,17 +49,22 @@ alias awst="export AWS_PROFILE=test"
 # git completions
 compdef git gitk
 
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 #goto directory
 g() {
   cd $(find ~ ~/src  -maxdepth 2 -type d | grep -v "/\." | fzf);
 }
-zle -N g g
-bindkey -s '^g' 'g\n'
 
-bindkey -s '^t' '~/tmux-sessionizer.sh\n'
+# zsh-vi-mode overwrites bindings, must wait until after init
+function zvm_after_init() {
+  # fzf
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+  zvm_bindkey viins '^@' autosuggest-accept
+
+  zle -N g g
+  bindkey -s '^g' 'g\n'
+  bindkey -s '^t' '~/tmux-sessionizer.sh\n'
+}
 
 # tmux colors
 export TERM=xterm-256color
