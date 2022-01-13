@@ -12,7 +12,7 @@ async def main(connection):
             # Themes have space-delimited attributes, one of which will be light or dark.
             parts = theme.split(" ")
             if "dark" in parts:
-                preset = await iterm2.ColorPreset.async_get(connection, "ayu-mirage")
+                preset = await iterm2.ColorPreset.async_get(connection, "monokai-pro")
             else:
                 preset = await iterm2.ColorPreset.async_get(connection, "Night Owl Light")
 

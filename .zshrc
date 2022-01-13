@@ -66,9 +66,6 @@ function zvm_after_init() {
   bindkey -s '^t' '~/tmux-sessionizer.sh\n'
 }
 
-# tmux colors
-export TERM=xterm-256color
-
 # go
 export GOHOME="$HOME/go"
 export GOPATH="$HOME/go"
@@ -93,3 +90,4 @@ export VOLTA_HOME="$HOME/.volta"
 if ! grep -q "$VOLTA_HOME/bin" <<< "$PATH"; then
   export PATH="$VOLTA_HOME/bin:$PATH"
 fi
+
