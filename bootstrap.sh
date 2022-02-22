@@ -12,14 +12,14 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 fi
 
 echo Checking for brew...
-if ! command -v brew &> /dev/null
-then
+if ! [ command -v brew &> /dev/null ] ; then
   echo Installing brew...
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
   if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.zprofile; 
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)";
   elif [[ "$OSTYPE" == "darwin"* ]]; then
+    echo 'Post install commands for homebrew on Mac?';
   fi
 fi
 

@@ -36,3 +36,7 @@
 
 - Run ./boostrap.sh
 
+## Issues
+
+- Brewfile may fail to install some packages, a manual re-run with `brew install` or `brew reinstall` should fix it.
+
