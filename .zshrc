@@ -72,6 +72,10 @@ export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 export GOPRIVATE="scm.bluebeam.com"
 
+if ! grep -q "$GOBIN" <<< "$PATH"; then
+  export PATH="$GOBIN:$PATH"
+fi
+
 # credentials
 export AWS_PROFILE="sandbox"
 source ~/.credentials
