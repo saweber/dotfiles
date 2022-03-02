@@ -19,6 +19,7 @@ cask "alfred"
 cask "bettertouchtool"
 cask "dozer" 
 cask "flux" # Night Shift does not work for multiple monitors
+cask "keepassxc"
 cask "monitorcontrol"
 cask "witch"
 

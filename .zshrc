@@ -51,7 +51,7 @@ compdef git gitk
 
 #goto directory
 g() {
-  cd $(find ~ ~/src  -maxdepth 2 -type d | grep -v "/\." | fzf);
+  cd $(find ~ ~/src ~/go -maxdepth 1 -type d | grep -v "/\." | fzf);
 }
 
 # zsh-vi-mode overwrites bindings, must wait until after init
@@ -84,6 +84,7 @@ source ~/.credentials
 alias vim="nvim"
 alias token="go run ~/src/rover/token-client/main.go | pbcopy"
 alias cht="cht.sh"
+alias npm="pnpm"
 
 # powerlevel10k theme
 source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme

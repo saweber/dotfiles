@@ -34,6 +34,7 @@ brew "golangci/tap/golangci-lint" # from Learn Go with tests
 
 # node
 brew "volta"
+brew "pnpm"
 
 # python
 brew "pyenv"
