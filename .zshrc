@@ -25,7 +25,7 @@ source $(brew --prefix)/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 # loads completions
 fpathCompletions="$(brew --prefix)/share/zsh-completions/src:/Users/$USER/.zsh:/home/$USER/.zsh"
 if ! grep -q "$fpathCompletions" <<< "$FPATH"; then
-  export FPATH="$FPATH:$fpathCompletions";
+  FPATH="$FPATH:$fpathCompletions";
 fi
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
@@ -72,9 +72,7 @@ export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 export GOPRIVATE="scm.bluebeam.com"
 
-if ! grep -q "$GOBIN" <<< "$PATH"; then
-  export PATH="$GOBIN:$PATH"
-fi
+PATH="$GOBIN:$PATH"
 
 # credentials
 export AWS_PROFILE="sandbox"
@@ -92,7 +90,5 @@ source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 export VOLTA_HOME="$HOME/.volta"
 
-if ! grep -q "$VOLTA_HOME/bin" <<< "$PATH"; then
-  export PATH="$VOLTA_HOME/bin:$PATH"
-fi
+PATH="$VOLTA_HOME/bin:$PATH"
 
