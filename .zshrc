@@ -51,7 +51,7 @@ compdef git gitk
 
 #goto directory
 g() {
-  cd $(find ~ ~/src ~/go -maxdepth 1 -type d | grep -v "/\." | fzf);
+  cd $(find ~ ~/src ~/go/src -maxdepth 1 -type d | grep -v "/\." | fzf);
 }
 
 # zsh-vi-mode overwrites bindings, must wait until after init
