@@ -7,7 +7,8 @@ echo git email:
 read git_email;
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  sudo apt-get install zsh;
+  sudo apt-get update;
+  sudo apt-get install zsh build-essential;
   chsh -s /bin/zsh;
 fi
 
