@@ -38,3 +38,6 @@ brew "pnpm"
 
 # python
 brew "pyenv"
+
+# rust
+brew "rustup"

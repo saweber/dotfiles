@@ -29,6 +29,7 @@ cask "iterm2"
 cask "jetbrains-toolbox"
 cask "postman"
 cask "visual-studio-code"
+cask "nosql-workbench"
 
 # good web browsers
 cask "firefox"
