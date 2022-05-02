@@ -45,6 +45,9 @@ alias awsq="export AWS_PROFILE=qa"
 alias awsp="export AWS_PROFILE=prod"
 alias awss="export AWS_PROFILE=sandbox"
 alias awst="export AWS_PROFILE=test"
+alias awsl="export AWS_PROFILE=local"
+
+alias awsls="aws --endpoint-url=http://localhost:4566"
 
 # git completions
 compdef git gitk
@@ -70,12 +73,12 @@ function zvm_after_init() {
 export GOHOME="$HOME/go"
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
-export GOPRIVATE="scm.bluebeam.com"
+export GOPRIVATE="scm.bluebeam.com,github.com"
 
 PATH="$GOBIN:$PATH"
 
 # credentials
-export AWS_PROFILE="sandbox"
+export AWS_PROFILE="local"
 source ~/.credentials
 
 # cli aliases
