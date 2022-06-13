@@ -47,6 +47,7 @@ alias awss="export AWS_PROFILE=sandbox"
 alias awst="export AWS_PROFILE=test"
 alias awsl="export AWS_PROFILE=local"
 
+# aws cli shortcut for working with localstack
 alias awsls="aws --endpoint-url=http://localhost:4566"
 
 # git completions
@@ -66,7 +67,7 @@ function zvm_after_init() {
 
   zle -N g g
   bindkey -s '^g' 'g\n'
-  bindkey -s '^t' '~/tmux-sessionizer.sh\n'
+  #bindkey -s '^t' '~/tmux-sessionizer.sh\n'
 }
 
 # go

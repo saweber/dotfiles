@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #assumes you are already in tmux
-session=$(find ~ ~/src ~/src/classes ~/src/notes ~/src/personal ~/src/rover -type d -maxdepth 1 | grep -v "/\." | fzf);
+session=$(find ~ ~/src -type d -maxdepth 1 | grep -v "/\." | fzf);
 session_name=$(basename "$session" | tr . _)
 
 if ! tmux has-session -t "$session_name"; then
