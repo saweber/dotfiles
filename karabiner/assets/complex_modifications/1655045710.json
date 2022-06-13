@@ -1,0 +1,20 @@
+{
+  "title": "dotfiles-layout",
+  "rules": [
+    {
+      "description": "Right Command to Meh",
+      "manipulators": [
+        {
+          "from": { "key_code": "right_gui" },
+          "to": [
+            {
+              "key_code": "left_shift",
+              "modifiers": ["left_control", "left_option"]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 *.swp
 *.DS_Store
 Brewfile.lock.json
+Brewfile-Mac.lock.json
 .credentials
 .idea/*

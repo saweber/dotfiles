@@ -30,6 +30,7 @@ brew "wget"
 
 # golang
 brew "go"
+tap "golangci/tap"
 brew "golangci/tap/golangci-lint" # from Learn Go with tests
 
 # node

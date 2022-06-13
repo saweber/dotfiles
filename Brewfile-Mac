@@ -16,11 +16,12 @@ cask "session-manager-plugin" # AWS session manager
 
 # useful macOS utilities
 cask "alfred"
+cask "bartender" 
 cask "bettertouchtool"
-cask "dozer" 
-cask "flux" # Night Shift does not work for multiple monitors
+cask "karabiner-elements"
 cask "keepassxc"
 cask "monitorcontrol"
+cask "rectangle"
 cask "witch"
 
 # software dev applications
@@ -29,7 +30,6 @@ cask "iterm2"
 cask "jetbrains-toolbox"
 cask "postman"
 cask "visual-studio-code"
-cask "nosql-workbench"
 
 # good web browsers
 cask "firefox"
@@ -37,6 +37,9 @@ cask "google-chrome"
 
 # other macOS applications
 cask "spotify"
+
+# communications
+cask "tuple"
 
 # jmeter
 # brew "jmeter"

@@ -20,7 +20,8 @@ if ! [ command -v brew &> /dev/null ] ; then
     echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.zprofile; 
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)";
   elif [[ "$OSTYPE" == "darwin"* ]]; then
-    echo 'Post install commands for homebrew on Mac?';
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
   fi
 fi
 
@@ -28,11 +29,9 @@ echo Installing brew packages from Brewfile...
 brew bundle;
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
+  echo Instaling Mac applications...
   brew bundle --file=Brewfile-Mac;
-  echo Copying iterm2 theme switcher...
-  cp -r ./iterm2-scripts/theme/ ~/Library/Application Support/iTerm2/Scripts/AutoLaunch/
 fi
-
 
 echo Configuring git...
 git config --global core.editor nvim;
@@ -52,9 +51,10 @@ echo Downloading vim-plug...
 curl -L https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -o "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs;
 
 echo Downloading cht.sh with completions...
-sudo curl https://cht.sh/:cht.sh > /usr/local/bin
+sudo touch /usr/local/bin/cht.sh
+sudo curl -s https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh
 sudo chmod +x /usr/local/bin/cht.sh
-curl https://cheat.sh/:zsh > ~/.zsh/_cht;
+curl https://cheat.sh/:zsh > ~/.zsh/_cht --create-dirs;
 
 echo Installing fzf...
 $(brew --prefix)/opt/fzf/install;
