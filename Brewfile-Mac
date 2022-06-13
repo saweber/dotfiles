@@ -15,6 +15,7 @@ cask "font-jetbrains-mono"
 cask "session-manager-plugin" # AWS session manager
 
 # useful macOS utilities
+brew "php" # for alfred spotify plugin
 cask "alfred"
 cask "bartender" 
 cask "bettertouchtool"
