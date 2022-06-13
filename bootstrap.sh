@@ -57,7 +57,7 @@ sudo chmod +x /usr/local/bin/cht.sh
 curl https://cheat.sh/:zsh > ~/.zsh/_cht --create-dirs;
 
 echo Installing fzf...
-$(brew --prefix)/opt/fzf/install;
+yes | $(brew --prefix)/opt/fzf/install;
 
 echo Moving .tmux.conf to .tmux_conf.pre_bootstrap...
 mv ~/.tmux.conf ~/.tmux_conf.pre_bootstrap;
