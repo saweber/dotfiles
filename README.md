@@ -45,6 +45,12 @@ Personal setup for MacOS and WSL2 Ubuntu Dev Environments
 - Terminal
   - `defaults write com.apple.dock no-bouncing -bool TRUE`
     - turns off dock bouncing
+  - `defaults write com.apple.screencapture disable-shadow -bool true; killall SystemUIServer`
+    - turns off shadows on screenshots
+- Desktop
+  - Create Screenshots folder in home dir
+  - Put Screenshots folder in dock
+  - Open Screenshot, go to settings, set to save to screenshots folder
 
 ## Known Limitations
 
