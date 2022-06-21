@@ -35,6 +35,7 @@ Personal setup for MacOS and WSL2 Ubuntu Dev Environments
     - Modifier Keys -> Set Caps Lock to Escape
   - Mission Control
     - Uncheck Auto rearrange spaces
+    - Disable Hot Corners
   - Mouse
     - Uncheck Scroll direction: Natural
   - Spotlight
