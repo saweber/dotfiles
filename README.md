@@ -52,6 +52,8 @@ Personal setup for MacOS and WSL2 Ubuntu Dev Environments
   - Create Screenshots folder in home dir
   - Put Screenshots folder in dock
   - Open Screenshot, go to settings, set to save to screenshots folder
+- Chrome
+  - Set fixed-width font to 'JetBrains Mono'
 
 ## Known Limitations
 

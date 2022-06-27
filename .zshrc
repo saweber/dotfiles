@@ -46,6 +46,7 @@ alias awsp="export AWS_PROFILE=prod"
 alias awss="export AWS_PROFILE=sandbox"
 alias awst="export AWS_PROFILE=test"
 alias awsl="export AWS_PROFILE=local"
+alias awsu="export AWS_PROFILE=uk"
 
 # aws cli shortcut for working with localstack
 alias awsls="aws --endpoint-url=http://localhost:4566"
@@ -79,7 +80,7 @@ export GOPRIVATE="scm.bluebeam.com,github.com"
 PATH="$GOBIN:$PATH"
 
 # credentials
-export AWS_PROFILE="local"
+export AWS_PROFILE="dev"
 source ~/.credentials
 
 # cli aliases
