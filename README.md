@@ -33,6 +33,7 @@ Personal setup for MacOS and WSL2 Ubuntu Dev Environments
     - Uncheck `Show recent applications in Dock`
   - Keyboard
     - Modifier Keys -> Set Caps Lock to Escape
+    - Check `Use F1, F2, etc. keys as Function Keys`
   - Mission Control
     - Uncheck Auto rearrange spaces
     - Disable Hot Corners
