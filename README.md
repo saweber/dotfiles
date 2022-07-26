@@ -19,38 +19,21 @@ Personal setup for MacOS and WSL2 Ubuntu Dev Environments
   - Import `iterm2/night-owl-light.itermcolors`
   - Follow steps here for light/dark theme switching: `https://gist.github.com/jamesmacfie/2061023e5365e8b6bfbbc20792ac90f8`
   - Theme : minimal
-- Karabiner-Elements - Replace contents in `~/.config/karabiner` with contents of karabiner folder
-- Rectangle - `RectangleConfig.json`
+- Karabiner-Elements - Replace contents in `~/.config/karabiner` with contents of ./karabiner folder
+- Rectangle - import `RectangleConfig.json`
 
-### Opinonated Personal Preferences
+### Opinonated Personal Preferences (that are not scripted)
 
-- Finder
-  - Preferences -> General -> Uncheck Show On Deskop section
 - System Preferences
-  - Dock
-    - Set Position on screen to left
-    - Check `Automatically hide and show the Dock`
-    - Uncheck `Show recent applications in Dock`
   - Keyboard
     - Modifier Keys -> Set Caps Lock to Escape
     - Check `Use F1, F2, etc. keys as Function Keys`
-  - Mission Control
-    - Uncheck Auto rearrange spaces
-    - Disable Hot Corners
   - Mouse
     - Uncheck Scroll direction: Natural
   - Spotlight
     - Keyboard Shortcuts -> Uncheck Show Spotlight Search ⌘Space
     - Use Alfred instead
-  - Accessibility -> Display -> Reduce Motion
-    - faster transitions between spaces
-- Terminal
-  - `defaults write com.apple.dock no-bouncing -bool TRUE`
-    - turns off dock bouncing
-  - `defaults write com.apple.screencapture disable-shadow -bool true; killall SystemUIServer`
-    - turns off shadows on screenshots
 - Desktop
-  - Create Screenshots folder in home dir
   - Put Screenshots folder in dock
   - Open Screenshot, go to settings, set to save to screenshots folder
 - Chrome
@@ -60,3 +43,8 @@ Personal setup for MacOS and WSL2 Ubuntu Dev Environments
 
 - WSL2 - Brewfile may fail to install some packages, a manual re-run with `brew install` or `brew reinstall` should fix it.
 - MacOS - Some brew casks do not contain a sha256, so those applications will have to be installed outside of `brew bundle`.
+
+## Credits
+
+- <https://sal.dev/macos/macos-screenshotting-tips-and-tricks/>
+- <https://macos-defaults.com/>

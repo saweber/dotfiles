@@ -31,12 +31,47 @@ brew bundle;
 if [[ "$OSTYPE" == "darwin"* ]]; then
   echo Instaling Mac applications...
   brew bundle --file=Brewfile-Mac;
+
+  echo Changing macOS defaults...
+
+  defaults write com.apple.Accessibility ReduceMotionEnabled -bool true;
+
+  echo Configuring finder and hiding unwanted desktop items.
+  defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false;
+  defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false;
+  defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false;
+  defaults write com.apple.finder ShowMountedServersOnDesktop -bool false;
+  killall Finder;
+
+  echo Configuring Dock and Mission Control.
+  defaults write com.apple.dock no-bouncing -bool true;
+  defaults write com.apple.dock orientation left;
+  defaults write com.apple.dock autohide -bool true;
+  defaults write com.apple.dock show-recents -bool false;
+  defaults write com.apple.dock tilesize -int 48;
+  defaults write com.apple.dock mru-spaces -bool false; # Turns off misson control rearrange spaces
+  # disable hot corners
+  defaults write com.apple.dock wvous-tl-corner -int 0;
+  defaults write com.apple.dock wvous-tr-corner -int 0;
+  defaults write com.apple.dock wvous-bl-corner -int 0;
+  defaults write com.apple.dock wvous-br-corner -int 0;
+  killall Dock;
+
+  echo Fixing mouse scroll direction.
+  defaults write -g com.apple.swipescrolldirection -bool false;
+
+  echo Setting screenshots to jpg and disabling shadows.
+  defaults write com.apple.screencapture disable-shadow -bool true;
+  defaults write com.apple.screencapture type jpg; 
+  mkdir ~/Screenshots;
+  killall SystemUIServer;
 fi
 
 echo Configuring git...
 git config --global core.editor nvim;
 git config --global push.default simple;
 git config --global core.autocrlf input;
+git config --global --add --bool push.autoSetupRemote true;
 git config --global user.name $git_username;
 git config --global user.email $git_email;
 
