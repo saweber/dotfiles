@@ -97,3 +97,10 @@ export VOLTA_HOME="$HOME/.volta"
 
 PATH="$VOLTA_HOME/bin:$PATH"
 
+# wsl2 ubuntu does not save history by default
+HISTFILE=~/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+setopt appendhistory
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
