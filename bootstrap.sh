@@ -71,6 +71,7 @@ echo Configuring git...
 git config --global core.editor nvim;
 git config --global push.default simple;
 git config --global core.autocrlf input;
+git config --global pull.rebase false;
 git config --global --add --bool push.autoSetupRemote true;
 git config --global user.name $git_username;
 git config --global user.email $git_email;
