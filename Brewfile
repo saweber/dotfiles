@@ -30,7 +30,7 @@ brew "wget"
 
 # golang
 brew "go"
-tap "golangci/tap"
+tap "golangci/tap" # from Learn Go with tests
 brew "golangci/tap/golangci-lint" # from Learn Go with tests
 
 # node
@@ -42,3 +42,10 @@ brew "pyenv"
 
 # rust
 brew "rustup"
+
+# k8s
+brew "kubectl"
+brew "kind"
+brew "helm"
+tap "derailed/k9s"
+brew "derailed/k9s/k9s"
