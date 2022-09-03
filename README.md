@@ -35,9 +35,9 @@ Personal setup for MacOS and WSL2 Ubuntu Dev Environments
     - Use Alfred instead
 - Desktop
   - Put Screenshots folder in dock
-  - Open Screenshot, go to settings, set to save to screenshots folder
-- Chrome
+- Firefox
   - Set fixed-width font to 'JetBrains Mono'
+  - [Arial font kerning fix](<https://bugzilla.mozilla.org/show_bug.cgi?id=1366880>)
 
 ## Known Limitations
 

@@ -12,7 +12,6 @@ brew "zsh" # macOS ships with an ancient version by default
 brew "zsh-autosuggestions"
 brew "zsh-completions"
 brew "zsh-syntax-highlighting"
-brew "zsh-vi-mode"
 
 # cli tools
 brew "awscli"

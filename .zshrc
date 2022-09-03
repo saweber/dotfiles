@@ -19,9 +19,6 @@ bindkey '^ ' autosuggest-accept
 # zsh syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# zsh vi mode
-source $(brew --prefix)/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-
 # loads completions
 fpathCompletions="$(brew --prefix)/share/zsh-completions/src:/Users/$USER/.zsh:/home/$USER/.zsh"
 if ! grep -q "$fpathCompletions" <<< "$FPATH"; then

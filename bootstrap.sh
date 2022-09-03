@@ -64,6 +64,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   defaults write com.apple.screencapture disable-shadow -bool true;
   defaults write com.apple.screencapture type jpg; 
   mkdir ~/Screenshots;
+  defaults write com.apple.screencapture "location" -string "~/Screenshots";
   killall SystemUIServer;
 fi
 
