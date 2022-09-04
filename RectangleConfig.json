@@ -70,6 +70,9 @@
     "ignoredSnapAreas" : {
       "int" : 0
     },
+    "landscapeSnapAreas" : {
+      "string" : "[5,{\"compound\":-3},1,{\"action\":15},4,{\"compound\":-2},2,{\"action\":2},8,{\"action\":14},3,{\"action\":16},6,{\"action\":13},7,{\"compound\":-4}]"
+    },
     "launchOnLogin" : {
       "bool" : true
     },
@@ -90,6 +93,9 @@
     },
     "obtainWindowOnClick" : {
       "int" : 0
+    },
+    "portraitSnapAreas" : {
+
     },
     "relaunchOpensMenu" : {
       "bool" : false
@@ -145,6 +151,9 @@
     "specifiedWidth" : {
       "float" : 1680
     },
+    "stageSize" : {
+      "float" : 190
+    },
     "subsequentExecutionMode" : {
       "int" : 1
     },
@@ -174,19 +183,23 @@
     }
   },
   "shortcuts" : {
-    "bottomRightSixth" : {
+    "bottomLeft" : {
       "keyCode" : 11,
       "modifierFlags" : 917504
     },
+    "bottomRight" : {
+      "keyCode" : 45,
+      "modifierFlags" : 917504
+    },
     "centerHalf" : {
-      "keyCode" : 50,
+      "keyCode" : 24,
       "modifierFlags" : 917504
     },
     "firstTwoThirds" : {
       "keyCode" : 6,
       "modifierFlags" : 917504
     },
-    "lastThird" : {
+    "lastTwoThirds" : {
       "keyCode" : 7,
       "modifierFlags" : 917504
     },
@@ -202,10 +215,14 @@
       "keyCode" : 2,
       "modifierFlags" : 917504
     },
-    "topRightSixth" : {
+    "topLeft" : {
       "keyCode" : 5,
+      "modifierFlags" : 917504
+    },
+    "topRight" : {
+      "keyCode" : 4,
       "modifierFlags" : 917504
     }
   },
-  "version" : "62"
+  "version" : "64"
 }
