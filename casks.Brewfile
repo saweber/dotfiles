@@ -40,7 +40,10 @@ cask "google-chrome"
 cask "spotify"
 
 # communications
-cask "tuple"
+# cask "tuple"
+
+# productivity
+cask "obsidian"
 
 # jmeter
 # brew "jmeter"

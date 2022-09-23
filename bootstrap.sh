@@ -25,12 +25,12 @@ if ! [ command -v brew &> /dev/null ] ; then
   fi
 fi
 
-echo Installing brew packages from Brewfile...
-brew bundle;
+  echo Installing brew packages from Brewfile...
+  brew bundle;
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   echo Instaling Mac applications...
-  brew bundle --file=Brewfile-Mac;
+  brew bundle --file=casks.Brewfile;
 
   echo Changing macOS defaults...
 
@@ -121,8 +121,5 @@ echo Moving .ideavimrc to .ideavimrc.pre_boostrap...
 mv ~/.ideavimrc ~/.ideavimrc.pre_bootstrap;
 echo Linking .ideavimrc for IntelliJ...
 ln -sf $(pwd)/.ideavimrc $(echo $HOME)/.ideavimrc;
-
-#echo Linking tmux-sessionizer...
-#ln tmux-sessionizer.sh ~/.tmux-sessionizer;
 
 echo Done. Run "source ~/.zshrc" or open a new terminal.

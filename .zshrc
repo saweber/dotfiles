@@ -1,3 +1,7 @@
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -9,7 +13,7 @@ fi
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
 # For pasting into zsh - turns off bracketed-paste-magic and url-quote-magic
-export DISABLE_MAGIC_FUNCTIONS=true
+# export DISABLE_MAGIC_FUNCTIONS=true
 
 # zsh autosuggestions
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
@@ -37,13 +41,13 @@ fi
 complete -C "$(brew --prefix)/bin/aws_completer" aws
 
 # switch aws profiles
-alias awsd="export AWS_PROFILE=dev"
-alias awsq="export AWS_PROFILE=qa"
-alias awsp="export AWS_PROFILE=prod"
-alias awss="export AWS_PROFILE=sandbox"
-alias awst="export AWS_PROFILE=test"
-alias awsl="export AWS_PROFILE=local"
-alias awsu="export AWS_PROFILE=uk"
+# alias awsd="export AWS_PROFILE=dev"
+# alias awsq="export AWS_PROFILE=qa"
+# alias awsp="export AWS_PROFILE=prod"
+# alias awss="export AWS_PROFILE=sandbox"
+# alias awst="export AWS_PROFILE=test"
+# alias awsl="export AWS_PROFILE=local"
+# alias awsu="export AWS_PROFILE=uk"
 
 # aws cli shortcut for working with localstack
 alias awsls="aws --endpoint-url=http://localhost:4566"
@@ -51,28 +55,21 @@ alias awsls="aws --endpoint-url=http://localhost:4566"
 # git completions
 compdef git gitk
 
-#goto directory
+# goto directory
 g() {
   cd $(find ~ ~/src ~/go/src -maxdepth 1 -type d | grep -v "/\." | fzf);
 }
 
-# zsh-vi-mode overwrites bindings, must wait until after init
-function zvm_after_init() {
-  # fzf
-  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+zle -N g g
+bindkey -s '^g' 'g\n'
 
-  zvm_bindkey viins '^@' autosuggest-accept
-
-  zle -N g g
-  bindkey -s '^g' 'g\n'
-  #bindkey -s '^t' '~/tmux-sessionizer.sh\n'
-}
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # go
 export GOHOME="$HOME/go"
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
-export GOPRIVATE="scm.bluebeam.com,github.com"
+export GOPRIVATE="github.com"
 
 PATH="$GOBIN:$PATH"
 
@@ -82,9 +79,11 @@ source ~/.credentials
 
 # cli aliases
 alias vim="nvim"
-alias token="go run ~/src/rover/token-client/main.go | pbcopy"
 alias cht="cht.sh"
-alias npm="pnpm"
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  alias pbcopy='xsel --clipboard --input'
+  alias pbpaste='xsel --clipboard --output'
+fi
 
 # powerlevel10k theme
 source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
@@ -94,7 +93,11 @@ export VOLTA_HOME="$HOME/.volta"
 
 PATH="$VOLTA_HOME/bin:$PATH"
 
-# wsl2 ubuntu does not save history by default
+# linux - ensure that Ctrl-Left Arrow and Ctrl-Right Arrow navigate by word
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+# linux - does not save history by default
 HISTFILE=~/.zsh_history
 HISTSIZE=50000
 SAVEHIST=50000

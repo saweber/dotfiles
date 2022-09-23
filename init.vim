@@ -16,22 +16,4 @@ set smartindent
 " Syntax Highlighting
 syntax enable
 
-call plug#begin(stdpath('config') . '/plugged')
-Plug 'phanviet/vim-monokai-pro'
-" Plug 'ayu-theme/ayu-vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-call plug#end()
-
 set termguicolors
-" let ayucolor="mirage"
-colorscheme monokai_pro 
-
-" Remaps
-let mapleader = ' '
-nnoremap <Leader>pt :Vex<CR>
-nnoremap <Leader><CR> :source ~/.config/nvim/init.vim<CR>
-nnoremap <C-p> :GFiles<CR>
-nnoremap <Leader>pf :Files<CR>
-nnoremap <Leader>lt :colorscheme morning<CR>
-nnoremap <Leader>dt :colorscheme monokai_pro<CR>

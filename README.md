@@ -1,6 +1,6 @@
 # dotfiles
 
-Personal setup for MacOS and WSL2 Ubuntu Dev Environments
+Personal setup for MacOS and Linux Development Environments
 
 ## How to Run
 
@@ -22,7 +22,7 @@ Personal setup for MacOS and WSL2 Ubuntu Dev Environments
 - Karabiner-Elements - Replace contents in `~/.config/karabiner` with contents of ./karabiner folder
 - Rectangle - import `RectangleConfig.json`
 
-### Opinonated MacOS Personal Preferences (that are not scripted)
+### Opinionated MacOS Personal Preferences (that are not scripted)
 
 - System Preferences
   - Keyboard
