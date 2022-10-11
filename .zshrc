@@ -41,7 +41,7 @@ fi
 complete -C "$(brew --prefix)/bin/aws_completer" aws
 
 # switch aws profiles
-# alias awsd="export AWS_PROFILE=dev"
+# alias awsd="export AWS_PROFILE=default"
 # alias awsq="export AWS_PROFILE=qa"
 # alias awsp="export AWS_PROFILE=prod"
 # alias awss="export AWS_PROFILE=sandbox"
@@ -50,14 +50,14 @@ complete -C "$(brew --prefix)/bin/aws_completer" aws
 # alias awsu="export AWS_PROFILE=uk"
 
 # aws cli shortcut for working with localstack
-alias awsls="aws --endpoint-url=http://localhost:4566"
+# alias awsls="aws --endpoint-url=http://localhost:4566"
 
 # git completions
 compdef git gitk
 
 # goto directory
 g() {
-  cd $(find ~ ~/src ~/go/src -maxdepth 1 -type d | grep -v "/\." | fzf);
+  cd $(find ~ ~/src ~/go/src ~/src/kubecost ~ src/kubecost/cost-model -maxdepth 1 -type d | grep -v "/\." | fzf);
 }
 
 zle -N g g

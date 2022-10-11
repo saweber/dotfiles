@@ -10,16 +10,21 @@ Personal setup for MacOS and Linux Development Environments
 
 ## MacOS
 
+### Install from Mac App Store
+
+- Overcast
+- HotKey
+
 ### Manual Imports
 
-- BetterTouchTool - `Default.bttpreset`
+- BetterTouchTool
+  - Import `Default.bttpreset`
 - Iterm2
   - Import `iterm2/iterm2_profile.json`
   - Import `iterm2/monokai-pro-spectrum.itermcolors`
   - Import `iterm2/night-owl-light.itermcolors`
-  - Follow steps here for light/dark theme switching: `https://gist.github.com/jamesmacfie/2061023e5365e8b6bfbbc20792ac90f8`
+  - [light/dark theme switching](https://gist.github.com/jamesmacfie/2061023e5365e8b6bfbbc20792ac90f8)
   - Theme : minimal
-- Karabiner-Elements - Replace contents in `~/.config/karabiner` with contents of ./karabiner folder
 - Rectangle - import `RectangleConfig.json`
 
 ### Opinionated MacOS Personal Preferences (that are not scripted)
@@ -39,13 +44,15 @@ Personal setup for MacOS and Linux Development Environments
 - Firefox
   - Set fixed-width font to 'JetBrains Mono'
   - [Arial font kerning fix](https://bugzilla.mozilla.org/show_bug.cgi?id=1366880)
+- [TouchID for Sudo](https://sixcolors.com/post/2020/11/quick-tip-enable-touch-id-for-sudo/)
 
 ## Known Limitations
 
-- WSL2 - Brewfile may fail to install some packages, a manual re-run with `brew install` or `brew reinstall` should fix it.
-- MacOS - Some brew casks do not contain a sha256, so those applications will have to be installed outside of `brew bundle`.
+- Linux - Brewfile may fail to install some packages, a manual re-run with `brew install` or `brew reinstall` should fix it.
 
 ## Credits
 
 - <https://sal.dev/macos/macos-screenshotting-tips-and-tricks/>
 - <https://macos-defaults.com/>
+- <https://sixcolors.com/post/2020/11/quick-tip-enable-touch-id-for-sudo/>
+- <https://gist.github.com/jamesmacfie/2061023e5365e8b6bfbbc20792ac90f8>

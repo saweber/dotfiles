@@ -4,7 +4,7 @@ tap "homebrew/cask"
 tap "homebrew/core"
 
 # set arguments for all 'brew install --cask' commands
-cask_args appdir: "~/Applications", require_sha: true
+cask_args appdir: "/Applications", require_sha: false
 
 # fonts
 tap "homebrew/cask-fonts"
@@ -15,20 +15,20 @@ cask "font-jetbrains-mono"
 cask "session-manager-plugin" # AWS session manager
 
 # useful macOS utilities
-brew "php" # for alfred spotify plugin
+# brew "php" # for alfred spotify plugin
 cask "alfred"
 cask "bartender" 
 cask "bettertouchtool"
 cask "karabiner-elements"
-cask "keepassxc"
-cask "monitorcontrol"
+# cask "keepassxc"
+# cask "monitorcontrol"
 cask "rectangle"
 cask "witch"
 
 # software dev applications
 cask "docker"
 cask "iterm2"
-cask "jetbrains-toolbox"
+# cask "jetbrains-toolbox" # https://youtrack.jetbrains.com/issue/TBX-5738/Apple-Silicon-version-sill-need-Rosetta2
 cask "postman"
 cask "visual-studio-code"
 
@@ -41,6 +41,8 @@ cask "spotify"
 
 # communications
 # cask "tuple"
+cask "slack"
+cask "zoom"
 
 # productivity
 cask "obsidian"

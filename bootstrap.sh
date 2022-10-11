@@ -66,6 +66,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   mkdir ~/Screenshots;
   defaults write com.apple.screencapture "location" -string "~/Screenshots";
   killall SystemUIServer;
+
+  echo Copying Karabiner configuration...
+  cp -r ./karabiner ~/.config
 fi
 
 echo Configuring git...
@@ -88,9 +91,9 @@ echo Downloading vim-plug...
 curl -L https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -o "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs;
 
 echo Downloading cht.sh with completions...
-sudo touch /usr/local/bin/cht.sh
-sudo curl -s https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh
-sudo chmod +x /usr/local/bin/cht.sh
+sudo touch /usr/local/bin/cht.sh;
+sudo curl -s https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh;
+sudo chmod +x /usr/local/bin/cht.sh;
 curl https://cheat.sh/:zsh > ~/.zsh/_cht --create-dirs;
 
 echo Installing fzf...
@@ -121,5 +124,10 @@ echo Moving .ideavimrc to .ideavimrc.pre_boostrap...
 mv ~/.ideavimrc ~/.ideavimrc.pre_bootstrap;
 echo Linking .ideavimrc for IntelliJ...
 ln -sf $(pwd)/.ideavimrc $(echo $HOME)/.ideavimrc;
+
+if ! test -f "~/.credentials"]; then
+  echo No .credentials file found, creating empty .credentials file...
+  touch .credentials
+fi
 
 echo Done. Run "source ~/.zshrc" or open a new terminal.
