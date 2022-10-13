@@ -17,6 +17,7 @@ brew "zsh-syntax-highlighting"
 brew "awscli"
 brew "fzf"
 brew "git"
+brew "gpg" # for signing git commits
 brew "htop"
 brew "jq"
 brew "neovim"

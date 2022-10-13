@@ -6,9 +6,12 @@ tap "homebrew/core"
 # set arguments for all 'brew install --cask' commands
 cask_args appdir: "/Applications", require_sha: false
 
+# for gpg
+brew "pinentry-mac"
+
 # fonts
 tap "homebrew/cask-fonts"
-cask "font-fira-code"
+# cask "font-fira-code"
 cask "font-jetbrains-mono"
 
 # cli tools
@@ -23,7 +26,7 @@ cask "karabiner-elements"
 # cask "keepassxc"
 # cask "monitorcontrol"
 cask "rectangle"
-cask "witch"
+# cask "witch"
 
 # software dev applications
 cask "docker"

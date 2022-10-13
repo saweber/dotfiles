@@ -55,6 +55,11 @@ complete -C "$(brew --prefix)/bin/aws_completer" aws
 # git completions
 compdef git gitk
 
+# for using gpg to sign git commits
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export GPG_TTY=$(tty)
+fi
+
 # goto directory
 g() {
   cd $(find ~ ~/src ~/go/src ~/src/kubecost ~/src/kubecost/cost-model -maxdepth 1 -type d | grep -v "/\." | fzf);
