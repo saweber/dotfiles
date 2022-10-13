@@ -57,7 +57,7 @@ compdef git gitk
 
 # goto directory
 g() {
-  cd $(find ~ ~/src ~/go/src ~/src/kubecost ~ src/kubecost/cost-model -maxdepth 1 -type d | grep -v "/\." | fzf);
+  cd $(find ~ ~/src ~/go/src ~/src/kubecost ~/src/kubecost/cost-model -maxdepth 1 -type d | grep -v "/\." | fzf);
 }
 
 zle -N g g
