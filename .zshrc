@@ -31,14 +31,21 @@ fi
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 
-# kubectl completions
+# kubectl completions and alias
 if command -v kubectl &> /dev/null; then
   source <(kubectl completion zsh)
   alias k="kubectl"
 fi
 
+# kubectl krew path
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
 # aws cli completions
-complete -C "$(brew --prefix)/bin/aws_completer" aws
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  complete -C "/usr/bin/aws_completer" aws
+else
+  complete -C "$(brew --prefix)/bin/aws_completer" aws
+fi
 
 # switch aws profiles
 # alias awsd="export AWS_PROFILE=default"
@@ -79,7 +86,7 @@ export GOPRIVATE="github.com"
 PATH="$GOBIN:$PATH"
 
 # credentials
-export AWS_PROFILE="dev"
+# export AWS_PROFILE="admin"
 source ~/.credentials
 
 # cli aliases
@@ -109,3 +116,14 @@ SAVEHIST=50000
 setopt appendhistory
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
+
+# The next line updates PATH for the Google Cloud SDK.
+# if [ -f '/home/steven/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/steven/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+# if [ -f '/home/steven/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/steven/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+cm-logs () {
+   # Namespace can be overridden by adding another -n
+   kubectl logs -l app=cost-analyzer -c cost-model --tail=-1 -n kubecost $@
+}
