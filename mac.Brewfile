@@ -11,11 +11,11 @@ brew "pinentry-mac"
 
 # fonts
 tap "homebrew/cask-fonts"
-# cask "font-fira-code"
 cask "font-jetbrains-mono"
 
 # cli tools
 cask "session-manager-plugin" # AWS session manager
+cask "google-cloud-sdk" # glcloud installer
 
 # useful macOS utilities
 # brew "php" # for alfred spotify plugin
@@ -35,7 +35,7 @@ cask "iterm2"
 cask "postman"
 cask "visual-studio-code"
 
-# good web browsers
+# web browsers
 cask "firefox"
 cask "google-chrome"
 
@@ -49,6 +49,10 @@ cask "zoom"
 
 # productivity
 cask "obsidian"
+
+# security
+cask "authy"
+cask "bitwarden"
 
 # jmeter
 # brew "jmeter"

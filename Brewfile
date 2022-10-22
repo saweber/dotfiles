@@ -21,6 +21,7 @@ brew "gpg" # for signing git commits
 brew "htop"
 brew "jq"
 brew "neovim"
+brew "ripgrep"
 brew "rlwrap" # for cht.sh
 brew "tig" # git history cli
 brew "tldr"
@@ -45,6 +46,7 @@ brew "rustup"
 
 # k8s
 brew "kubectl"
+brew "kubectx"
 brew "kind"
 brew "helm"
 tap "derailed/k9s"
