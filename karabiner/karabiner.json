@@ -35,6 +35,64 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "Mouse 4 -> Go back in Safari",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.apple.Safari"
+                                        ],
+                                        "description": "Safari is in the foreground",
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "pointing_button": "button4"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "left_gui"
+                                        ],
+                                        "repeat": true
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Mouse 5 -> Go forward in Safari",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.apple.Safari"
+                                        ],
+                                        "description": "Safari is in the foreground",
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "pointing_button": "button5"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "left_gui"
+                                        ],
+                                        "repeat": true
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
@@ -78,6 +136,20 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 45108,
+                        "vendor_id": 1133
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
                     "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
                 }
@@ -139,7 +211,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "f6"
+                            "apple_vendor_keyboard_key_code": "launchpad"
                         }
                     ]
                 },
