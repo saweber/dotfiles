@@ -58,7 +58,7 @@ else
 fi
 
 # switch aws profiles
-alias awsp='export AWS_PROFILE=$(sed -n "s/\[profile \(.*\)\]/\1/gp" ~/.aws/config | fzf)'
+alias awsp='export AWS_PROFILE=$(aws configure list-profiles | fzf)'
 
 # aws cli shortcut for working with localstack
 # alias awsls="aws --endpoint-url=http://localhost:4566"
