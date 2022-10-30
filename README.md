@@ -26,8 +26,8 @@ Personal setup for MacOS and Linux Development Environments
   - [light/dark theme switching](https://gist.github.com/jamesmacfie/2061023e5365e8b6bfbbc20792ac90f8)
   - Theme : minimal
 - Rectangle - import `RectangleConfig.json`
-- [Krew](https://krew.sigs.k8s.io/docs/user-guide/setup/install/)
 - `kubectl krew completion zsh >> ~/.zsh/_krew`
+- pprof - `go install github.com/google/pprof@latest`
 
 ### Opinionated MacOS Personal Preferences (that are not scripted)
 

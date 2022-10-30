@@ -45,9 +45,10 @@ brew "pyenv"
 brew "rustup"
 
 # k8s
+brew "helm"
+brew "kind"
+brew "krew"
 brew "kubectl"
 brew "kubectx"
-brew "kind"
-brew "helm"
 tap "derailed/k9s"
 brew "derailed/k9s/k9s"

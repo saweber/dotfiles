@@ -9,8 +9,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# For pasting into zsh - disable autosuggest for large pastes
-export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+
 
 # For pasting into zsh - turns off bracketed-paste-magic and url-quote-magic
 # export DISABLE_MAGIC_FUNCTIONS=true
@@ -19,6 +18,9 @@ export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^ ' autosuggest-accept
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7f7f7f"
+# For pasting into zsh - disable autosuggest for large pastes
+export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
 # zsh syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -37,8 +39,16 @@ if command -v kubectl &> /dev/null; then
   alias k="kubectl"
 fi
 
-# kubectl krew path
+# add krew to path
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# kubectl default editor
+export KUBE_EDITOR="nvim"
+
+cm-logs () {
+   # Namespace can be overridden by adding another -n
+   kubectl logs -l app=cost-analyzer -c cost-model --tail=-1 -n kubecost $@
+}
 
 # aws cli completions
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -48,13 +58,7 @@ else
 fi
 
 # switch aws profiles
-# alias awsd="export AWS_PROFILE=default"
-# alias awsq="export AWS_PROFILE=qa"
-# alias awsp="export AWS_PROFILE=prod"
-# alias awss="export AWS_PROFILE=sandbox"
-# alias awst="export AWS_PROFILE=test"
-# alias awsl="export AWS_PROFILE=local"
-# alias awsu="export AWS_PROFILE=uk"
+alias awsp='export AWS_PROFILE=$(sed -n "s/\[profile \(.*\)\]/\1/gp" ~/.aws/config | fzf)'
 
 # aws cli shortcut for working with localstack
 # alias awsls="aws --endpoint-url=http://localhost:4566"
@@ -82,11 +86,9 @@ export GOHOME="$HOME/go"
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 export GOPRIVATE="github.com"
-
 PATH="$GOBIN:$PATH"
 
 # credentials
-# export AWS_PROFILE="admin"
 source ~/.credentials
 
 # cli aliases
@@ -101,8 +103,8 @@ fi
 source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# use volta for node, yarn
 export VOLTA_HOME="$HOME/.volta"
-
 PATH="$VOLTA_HOME/bin:$PATH"
 
 # linux - ensure that Ctrl-Left Arrow and Ctrl-Right Arrow navigate by word
@@ -122,8 +124,3 @@ setopt SHARE_HISTORY
 
 # The next line enables shell command completion for gcloud.
 # if [ -f '/home/steven/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/steven/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
-cm-logs () {
-   # Namespace can be overridden by adding another -n
-   kubectl logs -l app=cost-analyzer -c cost-model --tail=-1 -n kubecost $@
-}

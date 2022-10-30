@@ -201,7 +201,7 @@
                     },
                     "to": [
                         {
-                            "consumer_key_code": "dictation"
+                            "apple_vendor_top_case_key_code": "illumination_down"
                         }
                     ]
                 },
@@ -211,7 +211,7 @@
                     },
                     "to": [
                         {
-                            "apple_vendor_keyboard_key_code": "launchpad"
+                            "apple_vendor_top_case_key_code": "illumination_up"
                         }
                     ]
                 },
