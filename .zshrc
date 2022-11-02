@@ -123,3 +123,8 @@ setopt SHARE_HISTORY
 if [ -f "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" ]; then
   source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 fi
+
+# The next line enables shell command completion for apt-get installed gcloud.
+if [ -f '/usr/share/google-cloud-sdk/completion.zsh.inc' ]; then 
+  source '/usr/share/google-cloud-sdk/completion.zsh.inc'
+fi
