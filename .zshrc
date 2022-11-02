@@ -57,6 +57,9 @@ else
   complete -C "$(brew --prefix)/bin/aws_completer" aws
 fi
 
+# use default aws profile - for p10k prompt
+export AWS_PROFILE="default"
+
 # switch aws profiles
 alias awsp='export AWS_PROFILE=$(aws configure list-profiles | fzf)'
 
