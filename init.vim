@@ -33,6 +33,10 @@ Plug 'sainnhe/everforest'
 Plug 'sainnhe/sonokai'
 Plug 'phanviet/vim-monokai-pro'
 
+" tmux status line generator
+"Plug 'edkolev/tmuxline.vim'
+"let g:tmuxline_powerline_separators = 0
+
 " usability
 Plug 'vim-airline/vim-airline'
 
