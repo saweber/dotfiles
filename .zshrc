@@ -95,11 +95,12 @@ fi
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Completions start
+# before re-enabling, check that we need something from zsh-completions
 # zsh-completions plugin completions
-fpathCompletions="$(brew --prefix)/share/zsh-completions/src:/Users/$USER/.zsh:/home/$USER/.zsh"
-if ! grep -q "$fpathCompletions" <<< "$FPATH"; then
-  FPATH="$FPATH:$fpathCompletions";
-fi
+# fpathCompletions="$(brew --prefix)/share/zsh-completions/src:/Users/$USER/.zsh:/home/$USER/.zsh"
+#if ! grep -q "$fpathCompletions" <<< "$FPATH"; then
+#  FPATH="$FPATH:$fpathCompletions";
+#fi
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 
