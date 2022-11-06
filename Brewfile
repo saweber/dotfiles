@@ -15,6 +15,7 @@ brew "zsh-syntax-highlighting"
 
 # cli tools
 brew "awscli"
+brew "fd" # for telescope.nvim
 brew "fzf"
 brew "git"
 brew "gpg" # for signing git commits

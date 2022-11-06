@@ -40,8 +40,24 @@ Plug 'phanviet/vim-monokai-pro'
 " usability
 Plug 'vim-airline/vim-airline'
 
+" fuzzy navigation
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 " trainer
 Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
+
+let mapleader = ' '
+
+# fuzzy navigation shortcuts
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+" reload config without exiting shortcut
+nnoremap <Leader><CR> :source ~/.config/nvim/init.vim<CR>
 
 autocmd vimenter * ++nested colorscheme sonokai
