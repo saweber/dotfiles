@@ -55,6 +55,9 @@ export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 # zsh syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# bat highlighting man pages
+ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
 # add krew to path
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 # kubectl default editor
@@ -98,9 +101,10 @@ fi
 # before re-enabling, check that we need something from zsh-completions
 # zsh-completions plugin completions
 # fpathCompletions="$(brew --prefix)/share/zsh-completions/src:/Users/$USER/.zsh:/home/$USER/.zsh"
-#if ! grep -q "$fpathCompletions" <<< "$FPATH"; then
-#  FPATH="$FPATH:$fpathCompletions";
-#fi
+fpathCompletions="/Users/$USER/.zsh:/home/$USER/.zsh"
+if ! grep -q "$fpathCompletions" <<< "$FPATH"; then
+  FPATH="$FPATH:$fpathCompletions";
+fi
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 

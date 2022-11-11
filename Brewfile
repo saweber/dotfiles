@@ -15,6 +15,7 @@ brew "zsh-syntax-highlighting"
 
 # cli tools
 brew "awscli"
+brew "bat" # colorize man pages
 brew "fd" # for telescope.nvim
 brew "fzf"
 brew "git"
