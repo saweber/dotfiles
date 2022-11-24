@@ -28,6 +28,7 @@ Personal setup for MacOS and Linux Development Environments
 - Rectangle - import `RectangleConfig.json`
 - `kubectl krew completion zsh >> ~/.zsh/_krew`
 - pprof - `go install github.com/google/pprof@latest`
+- go pseudo-monorepos - `go work init`
 
 ### Opinionated MacOS Personal Preferences (that are not scripted)
 

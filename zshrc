@@ -33,7 +33,7 @@ setopt SHARE_HISTORY
 
 # goto directory
 g() {
-  cd $(find ~ ~/src ~/go/src ~/src/kubecost ~/src/kubecost/cost-model -maxdepth 1 -type d | grep -v "/\." | fzf);
+  cd $(find ~ ~/src ~/go/src ~/src/kubecost ~/src/kubecost/cost-model -maxdepth 1 -type d | grep -v "/\." | sort -u | fzf);
 }
 zle -N g g
 bindkey -s '^g' 'g\n'
@@ -59,7 +59,8 @@ export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # bat highlighting man pages
- export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
 
 # add krew to path
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
@@ -76,7 +77,7 @@ alias awsp='export AWS_PROFILE=$(aws configure list-profiles | fzf)'
 
 # go
 export GOHOME="$HOME/go"
-export GOPATH="$HOME/go"
+export GOPATH="$HOME/go:$HOME/src"
 export GOBIN="$GOPATH/bin"
 export GOPRIVATE="github.com"
 PATH="$GOBIN:$PATH"
