@@ -31,19 +31,6 @@ setopt SHARE_HISTORY
 # For pasting into zsh - turns off bracketed-paste-magic and url-quote-magic
 # export DISABLE_MAGIC_FUNCTIONS=true
 
-# goto directory
-g() {
-  cd $(find ~ ~/src ~/go/src ~/src/kubecost ~/src/kubecost/cost-model -maxdepth 1 -type d | grep -v "/\." | sort -u | fzf);
-}
-zle -N g g
-bindkey -s '^g' 'g\n'
-
-# get kcm logs
-cm-logs () {
-   # Namespace can be overridden by adding another -n
-   kubectl logs -l app=cost-analyzer -c cost-model --tail=-1 -n kubecost $@
-}
-
 # credentials
 # source ~/.credentials
 
@@ -58,9 +45,9 @@ export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 # zsh syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# bat highlighting man pages
+# use bat to highlight man pages
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export MANROFFOPT="-c"
+# export MANROFFOPT="-c" # unsure if needed after tmux xterm fix
 
 # add krew to path
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
@@ -82,13 +69,29 @@ export GOBIN="$GOPATH/bin"
 export GOPRIVATE="github.com"
 PATH="$GOBIN:$PATH"
 
-# cli aliases
+# aliases
 alias vim="nvim"
-alias cht="cht.sh"
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   alias pbcopy='xsel --clipboard --input'
   alias pbpaste='xsel --clipboard --output'
 fi
+# goto directory
+g() {
+  cd $(find ~ ~/src ~/go/src ~/src/kubecost ~/src/kubecost/cost-model -maxdepth 1 -type d | grep -v "/\." | sort -u | fzf);
+}
+zle -N g g
+bindkey -s '^g' 'g\n'
+
+# get kcm logs
+cm-logs () {
+   # Namespace can be overridden by adding another -n
+   kubectl logs -l app=cost-analyzer -c cost-model --tail=-1 -n kubecost $@
+}
+
+# cht.sh
+cht() {
+  cht.sh "$1" | bat -p
+}
 
 # use volta for node, yarn
 export VOLTA_HOME="$HOME/.volta"
