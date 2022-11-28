@@ -47,7 +47,7 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # use bat to highlight man pages
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-# export MANROFFOPT="-c" # unsure if needed after tmux xterm fix
+export MANROFFOPT="-c"
 
 # add krew to path
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
