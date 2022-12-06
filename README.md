@@ -59,3 +59,4 @@ Personal setup for MacOS and Linux Development Environments
 - <https://macos-defaults.com/>
 - <https://sixcolors.com/post/2020/11/quick-tip-enable-touch-id-for-sudo/>
 - <https://gist.github.com/jamesmacfie/2061023e5365e8b6bfbbc20792ac90f8>
+- <https://gist.github.com/subfuzion/db7f57fff2fb6998a16c>
