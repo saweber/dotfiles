@@ -33,6 +33,8 @@ Plug 'sainnhe/everforest'
 Plug 'sainnhe/sonokai'
 Plug 'phanviet/vim-monokai-pro'
 
+autocmd vimenter * ++nested colorscheme sonokai
+
 " tmux status line generator
 "Plug 'edkolev/tmuxline.vim'
 "let g:tmuxline_powerline_separators = 0
@@ -60,4 +62,11 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 " reload config without exiting shortcut
 nnoremap <Leader><CR> :source ~/.config/nvim/init.vim<CR>
 
-autocmd vimenter * ++nested colorscheme sonokai
+" center cursor
+nnoremap <C-d> <C-d>z
+nnoremap <C-u> <C-u>zz
+nnoremap <C-f> <C-f>zz
+nnoremap <C-b> <C-b>zz
+nnoremap n nzz
+nnoremap N Nzz
+
