@@ -94,9 +94,6 @@ curl -L  https://raw.githubusercontent.com/docker/cli/master/contrib/completion/
 echo Downloading git completions...
 curl -L https://github.com/git/git/blob/master/contrib/completion/git-completion.zsh -o ~/.zsh/_git --create-dirs
 
-echo Downloading vim-plug...
-curl -L https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -o "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs
-
 echo Downloading cht.sh with completions...
 sudo touch /usr/local/bin/cht.sh
 sudo curl -s https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh
@@ -129,6 +126,11 @@ mv ~/.config/nvim/init.vim ~/.init_vim.pre_bootstrap
 echo Linking init.vim for neovim...
 mkdir -p ~/.config/nvim
 ln -sf $(pwd)/init.vim $(echo $HOME)/.config/nvim/init.vim
+
+echo Moving .config/nvim to .config/nvim.pre_boostrap...
+mv -r ~/.config/nvim ~/.config/nvim.pre_boostrap
+echo Linking .config/nvim directory to nvim
+ln -sf $(pwd)/nvim $(echo $HOME)/.config/nvim
 
 echo Moving .ideavimrc to .ideavimrc.pre_boostrap...
 mv ~/.ideavimrc ~/.ideavimrc.pre_bootstrap
