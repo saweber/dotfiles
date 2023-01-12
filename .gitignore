@@ -5,3 +5,4 @@ Brewfile-Mac.lock.json
 .credentials
 .idea/*
 karabiner/automatic_backups
+nvim/plugin/packer_compiled.lua

@@ -29,6 +29,9 @@ Personal setup for MacOS and Linux Development Environments
 - `kubectl krew completion zsh >> ~/.zsh/_krew`
 - pprof - `go install github.com/google/pprof@latest`
 - go pseudo-monorepos - `go work init`
+- [packer.nvim](https://github.com/wbthomason/packer.nvim)
+- `pip3 install pynvim`
+- `npx npm i -g neovim`
 
 ### Opinionated MacOS Personal Preferences (that are not scripted)
 
