@@ -14,12 +14,14 @@ return require('packer').startup(function(use)
   }
 
   use({
-	  'rose-pine/neovim',
-	  as = 'rose-pine',
-	  config = function()
-		  vim.cmd('colorscheme rose-pine')
-	  end
+      'sainnhe/sonokai',
+      as = 'sonokai',
+      config = function()
+          vim.cmd('let g:sonokai_style = "shusia"')
+          vim.cmd('colorscheme sonokai')
+      end
   })
+
 
   use {
 	  'nvim-lualine/lualine.nvim',

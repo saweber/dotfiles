@@ -1,5 +1,5 @@
 # open tmux by default
-if [ "$TMUX" = "" ]; then tmux; fi
+#if [ "$TMUX" = "" ]; then tmux; fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -77,7 +77,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 fi
 # goto directory
 g() {
-  cd $(find ~ ~/src ~/go/src ~/src/kubecost ~/src/kubecost/cost-model -maxdepth 1 -type d | grep -v "/\." | sort -u | fzf);
+  cd $(find ~ ~/src ~/go/src ~/src/kubecost -maxdepth 1 -type d | grep -v "/\." | sort -u | fzf);
 }
 zle -N g g
 bindkey -s '^g' 'g\n'
