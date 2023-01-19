@@ -14,12 +14,12 @@ return require('packer').startup(function(use)
   }
 
   use({
-      'sainnhe/sonokai',
-      as = 'sonokai',
-      config = function()
-          vim.cmd('let g:sonokai_style = "shusia"')
-          vim.cmd('colorscheme sonokai')
-      end
+    'sainnhe/sonokai',
+    as = 'sonokai',
+    config = function()
+      vim.cmd('let g:sonokai_style = "shusia"')
+      vim.cmd('colorscheme sonokai')
+    end
   })
 
 

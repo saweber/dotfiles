@@ -10,13 +10,13 @@ lsp.ensure_installed({
 })
 
 lsp.configure('sumneko_lua', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      }
     }
+  }
 })
 
 local cmp = require('cmp')
