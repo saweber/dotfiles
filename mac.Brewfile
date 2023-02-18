@@ -18,7 +18,6 @@ cask "session-manager-plugin" # AWS session manager
 cask "google-cloud-sdk" # glcloud installer
 
 # useful macOS utilities
-# brew "php" # for alfred spotify plugin
 cask "alfred"
 cask "bartender" 
 cask "bettertouchtool"
@@ -31,7 +30,7 @@ cask "rectangle"
 # software dev applications
 cask "docker"
 cask "iterm2"
-# cask "jetbrains-toolbox" # https://youtrack.jetbrains.com/issue/TBX-5738/Apple-Silicon-version-sill-need-Rosetta2
+cask "jetbrains-toolbox"
 cask "postman"
 cask "visual-studio-code"
 

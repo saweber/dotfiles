@@ -1,5 +1,8 @@
+# Custom generated infocmp color file; see links in README - this is to get italics working inside of tmux
+export TERMINFO='/usr/share/terminfo/'
+export TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo
 # open tmux by default
-#if [ "$TMUX" = "" ]; then tmux; fi
+if [ "$TMUX" = "" ]; then tmux; fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -81,6 +84,27 @@ g() {
 }
 zle -N g g
 bindkey -s '^g' 'g\n'
+
+# override profile to dark based on OS setting - for syncing vim
+if [[ "$OSTYPE" == "darwin"* ]]; then
+
+  i() {
+    if [[ $ITERM_PROFILE == "Dark" ]]; then
+      export ITERM_PROFILE="Terminal"
+    else
+      export ITERM_PROFILE="Dark"
+    fi
+  }
+
+  dark() {
+    val=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
+    if [[ $val == "Dark" ]]; then
+      i
+    fi
+  }
+  
+  dark
+fi
 
 # get kcm logs
 cm-logs () {

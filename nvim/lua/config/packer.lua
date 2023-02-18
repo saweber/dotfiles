@@ -22,6 +22,11 @@ return require('packer').startup(function(use)
     end
   })
 
+  use({
+    'cocopon/iceberg.vim',
+    as = 'iceberg'
+  })
+
 
   use {
 	  'nvim-lualine/lualine.nvim',

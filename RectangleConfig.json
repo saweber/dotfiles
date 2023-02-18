@@ -16,6 +16,9 @@
     "altThirdCycle" : {
       "int" : 0
     },
+    "alwaysAccountForStage" : {
+      "int" : 0
+    },
     "applyGapsToMaximize" : {
       "int" : 0
     },
@@ -46,8 +49,17 @@
     "disabledApps" : {
 
     },
+    "dragFromStage" : {
+      "int" : 0
+    },
+    "enhancedUI" : {
+      "int" : 1
+    },
     "footprintAlpha" : {
       "float" : 0.30000001192092896
+    },
+    "footprintAnimationDurationMultiplier" : {
+      "float" : 0
     },
     "footprintBorderWidth" : {
       "float" : 2
@@ -81,6 +93,15 @@
     },
     "minimumWindowWidth" : {
       "float" : 0
+    },
+    "missionControlDragging" : {
+      "int" : 0
+    },
+    "missionControlDraggingAllowedOffscreenDistance" : {
+      "float" : 25
+    },
+    "missionControlDraggingDisallowedDuration" : {
+      "int" : 250
     },
     "moveCursor" : {
       "int" : 0
@@ -183,24 +204,8 @@
     }
   },
   "shortcuts" : {
-    "bottomLeft" : {
-      "keyCode" : 11,
-      "modifierFlags" : 917504
-    },
-    "bottomRight" : {
-      "keyCode" : 45,
-      "modifierFlags" : 917504
-    },
     "centerHalf" : {
-      "keyCode" : 24,
-      "modifierFlags" : 917504
-    },
-    "firstTwoThirds" : {
       "keyCode" : 6,
-      "modifierFlags" : 917504
-    },
-    "lastThird" : {
-      "keyCode" : 7,
       "modifierFlags" : 917504
     },
     "leftHalf" : {
@@ -214,15 +219,7 @@
     "rightHalf" : {
       "keyCode" : 2,
       "modifierFlags" : 917504
-    },
-    "topLeft" : {
-      "keyCode" : 5,
-      "modifierFlags" : 917504
-    },
-    "topRight" : {
-      "keyCode" : 4,
-      "modifierFlags" : 917504
     }
   },
-  "version" : "64"
+  "version" : "71"
 }

@@ -29,9 +29,14 @@ Personal setup for MacOS and Linux Development Environments
 - `kubectl krew completion zsh >> ~/.zsh/_krew`
 - pprof - `go install github.com/google/pprof@latest`
 - go pseudo-monorepos - `go work init`
-- [packer.nvim](https://github.com/wbthomason/packer.nvim)
-- `pip3 install pynvim`
-- `npx npm i -g neovim`
+- neovim
+  - [packer.nvim](https://github.com/wbthomason/packer.nvim)
+  - `pip3 install pynvim`
+  - `npx npm i -g neovim`
+- tmux italics
+  - `/usr/bin/tic -x -o $HOME/.local/share/terminfo tmux-256color.src`
+  - edit pairs value in `tmux-256color.src` to `pairs#32767` on macOS
+  - `/opt/homebrew/Cellar/ncurses/6.4/bin/infocmp -x tmux-256color > ~/tmux-256color.src`
 
 ### Opinionated MacOS Personal Preferences (that are not scripted)
 
@@ -50,7 +55,6 @@ Personal setup for MacOS and Linux Development Environments
 - Firefox
   - Set fixed-width font to 'JetBrains Mono'
   - [Arial font kerning fix](https://bugzilla.mozilla.org/show_bug.cgi?id=1366880)
-- [TouchID for Sudo](https://sixcolors.com/post/2020/11/quick-tip-enable-touch-id-for-sudo/)
 
 ## Known Limitations
 
@@ -60,6 +64,8 @@ Personal setup for MacOS and Linux Development Environments
 
 - <https://sal.dev/macos/macos-screenshotting-tips-and-tricks/>
 - <https://macos-defaults.com/>
-- <https://sixcolors.com/post/2020/11/quick-tip-enable-touch-id-for-sudo/>
 - <https://gist.github.com/jamesmacfie/2061023e5365e8b6bfbbc20792ac90f8>
 - <https://gist.github.com/subfuzion/db7f57fff2fb6998a16c>
+- <https://gpanders.com/blog/the-definitive-guide-to-using-tmux-256color-on-macos/>
+- <https://medium.com/@dubistkomisch/how-to-actually-get-italics-and-true-colour-to-work-in-iterm-tmux-vim-9ebe55ebc2be>
+- <https://apas.gr/2018/11/dark-mode-macos-safari-iterm-vim/>
