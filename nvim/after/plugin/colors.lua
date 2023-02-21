@@ -1,4 +1,4 @@
-if (vim.env.ITERM_PROFILE == "dark")
+if (vim.env.ITERM_PROFILE == "Dark" or vim.env.ITERM_PROFILE == "")
 then
   vim.o.background = "dark"
   vim.cmd('let g:sonokai_style = "shusia"')
