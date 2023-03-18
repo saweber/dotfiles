@@ -45,6 +45,7 @@ Personal setup for MacOS and Linux Development Environments
     - Modifier Keys -> Set Caps Lock to Escape
     - Check `Use F1, F2, etc. keys as Function Keys`
     - Shortcuts - go through and disable unused shortcuts - reduce conflicts with IntelliJ and VS Code
+    - Add Shortcut for Notification Center (Ctrl Alt Shift J)
   - Mouse
     - Uncheck Scroll direction: Natural
   - Spotlight

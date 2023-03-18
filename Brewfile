@@ -2,8 +2,8 @@
 tap "homebrew/bundle"
 tap "homebrew/core"
 
-brew "make" # required by powerlevel10k
-brew "gcc" # required by powerlevel10k, zsh
+brew "make" # required by powerlevel10k on linux
+brew "gcc" # required by powerlevel10k, zsh on linux
 
 # zsh
 tap "romkatv/powerlevel10k"
@@ -12,6 +12,7 @@ brew "zsh" # macOS ships with an ancient version by default
 brew "zsh-autosuggestions"
 brew "zsh-completions"
 brew "zsh-syntax-highlighting"
+brew "zsh-vi-mode"
 
 # cli tools
 brew "awscli"

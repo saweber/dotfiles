@@ -1,8 +1,6 @@
 # Custom generated infocmp color file; see links in README - this is to get italics working inside of tmux
 export TERMINFO='/usr/share/terminfo/'
 export TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo
-# open tmux by default
-if [ "$TMUX" = "" ]; then tmux; fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -19,9 +17,20 @@ fi
 source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# linux - ensure that Ctrl-Left Arrow and Ctrl-Right Arrow navigate by word
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
+function zvm_after_init() {
+  # fzf goes here, otherwise fzf for history search does not work
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+  zvm_bindkey viins '^@' autosuggest-accept
+  bindkey '^ ' autosuggest-accept
+
+  zle -N g g
+  bindkey -s '^g' 'g\n'
+
+  # linux - ensure that Ctrl-Left Arrow and Ctrl-Right Arrow navigate by word
+  bindkey "^[[1;5C" forward-word
+  bindkey "^[[1;5D" backward-word
+}
 
 # linux - does not save history by default
 HISTFILE=~/.zsh_history
@@ -47,6 +56,9 @@ export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
 # zsh syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# zsh vi mode
+source $(brew --prefix)/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # use bat to highlight man pages
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -85,9 +97,8 @@ g() {
 zle -N g g
 bindkey -s '^g' 'g\n'
 
-# override profile to dark based on OS setting - for syncing vim
+# for using MacOS dark/light theme to control nvim
 if [[ "$OSTYPE" == "darwin"* ]]; then
-
   i() {
     if [[ $ITERM_PROFILE == "Dark" ]]; then
       export ITERM_PROFILE="Terminal"
@@ -102,7 +113,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
       i
     fi
   }
-  
+
   dark
 fi
 

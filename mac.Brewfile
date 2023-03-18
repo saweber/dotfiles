@@ -25,7 +25,10 @@ cask "karabiner-elements"
 # cask "keepassxc"
 # cask "monitorcontrol"
 cask "rectangle"
-# cask "witch"
+cask "witch"
+
+# dependencies
+brew "blueutil" # for alfred airpod plugin
 
 # software dev applications
 cask "docker"
