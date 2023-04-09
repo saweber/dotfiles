@@ -15,7 +15,6 @@ brew "zsh-syntax-highlighting"
 brew "zsh-vi-mode"
 
 # cli tools
-brew "awscli"
 brew "bat" # colorize man pages
 brew "fd" # for telescope.nvim
 brew "fzf"
@@ -31,6 +30,10 @@ brew "tldr"
 brew "tmux" 
 brew "tree" # for showing recursive directory structure
 brew "wget"
+
+# cloud clis
+brew "azure-cli"
+brew "awscli"
 
 # golang
 brew "go"

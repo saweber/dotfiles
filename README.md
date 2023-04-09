@@ -25,6 +25,7 @@ Personal setup for MacOS and Linux Development Environments
   - Import `iterm2/night-owl-light.itermcolors`
   - [light/dark theme switching](https://gist.github.com/jamesmacfie/2061023e5365e8b6bfbbc20792ac90f8)
   - Theme : minimal
+  - Profiles -> Keys -> Left + Right Option -> Set to `Esc+`
 - Rectangle - import `RectangleConfig.json`
 - `kubectl krew completion zsh >> ~/.zsh/_krew`
 - pprof - `go install github.com/google/pprof@latest`

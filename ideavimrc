@@ -27,15 +27,15 @@ set incsearch
 map Q gq
 
 set showmode
-"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
-"" Map \r to the Reformat Code action
-"map \r <Action>(ReformatCode)
 
-"" Map <leader>d to start debug
-"map <leader>d <Action>(Debug)
+" Have clipboard available in yank
+set clipboard+=unnamed
 
-"" Map \b to toggle the breakpoint on the current line
-"map \b <Action>(ToggleLineBreakpoint)
+" Set leader to space
+let mapleader = " " " map leader to Space
 
-
-" Find more examples here: https://jb.gg/share-ideavimrc
+" IntelliJ Specific Actions
+map <leader>r <Action>(RenameElement)
+map <leader>d <Action>(Debug)
+map <leader>st <Action>(Stop)
+map <leader>b <Action>(ToggleLineBreakpoint)

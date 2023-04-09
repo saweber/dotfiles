@@ -7,12 +7,7 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
-	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
-  }
-
+  -- Dark theme
   use({
     'sainnhe/sonokai',
     as = 'sonokai',
@@ -22,20 +17,38 @@ return require('packer').startup(function(use)
     end
   })
 
+  -- Light theme
   use({
     'cocopon/iceberg.vim',
     as = 'iceberg'
   })
 
-
+  -- Status line
   use {
 	  'nvim-lualine/lualine.nvim',
 	  requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
+
+  -- Syntax Highlighting
   use({'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}})
   use('nvim-treesitter/playground')
-  use('ThePrimeagen/harpoon')
 
+  -- File Navigation
+  --use('ThePrimeagen/harpoon')
+  use {
+	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+	  requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
+  -- Comments
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
+
+  -- LSP
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  requires = {
@@ -58,4 +71,5 @@ return require('packer').startup(function(use)
 		  {'rafamadriz/friendly-snippets'},
 	  }
   }
+
 end)

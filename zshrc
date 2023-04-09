@@ -2,6 +2,9 @@
 export TERMINFO='/usr/share/terminfo/'
 export TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo
 
+# open tmux by default - make color switching in vim work
+if [ "$TMUX" = "" ]; then tmux; fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -99,22 +102,16 @@ bindkey -s '^g' 'g\n'
 
 # for using MacOS dark/light theme to control nvim
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  i() {
-    if [[ $ITERM_PROFILE == "Dark" ]]; then
-      export ITERM_PROFILE="Terminal"
-    else
-      export ITERM_PROFILE="Dark"
-    fi
-  }
-
-  dark() {
+  theme() {
     val=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
     if [[ $val == "Dark" ]]; then
-      i
+      export ITERM_PROFILE="Dark"
+    else
+      export ITERM_PROFILE="Terminal"
     fi
   }
 
-  dark
+  theme
 fi
 
 # get kcm logs
@@ -162,6 +159,11 @@ if [ -f "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/comp
   source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 elif [ -f '/usr/share/google-cloud-sdk/completion.zsh.inc' ]; then 
   source '/usr/share/google-cloud-sdk/completion.zsh.inc'
+fi
+
+# azure completions
+if [ -f "$(brew --prefix)/etc/bash_completion.d/az" ]; then
+  source "$(brew --prefix)/etc/bash_completion.d/az"
 fi
 
 # kubectl completions
