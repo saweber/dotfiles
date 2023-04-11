@@ -34,8 +34,13 @@ set clipboard+=unnamed
 " Set leader to space
 let mapleader = " " " map leader to Space
 
-" IntelliJ Specific Actions
-map <leader>r <Action>(RenameElement)
-map <leader>d <Action>(Debug)
+" ideavim plugins
+Plug 'tpope/vim-commentary'
+
+" Debugging Actions
+map <leader>dd <Action>(Debug)
 map <leader>st <Action>(Stop)
-map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>bp <Action>(ToggleLineBreakpoint)
+
+" Refactoring Actions
+map <leader>re <Action>(RenameElement)
