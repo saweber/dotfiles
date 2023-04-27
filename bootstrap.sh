@@ -85,7 +85,7 @@ git config --global pull.rebase false
 git config --global --add --bool push.autoSetupRemote true
 git config --global user.name $git_username
 git config --global user.email $git_email
-git config --global core.exclusedfile ~/.gitignore
+git config --global core.excludesfile ~/.gitignore
 
 echo Downloading docker completions...
 curl -L https://raw.githubusercontent.com/docker/compose/1.29.2/contrib/completion/zsh/_docker-compose -o ~/.zsh/_docker-compose --create-dirs

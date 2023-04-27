@@ -106,8 +106,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     val=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
     if [[ $val == "Dark" ]]; then
       export ITERM_PROFILE="Dark"
+      export FZF_DEFAULT_OPTS='--color=bg+:#37343a,bg:#2d2a2e,border:#848089,spinner:#e5c463,hl:#9ecd6f,fg:#e3e1e4,header:#7accd7,info:#e5c463,pointer:#7accd7,marker:#7accd7,fg+:#e3e1e4,prompt:#f85e84,hl+:#9ecd6f'
     else
       export ITERM_PROFILE="Terminal"
+      export FZF_DEFAULT_OPTS='--color=bg+:#dcdfe7,bg:#e8e9ec,fg:#33374c,fg+:#33374c'
     fi
   }
 
