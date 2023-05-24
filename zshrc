@@ -23,6 +23,7 @@ source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 function zvm_after_init() {
   # fzf goes here, otherwise fzf for history search does not work
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+  export FZF_DEFAULT_OPTS='--color=bg+:#37343a,bg:#2d2a2e,border:#848089,spinner:#e5c463,hl:#9ecd6f,fg:#e3e1e4,header:#7accd7,info:#e5c463,pointer:#7accd7,marker:#7accd7,fg+:#e3e1e4,prompt:#f85e84,hl+:#9ecd6f'
 
   zvm_bindkey viins '^@' autosuggest-accept
   bindkey '^ ' autosuggest-accept
@@ -118,8 +119,8 @@ fi
 
 # get kcm logs
 cm-logs () {
-   # Namespace can be overridden by adding another -n
-   kubectl logs -l app=cost-analyzer -c cost-model --tail=-1 -n kubecost $@
+# Namespace can be overridden by adding another -n
+kubectl logs -l app=cost-analyzer -c cost-model --tail=-1 -n kubecost $@
 }
 
 # cht.sh
@@ -163,6 +164,9 @@ elif [ -f '/usr/share/google-cloud-sdk/completion.zsh.inc' ]; then
   source '/usr/share/google-cloud-sdk/completion.zsh.inc'
 fi
 
+if [ -f '/home/steven/google-cloud-sdk/path.zsh.inc' ]; then . '/home/steven/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/home/steven/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/steven/google-cloud-sdk/completion.zsh.inc'; fi
+
 # azure completions
 if [ -f "$(brew --prefix)/etc/bash_completion.d/az" ]; then
   source "$(brew --prefix)/etc/bash_completion.d/az"
@@ -176,3 +180,4 @@ fi
 # git completions
 compdef git gitk
 # Completions end
+
