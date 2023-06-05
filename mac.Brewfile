@@ -31,7 +31,9 @@ cask "witch"
 brew "blueutil" # for alfred airpod plugin
 
 # software dev applications
+cask "alacritty"
 cask "docker"
+cask "podman-desktop"
 cask "iterm2"
 cask "jetbrains-toolbox"
 cask "postman"

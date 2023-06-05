@@ -22,6 +22,7 @@ brew "git"
 brew "gpg" # for signing git commits
 brew "htop"
 brew "jq"
+brew "just"
 brew "neovim"
 brew "ripgrep"
 brew "rlwrap" # for cht.sh
@@ -37,6 +38,7 @@ brew "awscli"
 
 # golang
 brew "go"
+brew "delve"
 tap "golangci/tap" # from Learn Go with tests
 brew "golangci/tap/golangci-lint" # from Learn Go with tests
 
