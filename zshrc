@@ -151,11 +151,7 @@ autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 
 # aws completions
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  complete -C "/usr/bin/aws_completer" aws
-else
-  complete -C "$(brew --prefix)/bin/aws_completer" aws
-fi
+complete -C "$(brew --prefix)/bin/aws_completer" aws
 
 # gcloud completions
 if [ -f "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" ]; then
