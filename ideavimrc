@@ -32,14 +32,22 @@ let mapleader = " "
 " ideavim plugins
 Plug 'tpope/vim-commentary'
 
-# Search Actions
+" Search Actions
 map <leader>ff <Action>(SearchEverywhere)
 
 " Debugging Actions
+map <leader>bu <Action>(BuildProject)
 map <leader>dd <Action>(Debug)
+map <leader>dr <Action>(Resume)
 map <leader>st <Action>(Stop)
 map <leader>bp <Action>(ToggleLineBreakpoint)
 
 " Refactoring Actions
 map <leader>re <Action>(RenameElement)
 map <leader>em <Action>(ExtractMethod)
+
+" Navigation Actions
+map <leader>td <Action>(GoToTypeDeclaration)
+
+" Panels
+map <leader>pp <Action>(ActivateProjectToolWindow)

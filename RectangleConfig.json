@@ -83,7 +83,7 @@
       "int" : 0
     },
     "landscapeSnapAreas" : {
-      "string" : "[5,{\"compound\":-3},1,{\"action\":15},4,{\"compound\":-2},2,{\"action\":2},8,{\"action\":14},3,{\"action\":16},6,{\"action\":13},7,{\"compound\":-4}]"
+      "string" : "[3,{\"action\":16},7,{\"action\":30},6,{\"action\":13},2,{\"action\":2},4,{\"compound\":-2},8,{\"action\":14},1,{\"action\":15},5,{\"compound\":-3}]"
     },
     "launchOnLogin" : {
       "bool" : true
@@ -190,6 +190,9 @@
     "todoMode" : {
       "bool" : false
     },
+    "todoSidebarSide" : {
+      "int" : 1
+    },
     "todoSidebarWidth" : {
       "float" : 400
     },
@@ -204,8 +207,16 @@
     }
   },
   "shortcuts" : {
+    "center" : {
+      "keyCode" : 42,
+      "modifierFlags" : 917504
+    },
     "centerHalf" : {
       "keyCode" : 6,
+      "modifierFlags" : 917504
+    },
+    "larger" : {
+      "keyCode" : 24,
       "modifierFlags" : 917504
     },
     "leftHalf" : {
@@ -216,10 +227,22 @@
       "keyCode" : 1,
       "modifierFlags" : 917504
     },
+    "reflowTodo" : {
+      "keyCode" : 45,
+      "modifierFlags" : 786432
+    },
     "rightHalf" : {
       "keyCode" : 2,
       "modifierFlags" : 917504
+    },
+    "smaller" : {
+      "keyCode" : 27,
+      "modifierFlags" : 917504
+    },
+    "toggleTodo" : {
+      "keyCode" : 11,
+      "modifierFlags" : 786432
     }
   },
-  "version" : "71"
+  "version" : "74"
 }
