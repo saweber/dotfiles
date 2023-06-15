@@ -60,3 +60,7 @@ brew "kubectl"
 brew "kubectx"
 tap "derailed/k9s"
 brew "derailed/k9s/k9s"
+
+# github cli
+brew "act" # for testing github actions
+brew "gh"
