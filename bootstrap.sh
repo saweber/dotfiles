@@ -1,4 +1,4 @@
-#!/bin/bash
+
 
 echo git username
 read git_username
@@ -49,6 +49,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   defaults write com.apple.dock autohide -bool true
   defaults write com.apple.dock show-recents -bool false
   defaults write com.apple.dock tilesize -int 48
+  defaults write com.apple.dock "mineffect" -string "scale"
   # Turns off misson control rearrange spaces
   defaults write com.apple.dock mru-spaces -bool false
   # disable hot corners
@@ -86,13 +87,6 @@ git config --global --add --bool push.autoSetupRemote true
 git config --global user.name $git_username
 git config --global user.email $git_email
 git config --global core.excludesfile ~/.gitignore
-
-echo Downloading docker completions...
-curl -L https://raw.githubusercontent.com/docker/compose/1.29.2/contrib/completion/zsh/_docker-compose -o ~/.zsh/_docker-compose --create-dirs
-curl -L  https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker -o ~/.zsh/_docker --create-dirs
-
-echo Downloading git completions...
-curl -L https://github.com/git/git/blob/master/contrib/completion/git-completion.zsh -o ~/.zsh/_git --create-dirs
 
 echo Downloading cht.sh with completions...
 sudo touch /usr/local/bin/cht.sh

@@ -23,7 +23,7 @@ source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 function zvm_after_init() {
   # fzf goes here, otherwise fzf for history search does not work
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-  export FZF_DEFAULT_OPTS='--color=bg+:#37343a,bg:#2d2a2e,border:#848089,spinner:#e5c463,hl:#9ecd6f,fg:#e3e1e4,header:#7accd7,info:#e5c463,pointer:#7accd7,marker:#7accd7,fg+:#e3e1e4,prompt:#f85e84,hl+:#9ecd6f'
+  export FZF_DEFAULT_OPTS='--color=bg+:#37343a,bg:#2d2a2e,border:#848089,spinner:#e5c463,hl:#9ecd6f,fg:#e3e1e4,header:#7accd7,info:#e5c463,pointer:#7accd7,marker:#7accd7,fg+:#e3e1e4,prompt:#f85e84,hl+:#9ecd6f --height=80% --layout=reverse --info=inline --border --margin=1 --padding=1'
 
   zvm_bindkey viins '^@' autosuggest-accept
   bindkey '^ ' autosuggest-accept
@@ -65,19 +65,16 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source $(brew --prefix)/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # use bat to highlight man pages
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export MANROFFOPT="-c"
+#export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+#export MANPAGER="sh -c 'bat -l man -p'" # partial fix for AWS docs
+#export MANROFFOPT="-c"
 
-# add krew to path
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-# kubectl default editor
 export KUBE_EDITOR="nvim"
 alias k="kubectl"
 
-# use default aws profile - for p10k prompt
 export AWS_PROFILE="default"
-# switch aws profiles
-alias awsp='export AWS_PROFILE=$(aws configure list-profiles | fzf)'
+alias awsp='export AWS_PROFILE=$(aws configure list-profiles | fzf)' # switch aws profiles
 # aws cli shortcut for working with localstack
 # alias awsls="aws --endpoint-url=http://localhost:4566"
 
@@ -94,6 +91,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   alias pbcopy='xsel --clipboard --input'
   alias pbpaste='xsel --clipboard --output'
 fi
+
 # goto directory
 g() {
   cd $(find ~ ~/src ~/go/src ~/src/kubecost -maxdepth 1 -type d | grep -v "/\." | sort -u | fzf);
@@ -107,10 +105,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     val=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
     if [[ $val == "Dark" ]]; then
       export ITERM_PROFILE="Dark"
-      export FZF_DEFAULT_OPTS='--color=bg+:#37343a,bg:#2d2a2e,border:#848089,spinner:#e5c463,hl:#9ecd6f,fg:#e3e1e4,header:#7accd7,info:#e5c463,pointer:#7accd7,marker:#7accd7,fg+:#e3e1e4,prompt:#f85e84,hl+:#9ecd6f'
+      export FZF_DEFAULT_OPTS='--color=bg+:#37343a,bg:#2d2a2e,border:#848089,spinner:#e5c463,hl:#9ecd6f,fg:#e3e1e4,header:#7accd7,info:#e5c463,pointer:#7accd7,marker:#7accd7,fg+:#e3e1e4,prompt:#f85e84,hl+:#9ecd6f --height=80% --layout=reverse --info=inline --border --margin=1 --padding=1'
     else
       export ITERM_PROFILE="Terminal"
-      export FZF_DEFAULT_OPTS='--color=bg+:#dcdfe7,bg:#e8e9ec,fg:#33374c,fg+:#33374c'
+      export FZF_DEFAULT_OPTS='--color=bg+:#D9D9D9,bg:#E1E1E1,border:#C8C8C8,spinner:#719899,hl:#719872,fg:#616161,header:#719872,info:#727100,pointer:#E12672,marker:#E17899,fg+:#616161,preview-bg:#D9D9D9,prompt:#0099BD,hl+:#719899 --height=80% --layout=reverse --info=inline --border --margin=1 --padding=1'
     fi
   }
 
@@ -139,41 +137,30 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Completions start
-# before re-enabling, check that we need something from zsh-completions
-# zsh-completions plugin completions
-# fpathCompletions="$(brew --prefix)/share/zsh-completions/src:/Users/$USER/.zsh:/home/$USER/.zsh"
-fpathCompletions="/Users/$USER/.zsh:/home/$USER/.zsh"
+# Completions
+fpathCompletions="$(brew --prefix)/share/zsh/site-functions:/Users/$USER/.zsh:/home/$USER/.zsh"
 if ! grep -q "$fpathCompletions" <<< "$FPATH"; then
   FPATH="$FPATH:$fpathCompletions";
 fi
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 
-# aws completions
-complete -C "$(brew --prefix)/bin/aws_completer" aws
-
 # gcloud completions
 if [ -f "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" ]; then
   source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-elif [ -f '/usr/share/google-cloud-sdk/completion.zsh.inc' ]; then 
+elif [ -f '/usr/share/google-cloud-sdk/completion.zsh.inc' ]; then
   source '/usr/share/google-cloud-sdk/completion.zsh.inc'
 fi
 
-if [ -f '/home/steven/google-cloud-sdk/path.zsh.inc' ]; then . '/home/steven/google-cloud-sdk/path.zsh.inc'; fi
-if [ -f '/home/steven/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/steven/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then
+  source "$HOME/google-cloud-sdk/path.zsh.inc"
+fi
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then
+  source "$HOME/google-cloud-sdk/completion.zsh.inc"
+fi
 
 # azure completions
 if [ -f "$(brew --prefix)/etc/bash_completion.d/az" ]; then
   source "$(brew --prefix)/etc/bash_completion.d/az"
 fi
-
-# kubectl completions
-if command -v kubectl &> /dev/null; then
-  source <(kubectl completion zsh)
-fi
-
-# git completions
-compdef git gitk
-# Completions end
 
