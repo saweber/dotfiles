@@ -1,5 +1,6 @@
 
 vim.opt.nu = true
+
 vim.opt.relativenumber = true
 
 vim.opt.tabstop = 2
@@ -15,3 +16,6 @@ vim.opt.scrolloff = 8
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
+
+-- Hide vim command line when not in use
+vim.opt.cmdheight = 0

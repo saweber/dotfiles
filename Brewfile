@@ -64,3 +64,9 @@ brew "derailed/k9s/k9s"
 # github cli
 brew "act" # for testing github actions
 brew "gh"
+
+# infrastructure
+brew "terraform"
+
+# tilt
+brew install "tilt-dev/tap/tilt"

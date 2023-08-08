@@ -3,6 +3,7 @@ export TERMINFO='/usr/share/terminfo/'
 export TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo
 
 # open tmux by default - make color switching in vim work
+# disabled because JetBrains terminal is weird with tmux
 # if [ "$TMUX" = "" ]; then tmux; fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -47,8 +48,8 @@ setopt SHARE_HISTORY
 # For pasting into zsh - turns off bracketed-paste-magic and url-quote-magic
 # export DISABLE_MAGIC_FUNCTIONS=true
 
-# credentials
-# source ~/.credentials
+# load secure credentials
+source ~/.credentials
 
 # zsh autosuggestions
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
@@ -80,9 +81,10 @@ alias awsp='export AWS_PROFILE=$(aws configure list-profiles | fzf)' # switch aw
 
 # go
 export GOHOME="$HOME/go"
-export GOPATH="$HOME/go:$HOME/src"
+export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 export GOPRIVATE="github.com"
+export GO111MODULE="on"
 PATH="$GOBIN:$PATH"
 
 # aliases
