@@ -21,6 +21,7 @@ set incsearch
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
+" Show mode in status line
 set showmode
 
 " Have clipboard available in yank
@@ -31,6 +32,11 @@ let mapleader = " "
 
 " ideavim plugins
 Plug 'tpope/vim-commentary'
+
+" easymotion with remaps
+Plug 'easymotion/vim-easymotion
+map <leader>fs <Plug>(easymotion-s2)
+map <leader>ft <Plug>(easymotion-t2)
 
 " Search Actions
 map <leader>ff <Action>(SearchEverywhere)
