@@ -64,9 +64,13 @@ return require('packer').startup(function(use)
     }
   }
 
-  -- use {
-  --   'junegunn/fzf.vim',
-  --   requires = { 'junegunn/fzf', run = ':call fzf#install()' }
-  -- }
+  -- Hop (easymotion)
+	use {
+		'phaazon/hop.nvim',
+		branch = 'v2', -- optional but strongly recommended
+		config = function()
+			require'hop'.setup {}
+		end
+	}
 
 end)

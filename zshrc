@@ -2,9 +2,8 @@
 export TERMINFO='/usr/share/terminfo/'
 export TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo
 
-# open tmux by default - make color switching in vim work
-# disabled because JetBrains terminal is weird with tmux
-# if [ "$TMUX" = "" ]; then tmux; fi
+# open tmux by default - if not already open or in IntelliJ
+if [ "$TMUX" = "" ] && [ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]; then tmux; fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
