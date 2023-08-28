@@ -34,7 +34,6 @@ return require('packer').startup(function(use)
   --use('nvim-treesitter/playground')
 
   -- File Navigation
-  --use('ThePrimeagen/harpoon')
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
 	  requires = { {'nvim-lua/plenary.nvim'} }

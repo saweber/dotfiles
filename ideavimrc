@@ -36,7 +36,7 @@ Plug 'tpope/vim-commentary'
 " easymotion with remaps
 Plug 'easymotion/vim-easymotion
 map <leader>fs <Plug>(easymotion-s2)
-map <leader>ft <Plug>(easymotion-t2)
+" map <leader>ft <Plug>(easymotion-t2)
 
 " Search Actions
 map <leader>ff <Action>(SearchEverywhere)
@@ -51,6 +51,7 @@ map <leader>bp <Action>(ToggleLineBreakpoint)
 " Refactoring Actions
 map <leader>re <Action>(RenameElement)
 map <leader>em <Action>(ExtractMethod)
+map <leader>lf <Action>(ReformatCode)
 
 " Navigation Actions
 map <leader>td <Action>(GoToTypeDeclaration)

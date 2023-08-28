@@ -65,9 +65,9 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source $(brew --prefix)/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # use bat to highlight man pages
-#export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-#export MANPAGER="sh -c 'bat -l man -p'" # partial fix for AWS docs
-#export MANROFFOPT="-c"
+# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+# export MANPAGER="sh -c 'bat -l man -p'" # partial fix for AWS docs
+# export MANROFFOPT="-c"
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export KUBE_EDITOR="nvim"
