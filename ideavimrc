@@ -7,6 +7,10 @@ set shiftwidth=2
 set expandtab
 set smartindent
 
+" make IntelliJ shut up
+set visualbell
+set noerrorbells
+
 " Center cursor on movements
 map <C-d> <C-d>zz
 map <C-u> <C-u>zz
@@ -55,6 +59,7 @@ map <leader>lf <Action>(ReformatCode)
 
 " Navigation Actions
 map <leader>td <Action>(GoToTypeDeclaration)
+map <leader>tu <Action>(FindUsages)
 
 " Panels
 map <leader>pp <Action>(ActivateProjectToolWindow)
