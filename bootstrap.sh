@@ -88,6 +88,10 @@ git config --global user.name $git_username
 git config --global user.email $git_email
 git config --global core.excludesfile ~/.gitignore
 
+echo Downloading docker completions...
+curl -L https://raw.githubusercontent.com/docker/compose/1.29.2/contrib/completion/zsh/_docker-compose -o ~/.zsh/_docker-compose --create-dirs
+curl -L  https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker -o ~/.zsh/_docker --create-dirs
+
 echo Downloading cht.sh with completions...
 sudo touch /usr/local/bin/cht.sh
 sudo curl -s https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh
@@ -133,7 +137,7 @@ ln -sf $(pwd)/ideavimrc $(echo $HOME)/.ideavimrc
 
 if ! test -f "~/.credentials"]; then
   echo No .credentials file found, creating empty .credentials file...
-  touch .credentials
+  touch ~/.credentials
 fi
 
 echo Done. Run "source ~/.zshrc" or open a new terminal.

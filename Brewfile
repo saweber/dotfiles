@@ -35,6 +35,8 @@ brew "wget"
 # cloud clis
 brew "azure-cli"
 brew "awscli"
+tap "aws/tap"
+brew "eks-node-viewer"
 
 # golang
 brew "go"

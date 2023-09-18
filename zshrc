@@ -54,7 +54,7 @@ source ~/.credentials
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^ ' autosuggest-accept
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7f7f7f"
+#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7f7f7f"
 # For pasting into zsh - disable autosuggest for large pastes
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
