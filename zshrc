@@ -13,7 +13,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
+  PATH="$PATH:/home/linuxbrew/.linuxbrew/bin:/home/$USER/.local/bin"
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -99,7 +99,7 @@ fi
 
 # goto directory
 g() {
-  cd $(find ~ ~/src ~/go/src ~/src/kubecost -maxdepth 1 -type d | grep -v "/\." | sort -u | fzf);
+  cd $(find ~ ~/src ~/go/src ~/src/kubecost ~/src/waterfowl -maxdepth 1 -type d | grep -v "/\." | sort -u | fzf);
 }
 zle -N g g
 bindkey -s '^g' 'g\n'
