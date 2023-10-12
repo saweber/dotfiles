@@ -7,7 +7,7 @@ tap "homebrew/core"
 cask_args appdir: "/Applications", require_sha: false
 
 # for gpg
-brew "pinentry-mac"
+#brew "pinentry-mac"
 
 # fonts
 tap "homebrew/cask-fonts"
@@ -19,19 +19,20 @@ cask "google-cloud-sdk" # glcloud installer
 
 # useful macOS utilities
 cask "alfred"
+cask "amethyst"
 cask "bartender" 
-cask "bettertouchtool"
+#cask "bettertouchtool"
 cask "karabiner-elements"
-# cask "keepassxc"
-# cask "monitorcontrol"
-cask "rectangle"
-cask "witch"
+#cask "keepassxc"
+#cask "monitorcontrol"
+#cask "rectangle"
+#cask "witch"
 
 # dependencies
 brew "blueutil" # for alfred airpod plugin
 
 # software dev applications
-cask "alacritty"
+#cask "alacritty"
 cask "docker"
 cask "podman-desktop"
 cask "iterm2"

@@ -17,8 +17,6 @@ Personal setup for MacOS and Linux Development Environments
 
 ### Manual Imports
 
-- BetterTouchTool
-  - Import `Default.bttpreset`
 - Iterm2
   - Import `iterm2/iterm2_profile.json`
   - Import `iterm2/monokai-pro-spectrum.itermcolors`
@@ -26,7 +24,6 @@ Personal setup for MacOS and Linux Development Environments
   - [light/dark theme switching](https://gist.github.com/jamesmacfie/2061023e5365e8b6bfbbc20792ac90f8)
   - Theme : minimal
   - Profiles -> Keys -> Left + Right Option -> Set to `Esc+`
-- Rectangle - import `RectangleConfig.json`
 - `kubectl krew completion zsh >> ~/.zsh/_krew`
 - pprof - `go install github.com/google/pprof@latest`
 - go pseudo-monorepos - `go work init`
@@ -46,7 +43,7 @@ Personal setup for MacOS and Linux Development Environments
     - Modifier Keys -> Set Caps Lock to Escape
     - Check `Use F1, F2, etc. keys as Function Keys`
     - Shortcuts - go through and disable unused shortcuts - reduce conflicts with IntelliJ and VS Code
-    - Add Shortcut for Notification Center (Ctrl Alt Shift J)
+    - Mission Control - Switch to Desktop {n} - Ctrl Alt Shift {n}
   - Mouse
     - Uncheck Scroll direction: Natural
   - Spotlight
@@ -57,6 +54,7 @@ Personal setup for MacOS and Linux Development Environments
 - Firefox
   - Set fixed-width font to 'JetBrains Mono'
   - [Arial font kerning fix](https://bugzilla.mozilla.org/show_bug.cgi?id=1366880)
+- Amethyst
 
 ## Known Limitations
 

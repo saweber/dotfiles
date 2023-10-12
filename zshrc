@@ -16,6 +16,10 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
 fi
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  PATH="$PATH:/Users/$USER/.local/bin"
+fi
+
 # powerlevel10k theme
 source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -36,6 +36,7 @@ let mapleader = " "
 
 " ideavim plugins
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 
 " easymotion with remaps
 Plug 'easymotion/vim-easymotion

@@ -18,6 +18,7 @@ brew "zsh-vi-mode"
 brew "bat" # colorize man pages
 brew "fd" # for telescope.nvim
 brew "fzf"
+brew "fx" # for json viewing
 brew "git"
 brew "gpg" # for signing git commits
 brew "htop"
