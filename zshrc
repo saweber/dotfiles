@@ -20,6 +20,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   PATH="$PATH:/Users/$USER/.local/bin"
 fi
 
+# for versioned duckdb executable
+PATH="$PATH:/Users/$USER/src/kubecost"
+
 # powerlevel10k theme
 source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -99,7 +102,7 @@ fi
 
 # goto directory
 g() {
-  cd $(find ~ ~/src ~/go/src ~/src/kubecost ~/src/waterfowl -maxdepth 1 -type d | grep -v "/\." | sort -u | fzf);
+  cd $(find ~ ~/src ~/go/src ~/src/kubecost -maxdepth 1 -type d | grep -v "/\." | sort -u | fzf);
 }
 zle -N g g
 bindkey -s '^g' 'g\n'
