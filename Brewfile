@@ -25,6 +25,7 @@ brew "htop"
 brew "jq"
 brew "just"
 brew "neovim"
+brew "peak/tap/s5cmd" #s3 faster + sync
 brew "ripgrep"
 brew "rlwrap" # for cht.sh
 brew "tig" # git history cli

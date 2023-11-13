@@ -18,7 +18,7 @@ config.font_size = 14.0
 config.harfbuzz_features = {"calt=0", "clig=0", "liga=0"} -- disable ligatures
 
 -- For example, changing the color scheme:
-config.color_scheme = 'Monokai Pro (Gogh)'
-config.color_scheme = 'Night Owlish Light'
+config.color_scheme = 'Monokai Dark (Gogh)'
+-- config.color_scheme = 'Night Owlish Light'
 
 return config

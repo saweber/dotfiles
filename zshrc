@@ -76,6 +76,9 @@ source $(brew --prefix)/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 # export MANPAGER="sh -c 'bat -l man -p'" # partial fix for AWS docs
 # export MANROFFOPT="-c"
 
+export EDITOR="nvim"
+export HOMEBREW_EDITOR="nvim"
+
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export KUBE_EDITOR="nvim"
 alias k="kubectl"
