@@ -35,6 +35,7 @@ Personal setup for MacOS and Linux Development Environments
   - `/usr/bin/tic -x -o $HOME/.local/share/terminfo tmux-256color.src`
   - edit pairs value in `tmux-256color.src` to `pairs#32767` on macOS
   - `/opt/homebrew/Cellar/ncurses/6.4/bin/infocmp -x tmux-256color > ~/tmux-256color.src`
+  - [skhd/yabai - fix slow response](https://github.com/koekeishiya/skhd/issues/150)
 
 ### Opinionated MacOS Personal Preferences (that are not scripted)
 

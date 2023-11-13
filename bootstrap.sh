@@ -124,6 +124,18 @@ mv -r ~/.config/wezterm ~/.config/wezterm.pre_boostrap
 echo Linking .config/wezterm.lua to wezterm
 ln -sf $(pwd)/wezterm.lua $(echo $HOME)/.config/wezterm/wezterm.lua
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  echo Moving .config/yabai to .config/yabai.pre_boostrap...
+  mv -r ~/.config/yabai ~/.config/yabairc.pre_boostrap
+  echo Linking .config/yabai.lua to yabai
+  ln -sf $(pwd)/yabairc $(echo $HOME)/.config/yabai/yabairc
+
+  echo Moving .config/skhd to .config/skhd.pre_boostrap...
+  mv -r ~/.config/skhd ~/.config/skhd.pre_boostrap
+  echo Linking .config/skhd/skhdrc to skhd
+  ln -sf $(pwd)/skhdrc $(echo $HOME)/.config/skhd/skhdrc
+fi
+
 echo Moving .init.vim to .init_vim.pre_bootstrap...
 mv ~/.config/nvim/init.vim ~/.init_vim.pre_bootstrap
 echo Linking init.vim for neovim...
