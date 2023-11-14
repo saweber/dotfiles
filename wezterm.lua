@@ -2,6 +2,10 @@ local wezterm = require 'wezterm'
 
 local config = {}
 
+-- crude way of determining which machine wezterm is running on
+local os_name = tostring(os.getenv("HOSTNAME"))
+local is_linux = string.match(os_name,"fedora")
+
 -- In newer versions of wezterm, use the config_builder which will
 -- help provide clearer error messages
 if wezterm.config_builder then
@@ -14,11 +18,30 @@ config.hide_tab_bar_if_only_one_tab = true
 
 -- Fonts
 config.font = wezterm.font 'JetBrains Mono'
-config.font_size = 14.0
 config.harfbuzz_features = {"calt=0", "clig=0", "liga=0"} -- disable ligatures
 
--- For example, changing the color scheme:
-config.color_scheme = 'Monokai Dark (Gogh)'
--- config.color_scheme = 'Night Owlish Light'
+config.font_size = 14.0
+if is_linux then
+  config.font_size = 12.0
+end
+
+-- wezterm.gui is not available to the mux server, so take care to
+-- do something reasonable when this config is evaluated by the mux
+local function get_appearance()
+  if wezterm.gui then
+    return wezterm.gui.get_appearance()
+  end
+  return 'Dark'
+end
+
+local function scheme_for_appearance(appearance)
+  if appearance:find 'Dark' then
+    return 'Monokai Dark (Gogh)'
+  else
+    return 'Night Owlish Light'
+  end
+end
+
+config.color_scheme = scheme_for_appearance(get_appearance())
 
 return config
