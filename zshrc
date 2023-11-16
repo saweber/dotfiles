@@ -54,39 +54,32 @@ setopt SHARE_HISTORY
 # For pasting into zsh - turns off bracketed-paste-magic and url-quote-magic
 # export DISABLE_MAGIC_FUNCTIONS=true
 
-# load secure credentials
-source ~/.credentials
+source ~/.credentials # load credentials that do not belong in source control
 
 # zsh autosuggestions
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-bindkey '^ ' autosuggest-accept
-#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7f7f7f"
-# For pasting into zsh - disable autosuggest for large pastes
-export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+# bindkey '^ ' autosuggest-accept # dupe?
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7f7f7f"
+export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20 # For pasting into zsh - disable autosuggest for large pastes
 
 # zsh syntax highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 # zsh vi mode
 source $(brew --prefix)/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
-# use bat to highlight man pages
-# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-# export MANPAGER="sh -c 'bat -l man -p'" # partial fix for AWS docs
-# export MANROFFOPT="-c"
-
+# alias nvim, and set as editor
+alias vim="nvim"
 export EDITOR="nvim"
 export HOMEBREW_EDITOR="nvim"
+export KUBE_EDITOR="nvim"
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-export KUBE_EDITOR="nvim"
 alias k="kubectl"
 
 export AWS_PROFILE="default"
 alias awsp='export AWS_PROFILE=$(aws configure list-profiles | fzf)' # switch aws profiles
-# aws cli shortcut for working with localstack
-# alias awsls="aws --endpoint-url=http://localhost:4566"
+# alias awsls="aws --endpoint-url=http://localhost:4566" # aws cli shortcut for working with localstack
 
 # go
 export GOHOME="$HOME/go"
@@ -97,7 +90,6 @@ export GO111MODULE="on"
 PATH="$GOBIN:$PATH"
 
 # aliases
-alias vim="nvim"
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   alias pbcopy='xsel --clipboard --input'
   alias pbpaste='xsel --clipboard --output'
@@ -142,11 +134,11 @@ export VOLTA_HOME="$HOME/.volta"
 PATH="$VOLTA_HOME/bin:$PATH"
 
 # for using gpg to sign git commits
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  export GPG_TTY=$(tty)
-fi
+# if [[ "$OSTYPE" == "darwin"* ]]; then
+#   export GPG_TTY=$(tty)
+# fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh # dupe?
 
 # Completions
 fpathCompletions="$(brew --prefix)/share/zsh/site-functions:/Users/$USER/.zsh:/home/$USER/.zsh"
@@ -161,13 +153,16 @@ if [ -f "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/comp
   source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 elif [ -f '/usr/share/google-cloud-sdk/completion.zsh.inc' ]; then
   source '/usr/share/google-cloud-sdk/completion.zsh.inc'
+elif [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then
+  source "$HOME/google-cloud-sdk/completion.zsh.inc"
 fi
 
-if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then
+if [ -f "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc" ]; then
+  source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+elif [ -f '/usr/share/google-cloud-sdk/path.zsh.inc' ]; then
+  source '/usr/share/google-cloud-sdk/path.zsh.inc'
+elif [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then
   source "$HOME/google-cloud-sdk/path.zsh.inc"
-fi
-if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then
-  source "$HOME/google-cloud-sdk/completion.zsh.inc"
 fi
 
 # azure completions
