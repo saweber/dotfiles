@@ -9,3 +9,6 @@ vim.keymap.set("n", "<C-b>", "<C-b>zz")
 vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "N", "Nzz")
 
+local builtin = require("telescope.builtin")
+vim.keymap.del("n", "<leader>ff")
+vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
