@@ -51,4 +51,5 @@ if is_linux then
   config.front_end = 'WebGpu'
   config.enable_wayland = true
 end
+
 return config

@@ -30,7 +30,8 @@ source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
 function zvm_after_init() {
   # fzf goes here, otherwise fzf for history search does not work
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-  export FZF_DEFAULT_OPTS='--color=bg+:#37343a,bg:#2d2a2e,border:#848089,spinner:#e5c463,hl:#9ecd6f,fg:#e3e1e4,header:#7accd7,info:#e5c463,pointer:#7accd7,marker:#7accd7,fg+:#e3e1e4,prompt:#f85e84,hl+:#9ecd6f --height=80% --layout=reverse --info=inline --border --margin=1 --padding=1'
+
+  theme
 
   zvm_bindkey viins '^@' autosuggest-accept
   bindkey '^ ' autosuggest-accept
@@ -59,7 +60,6 @@ source ~/.credentials # load credentials that do not belong in source control
 # zsh autosuggestions
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# bindkey '^ ' autosuggest-accept # dupe?
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7f7f7f"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20 # For pasting into zsh - disable autosuggest for large pastes
 
@@ -102,21 +102,29 @@ g() {
 zle -N g g
 bindkey -s '^g' 'g\n'
 
-# for using MacOS dark/light theme to control nvim
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  theme() {
+# dark/light theme to control nvim and fzf
+theme() {
+  if [[ "$OSTYPE" == "darwin"* ]]; then
     val=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
     if [[ $val == "Dark" ]]; then
-      export ITERM_PROFILE="Dark"
+      export TERM_PROFILE="Dark"
       export FZF_DEFAULT_OPTS='--color=bg+:#37343a,bg:#2d2a2e,border:#848089,spinner:#e5c463,hl:#9ecd6f,fg:#e3e1e4,header:#7accd7,info:#e5c463,pointer:#7accd7,marker:#7accd7,fg+:#e3e1e4,prompt:#f85e84,hl+:#9ecd6f --height=80% --layout=reverse --info=inline --border --margin=1 --padding=1'
     else
-      export ITERM_PROFILE="Terminal"
+      export TERM_PROFILE="Terminal"
       export FZF_DEFAULT_OPTS='--color=bg+:#D9D9D9,bg:#E1E1E1,border:#C8C8C8,spinner:#719899,hl:#719872,fg:#616161,header:#719872,info:#727100,pointer:#E12672,marker:#E17899,fg+:#616161,preview-bg:#D9D9D9,prompt:#0099BD,hl+:#719899 --height=80% --layout=reverse --info=inline --border --margin=1 --padding=1'
     fi
-  }
+  else
+    val=$(gsettings get org.gnome.desktop.interface color-scheme)
+    if [[ $val == 'default' ]]; then
+      export TERM_PROFILE="Terminal"
+      export FZF_DEFAULT_OPTS='--color=bg+:#D9D9D9,bg:#E1E1E1,border:#C8C8C8,spinner:#719899,hl:#719872,fg:#616161,header:#719872,info:#727100,pointer:#E12672,marker:#E17899,fg+:#616161,preview-bg:#D9D9D9,prompt:#0099BD,hl+:#719899 --height=80% --layout=reverse --info=inline --border --margin=1 --padding=1'
+    else
+      export TERM_PROFILE="Dark"
+      export FZF_DEFAULT_OPTS='--color=bg+:#37343a,bg:#2d2a2e,border:#848089,spinner:#e5c463,hl:#9ecd6f,fg:#e3e1e4,header:#7accd7,info:#e5c463,pointer:#7accd7,marker:#7accd7,fg+:#e3e1e4,prompt:#f85e84,hl+:#9ecd6f --height=80% --layout=reverse --info=inline --border --margin=1 --padding=1'
 
-  theme
-fi
+  fi
+}
+theme
 
 # get kcm logs
 cm-logs () {
@@ -129,16 +137,9 @@ cht() {
   cht.sh "$1" | bat -p
 }
 
-# use volta for node, yarn
+# use volta for node, yarn, npm
 export VOLTA_HOME="$HOME/.volta"
 PATH="$VOLTA_HOME/bin:$PATH"
-
-# for using gpg to sign git commits
-# if [[ "$OSTYPE" == "darwin"* ]]; then
-#   export GPG_TTY=$(tty)
-# fi
-
-#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh # dupe?
 
 # Completions
 fpathCompletions="$(brew --prefix)/share/zsh/site-functions:/Users/$USER/.zsh:/home/$USER/.zsh"
