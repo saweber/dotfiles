@@ -15,6 +15,7 @@ brew "zsh-syntax-highlighting"
 brew "zsh-vi-mode"
 
 # cli tools
+tap "jesseduffield/lazygit/lazygit"
 brew "bat" # colorize man pages
 brew "fd" # for telescope.nvim
 brew "fzf"
@@ -24,6 +25,7 @@ brew "gpg" # for signing git commits
 brew "htop"
 brew "jq"
 brew "just"
+brew "lazygit"
 brew "neovim"
 brew "peak/tap/s5cmd" #s3 faster + sync
 brew "ripgrep"

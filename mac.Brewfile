@@ -6,9 +6,6 @@ tap "homebrew/core"
 # set arguments for all 'brew install --cask' commands
 cask_args appdir: "/Applications", require_sha: false
 
-# for gpg
-#brew "pinentry-mac"
-
 # fonts
 tap "homebrew/cask-fonts"
 cask "font-jetbrains-mono"
@@ -29,7 +26,7 @@ cask "koekeishiya/formulae/skhd"
 cask "koekeishiya/formulae/yabai"
 
 # dependencies
-brew "blueutil" # for alfred airpod plugin
+# brew "blueutil" # for alfred airpod plugin
 
 # software dev applications
 cask "docker"
