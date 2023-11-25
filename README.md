@@ -36,6 +36,7 @@ Personal setup for MacOS and Linux Development Environments
   - edit pairs value in `tmux-256color.src` to `pairs#32767` on macOS
   - `/opt/homebrew/Cellar/ncurses/6.4/bin/infocmp -x tmux-256color > ~/tmux-256color.src`
   - [skhd/yabai - fix slow response](https://github.com/koekeishiya/skhd/issues/150)
+- k9s - dump skin.yml in config directory from `k9s info`
 
 ### Opinionated MacOS Personal Preferences (that are not scripted)
 
