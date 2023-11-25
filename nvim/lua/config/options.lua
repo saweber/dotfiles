@@ -19,5 +19,3 @@ vim.opt.scrolloff = 8
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
-
--- Hide vim command line when not in use
