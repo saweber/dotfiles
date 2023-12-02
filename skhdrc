@@ -1,42 +1,23 @@
 # navigation
-alt - h : yabai -m window --focus west
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
-alt - l : yabai -m window --focus east
+shift + ctrl + alt - h : yabai -m window --focus west
+shift + ctrl + alt - j : yabai -m window --focus south
+shift + ctrl + alt - k : yabai -m window --focus north
+shift + ctrl + alt - l : yabai -m window --focus east
 
 # move windows
-shift + ctrl + alt - h : yabai -m window --warp west
-shift + ctrl + alt - j : yabai -m window --warp south
-shift + ctrl + alt - k : yabai -m window --warp north
-shift + ctrl + alt - l : yabai -m window --warp east
-
-# move focus container to workspace
-cmd + ctrl + alt + shift - 1: yabai -m window --space 1; yabai -m space --focus 1
-cmd + ctrl + alt + shift - 2: yabai -m window --space 1; yabai -m space --focus 2
-cmd + ctrl + alt + shift - 3: yabai -m window --space 1; yabai -m space --focus 3
-cmd + ctrl + alt + shift - 4: yabai -m window --space 1; yabai -m space --focus 4
-cmd + ctrl + alt + shift - 5: yabai -m window --space 1; yabai -m space --focus 5
-cmd + ctrl + alt + shift - 6: yabai -m window --space 1; yabai -m space --focus 6
-cmd + ctrl + alt + shift - 7: yabai -m window --space 1; yabai -m space --focus 7
-cmd + ctrl + alt + shift - 8: yabai -m window --space 1; yabai -m space --focus 8
-cmd + ctrl + alt + shift - 9: yabai -m window --space 1; yabai -m space --focus 9
-cmd + ctrl + alt + shift - 0: yabai -m window --space 1; yabai -m space --focus 10
+cmd + ctrl + alt + shift - h : yabai -m window --warp west
+cmd + ctrl + alt + shift - j : yabai -m window --warp south
+cmd + ctrl + alt + shift - k : yabai -m window --warp north
+cmd + ctrl + alt + shift - l : yabai -m window --warp east
 
 # resize windows
-shift + ctrl + alt - a : yabai -m window --resize left:-50:0; \
-                 yabai -m window --resize right:-50:0
-#? : yabai -m window --resize bottom:0:50; \
-#                  yabai -m window --resize top:0:50
-#? : yabai -m window --resize top:0:-50; \
-#                  yabai -m window --resize bottom:0:-50
-shift + ctrl + alt - d : yabai -m window --resize right:50:0; \
-                 yabai -m window --resize left:50:0
+shift + ctrl + alt - a : yabai -m window --resize left:-50:0; yabai -m window --resize right:-50:0
+shift + ctrl + alt - x : yabai -m window --resize bottom:0:50; yabai -m window --resize top:0:50
+shift + ctrl + alt - z : yabai -m window --resize top:0:-50; yabai -m window --resize bottom:0:-50
+shift + ctrl + alt - d : yabai -m window --resize right:50:0; yabai -m window --resize left:50:0
 
 # equalize size of windows
-shift + ctrl + alt - f : yabai -m space --balance
+shift + ctrl + alt - s : yabai -m space --balance
 
 # float or unfloat window
-ctrl + alt + shift - f : \
-    yabai -m window --toggle float; \
-    yabai -m window --toggle border
-
+ctrl + alt + shift - f : yabai -m window --toggle float; yabai -m window --toggle border
