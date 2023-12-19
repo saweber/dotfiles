@@ -5,6 +5,9 @@ return {
       char = {
         enabled = false,
       },
+      search = {
+        enabled = false,
+      },
     },
   },
 }

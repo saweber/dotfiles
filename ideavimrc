@@ -19,8 +19,8 @@ map <C-b> <C-b>zz
 map n nzz
 map N Nzz
 
-" Do incremental searching.
-set incsearch
+set incsearch " incremental search
+set ignorecase " ignore case when searching
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq
@@ -38,10 +38,8 @@ let mapleader = " "
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 
-" easymotion with remaps
-Plug 'easymotion/vim-easymotion
-map <leader>fs <Plug>(easymotion-s2)
-" map <leader>ft <Plug>(easymotion-t2)
+Plug 'easymotion/vim-easymotion'
+nmap s <Plug>(easymotion-s2)
 
 " Search Actions
 map <leader>ff <Action>(SearchEverywhere)
