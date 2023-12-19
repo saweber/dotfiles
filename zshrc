@@ -21,7 +21,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 # for versioned duckdb executable
-PATH="$PATH:/Users/$USER/src/kubecost"
+PATH="$PATH:/$HOME/src/kubecost"
 
 # powerlevel10k theme
 source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
