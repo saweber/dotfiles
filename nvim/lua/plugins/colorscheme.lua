@@ -1,7 +1,12 @@
 if vim.env.TERM_PROFILE == "Terminal" then
   return {
     { "projekt0n/github-nvim-theme" },
-    { "loctvl842/monokai-pro.nvim" },
+    {
+      "loctvl842/monokai-pro.nvim",
+      opts = {
+        filter = "spectrum",
+      },
+    },
     {
       "LazyVim/LazyVim",
       opts = {
@@ -12,7 +17,12 @@ if vim.env.TERM_PROFILE == "Terminal" then
 else
   return {
     { "projekt0n/github-nvim-theme" },
-    { "loctvl842/monokai-pro.nvim" },
+    {
+      "loctvl842/monokai-pro.nvim",
+      opts = {
+        filter = "spectrum",
+      },
+    },
     {
       "LazyVim/LazyVim",
       opts = {

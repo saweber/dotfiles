@@ -8,12 +8,13 @@ if [ "$TMUX" = "" ] && [ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]; then tm
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  PATH="$PATH:/home/linuxbrew/.linuxbrew/bin:/home/$USER/.local/bin"
+#   PATH="$PATH:/home/linuxbrew/.linuxbrew/bin:/home/$USER/.local/bin"
+   PATH="$PATH:/home/$USER/.local/bin"
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -24,16 +25,16 @@ fi
 PATH="$PATH:/$HOME/src/kubecost"
 
 # powerlevel10k theme
-source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-function zvm_after_init() {
+#function zvm_after_init() {
   # fzf goes here, otherwise fzf for history search does not work
   [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
   theme
 
-  zvm_bindkey viins '^@' autosuggest-accept
+  #zvm_bindkey viins '^@' autosuggest-accept
   bindkey '^ ' autosuggest-accept
 
   zle -N g g
@@ -42,7 +43,7 @@ function zvm_after_init() {
   # linux - ensure that Ctrl-Left Arrow and Ctrl-Right Arrow navigate by word
   bindkey "^[[1;5C" forward-word
   bindkey "^[[1;5D" backward-word
-}
+#}
 
 # linux - does not save history by default
 HISTFILE=~/.zsh_history
@@ -58,15 +59,15 @@ setopt SHARE_HISTORY
 source ~/.credentials # load credentials that do not belong in source control
 
 # zsh autosuggestions
-export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7f7f7f"
-export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20 # For pasting into zsh - disable autosuggest for large pastes
+# export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+# source usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7f7f7f"
+# export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20 # For pasting into zsh - disable autosuggest for large pastes
 
 # zsh syntax highlighting
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # zsh vi mode
-source $(brew --prefix)/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+# source $(brew --prefix)/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # alias nvim, and set as editor
 alias vim="nvim"
@@ -142,32 +143,35 @@ export VOLTA_HOME="$HOME/.volta"
 PATH="$VOLTA_HOME/bin:$PATH"
 
 # Completions
-fpathCompletions="$(brew --prefix)/share/zsh/site-functions:/Users/$USER/.zsh:/home/$USER/.zsh"
-if ! grep -q "$fpathCompletions" <<< "$FPATH"; then
-  FPATH="$FPATH:$fpathCompletions";
-fi
+# fpathCompletions="$(brew --prefix)/share/zsh/site-functions:/Users/$USER/.zsh:/home/$USER/.zsh"
+# if ! grep -q "$fpathCompletions" <<< "$FPATH"; then
+#   FPATH="$FPATH:$fpathCompletions";
+# fi
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 
 # gcloud completions
-if [ -f "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" ]; then
-  source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-elif [ -f '/usr/share/google-cloud-sdk/completion.zsh.inc' ]; then
+# if [ -f "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc" ]; then
+#   source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+# elif [ -f '/usr/share/google-cloud-sdk/completion.zsh.inc' ]; then
+if [ -f '/usr/share/google-cloud-sdk/completion.zsh.inc' ]; then
   source '/usr/share/google-cloud-sdk/completion.zsh.inc'
 elif [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then
   source "$HOME/google-cloud-sdk/completion.zsh.inc"
 fi
 
-if [ -f "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc" ]; then
-  source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-elif [ -f '/usr/share/google-cloud-sdk/path.zsh.inc' ]; then
+# if [ -f "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc" ]; then
+#   source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+# elif [ -f '/usr/share/google-cloud-sdk/path.zsh.inc' ]; then
+if [ -f '/usr/share/google-cloud-sdk/path.zsh.inc' ]; then
   source '/usr/share/google-cloud-sdk/path.zsh.inc'
 elif [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then
   source "$HOME/google-cloud-sdk/path.zsh.inc"
 fi
 
 # azure completions
-if [ -f "$(brew --prefix)/etc/bash_completion.d/az" ]; then
-  source "$(brew --prefix)/etc/bash_completion.d/az"
-fi
+# if [ -f "$(brew --prefix)/etc/bash_completion.d/az" ]; then
+#   source "$(brew --prefix)/etc/bash_completion.d/az"
+# fi
 
+eval "$(starship init zsh)"

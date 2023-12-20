@@ -1,76 +1,74 @@
-
-
 echo git username
 read git_username
 
 echo git email
 read git_email
 
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  sudo apt-get update
-  sudo apt-get install zsh build-essential
-  chsh -s /bin/zsh
-fi
+#if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+#  sudo apt-get update
+#  sudo apt-get install zsh build-essential
+#  chsh -s /bin/zsh
+#fi
 
 echo Checking for brew...
-if ! [ command -v brew &> /dev/null ] ; then
-  echo Installing brew...
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.zprofile
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  elif [[ "$OSTYPE" == "darwin"* ]]; then
-    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-  fi
+if ! [ command -v brew ] &>/dev/null; then
+	echo Installing brew...
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+		echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>~/.zprofile
+		eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+	elif [[ "$OSTYPE" == "darwin"* ]]; then
+		echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>~/.zprofile
+		eval "$(/opt/homebrew/bin/brew shellenv)"
+	fi
 fi
 
-  echo Installing brew packages from Brewfile...
-  brew bundle;
+echo Installing brew packages from Brewfile...
+#  brew bundle;
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  echo Instaling Mac applications...
-  brew bundle --file=casks.Brewfile
+	echo Instaling Mac applications...
+	brew bundle --file=casks.Brewfile
 
-  echo Changing macOS defaults...
+	echo Changing macOS defaults...
 
-  defaults write com.apple.Accessibility ReduceMotionEnabled -bool true
+	defaults write com.apple.Accessibility ReduceMotionEnabled -bool true
 
-  echo Configuring finder and hiding unwanted desktop items.
-  defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
-  defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
-  defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
-  defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
-  killall Finder
+	echo Configuring finder and hiding unwanted desktop items.
+	defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
+	defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
+	defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
+	defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
+	killall Finder
 
-  echo Configuring Dock and Mission Control.
-  defaults write com.apple.dock no-bouncing -bool true
-  defaults write com.apple.dock orientation left
-  defaults write com.apple.dock autohide -bool true
-  defaults write com.apple.dock show-recents -bool false
-  defaults write com.apple.dock tilesize -int 48
-  defaults write com.apple.dock "mineffect" -string "scale"
-  # Turns off misson control rearrange spaces
-  defaults write com.apple.dock mru-spaces -bool false
-  # disable hot corners
-  defaults write com.apple.dock wvous-tl-corner -int 0
-  defaults write com.apple.dock wvous-tr-corner -int 0
-  defaults write com.apple.dock wvous-bl-corner -int 0
-  defaults write com.apple.dock wvous-br-corner -int 0
-  killall Dock
+	echo Configuring Dock and Mission Control.
+	defaults write com.apple.dock no-bouncing -bool true
+	defaults write com.apple.dock orientation left
+	defaults write com.apple.dock autohide -bool true
+	defaults write com.apple.dock show-recents -bool false
+	defaults write com.apple.dock tilesize -int 48
+	defaults write com.apple.dock "mineffect" -string "scale"
+	# Turns off misson control rearrange spaces
+	defaults write com.apple.dock mru-spaces -bool false
+	# disable hot corners
+	defaults write com.apple.dock wvous-tl-corner -int 0
+	defaults write com.apple.dock wvous-tr-corner -int 0
+	defaults write com.apple.dock wvous-bl-corner -int 0
+	defaults write com.apple.dock wvous-br-corner -int 0
+	killall Dock
 
-  echo Fixing mouse scroll direction.
-  defaults write -g com.apple.swipescrolldirection -bool false
+	echo Fixing mouse scroll direction.
+	defaults write -g com.apple.swipescrolldirection -bool false
 
-  echo Setting screenshots to jpg and disabling shadows.
-  defaults write com.apple.screencapture disable-shadow -bool true
-  defaults write com.apple.screencapture type jpg
-  mkdir ~/Screenshots
-  defaults write com.apple.screencapture "location" -string "~/Screenshots"
-  killall SystemUIServer
+	echo Setting screenshots to jpg and disabling shadows.
+	defaults write com.apple.screencapture disable-shadow -bool true
+	defaults write com.apple.screencapture type jpg
+	mkdir ~/Screenshots
+	defaults write com.apple.screencapture "location" -string "~/Screenshots"
+	killall SystemUIServer
 
-  echo Copying Karabiner configuration...
-  cp -r ./karabiner ~/.config
+	echo Copying Karabiner configuration...
+	cp -r ./karabiner ~/.config
 fi
 
 echo Moving .gitignore to .gitignore.pre_bootstrap...
@@ -90,16 +88,16 @@ git config --global core.excludesfile ~/.gitignore
 
 echo Downloading docker completions...
 curl -L https://raw.githubusercontent.com/docker/compose/1.29.2/contrib/completion/zsh/_docker-compose -o ~/.zsh/_docker-compose --create-dirs
-curl -L  https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker -o ~/.zsh/_docker --create-dirs
+curl -L https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker -o ~/.zsh/_docker --create-dirs
 
 echo Downloading cht.sh with completions...
 sudo touch /usr/local/bin/cht.sh
 sudo curl -s https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh
 sudo chmod +x /usr/local/bin/cht.sh
-curl https://cheat.sh/:zsh > ~/.zsh/_cht --create-dirs
+curl https://cheat.sh/:zsh --create-dirs >~/.zsh/_cht
 
 echo Installing fzf...
-yes | $(brew --prefix)/opt/fzf/install;
+yes | $(brew --prefix)/opt/fzf/install
 
 echo Moving .tmux.conf to .tmux_conf.pre_bootstrap...
 mv ~/.tmux.conf ~/.tmux_conf.pre_bootstrap
@@ -124,23 +122,22 @@ mv -r ~/.config/wezterm ~/.config/wezterm.pre_boostrap
 echo Linking .config/wezterm.lua to wezterm
 ln -sf $(pwd)/wezterm.lua $(echo $HOME)/.config/wezterm/wezterm.lua
 
+echo Moving .config/fish/config.fish to .config/fish/config_fish.pre_boostrap...
+mv -r ~/.config/fish/config.fish ~/.config/fish/config_fish.pre_boostrap
+echo Linking .config/fish/config.fish to config.fish
+ln -sf $(pwd)/config.fish $(echo $HOME)/.config/fish/config.fish
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  echo Moving .config/yabai to .config/yabai.pre_boostrap...
-  mv -r ~/.config/yabai ~/.config/yabairc.pre_boostrap
-  echo Linking .config/yabai.lua to yabai
-  ln -sf $(pwd)/yabairc $(echo $HOME)/.config/yabai/yabairc
+	echo Moving .config/yabai to .config/yabai.pre_boostrap...
+	mv -r ~/.config/yabai ~/.config/yabairc.pre_boostrap
+	echo Linking .config/yabai.lua to yabai
+	ln -sf $(pwd)/yabairc $(echo $HOME)/.config/yabai/yabairc
 
-  echo Moving .config/skhd to .config/skhd.pre_boostrap...
-  mv -r ~/.config/skhd ~/.config/skhd.pre_boostrap
-  echo Linking .config/skhd/skhdrc to skhd
-  ln -sf $(pwd)/skhdrc $(echo $HOME)/.config/skhd/skhdrc
+	echo Moving .config/skhd to .config/skhd.pre_boostrap...
+	mv -r ~/.config/skhd ~/.config/skhd.pre_boostrap
+	echo Linking .config/skhd/skhdrc to skhd
+	ln -sf $(pwd)/skhdrc $(echo $HOME)/.config/skhd/skhdrc
 fi
-
-echo Moving .init.vim to .init_vim.pre_bootstrap...
-mv ~/.config/nvim/init.vim ~/.init_vim.pre_bootstrap
-echo Linking init.vim for neovim...
-mkdir -p ~/.config/nvim
-ln -sf $(pwd)/init.vim $(echo $HOME)/.config/nvim/init.vim
 
 echo Moving .config/nvim to .config/nvim.pre_boostrap...
 mv -r ~/.config/nvim ~/.config/nvim.pre_boostrap
@@ -153,8 +150,8 @@ echo Linking .ideavimrc for IntelliJ...
 ln -sf $(pwd)/ideavimrc $(echo $HOME)/.ideavimrc
 
 if ! test -f "~/.credentials"]; then
-  echo No .credentials file found, creating empty .credentials file...
-  touch ~/.credentials
+	echo No .credentials file found, creating empty .credentials file...
+	touch ~/.credentials
 fi
 
 echo Done. Run "source ~/.zshrc" or open a new terminal.
