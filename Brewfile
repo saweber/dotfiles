@@ -1,6 +1,10 @@
+# manual installs
+go install sigs.k8s.io/kind@v0.20.0
+go install github.com/peak/s5cmd/v2@master
+docker via dnf
 # homebrew taps
-tap "homebrew/bundle"
-tap "homebrew/core"
+# tap "homebrew/bundle"
+# tap "homebrew/core"
 
 #brew "make" # required by powerlevel10k on linux
 #brew "gcc" # required by powerlevel10k, zsh on linux
@@ -27,7 +31,7 @@ tap "homebrew/core"
 #tap "jesseduffield/lazygit/lazygit"
 #brew "lazygit" copr
 #brew "neovim"
-brew "peak/tap/s5cmd" #s3 faster + sync
+#brew "peak/tap/s5cmd" #s3 faster + sync
 #brew "ripgrep"
 #brew "rlwrap" # for cht.sh
 #brew "tig" # git history cli
@@ -38,10 +42,10 @@ brew "peak/tap/s5cmd" #s3 faster + sync
 #brew "bottom" # copr
 
 # cloud clis
-brew "azure-cli"
-brew "awscli"
-tap "aws/tap"
-brew "eks-node-viewer"
+# brew "azure-cli"
+#brew "awscli" dnf awscli2
+# tap "aws/tap"
+# brew "eks-node-viewer"
 
 # golang
 #brew "go"
@@ -62,11 +66,11 @@ brew "eks-node-viewer"
 
 # k8s
 # brew "helm"
-brew "kind"
-brew "krew"
+# brew "kind" go install see top
+# brew "krew" # manual install
 # brew "kubectl" # dnf kubernetes-client
-brew "kubectx"
-tap "derailed/k9s"
+#brew "kubectx"
+# tap "derailed/k9s"
 brew "derailed/k9s/k9s"
 
 # github cli
@@ -77,6 +81,6 @@ brew "derailed/k9s/k9s"
 # brew "terraform" # skip
 
 # tilt
-brew install "tilt-dev/tap/tilt"
+# brew install "tilt-dev/tap/tilt" manual
 
 # wezterm - copr

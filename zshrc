@@ -12,15 +12,11 @@ if [ "$TMUX" = "" ] && [ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]; then tm
 #   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 # fi
 
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+#if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 #   PATH="$PATH:/home/linuxbrew/.linuxbrew/bin:/home/$USER/.local/bin"
-   PATH="$PATH:/home/$USER/.local/bin"
-fi
+#fi
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  PATH="$PATH:/Users/$USER/.local/bin"
-fi
-
+PATH="$PATH:/$HOME/.local/bin"
 # for versioned duckdb executable
 PATH="$PATH:/$HOME/src/kubecost"
 
