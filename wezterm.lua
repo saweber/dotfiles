@@ -42,7 +42,7 @@ local function scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
 		return "Monokai Dark (Gogh)"
 	else
-		return "Github"
+		return "Night Owlish Light"
 	end
 end
 

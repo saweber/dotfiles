@@ -8,9 +8,9 @@ brew "gcc" # required by powerlevel10k, zsh on linux
 # zsh
 tap "romkatv/powerlevel10k"
 brew "romkatv/powerlevel10k/powerlevel10k"
-brew "zsh" # macOS ships with an ancient version by default, trying fish
+brew "zsh" # macOS ships with an ancient version by default
 brew "zsh-autosuggestions"
-NOT COMPATIBLE brew "zsh-completions"
+brew "zsh-completions"
 brew "zsh-syntax-highlighting"
 brew "zsh-vi-mode"
 
@@ -19,7 +19,7 @@ brew "bat" # colorize man pages
 brew "fd" # for telescope.nvim # fd-find
 brew "fish"
 brew "fzf"
-# brew "fx" # for json viewing # brew only
+brew "fx" # for json viewing
 brew "git"
 brew "gpg" # for signing git commits
 brew "htop"
