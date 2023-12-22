@@ -6,7 +6,7 @@ if status is-interactive
         commandline -f repaint
     end
 
-    # UNTESTED - for tmux italics on MacOS 
+    # UNTESTED - for tmux italics on MacOS
     switch (uname)
         case Darwin
             set TERMINFO /usr/share/terminfo/
@@ -36,7 +36,28 @@ if status is-interactive
 
     source ~/.credentials
 
-    export FZF_DEFAULT_OPTS='--color=bg+:#37343a,bg:#2d2a2e,border:#848089,spinner:#e5c463,hl:#9ecd6f,fg:#e3e1e4,header:#7accd7,info:#e5c463,pointer:#7accd7,marker:#7accd7,fg+:#e3e1e4,prompt:#f85e84,hl+:#9ecd6f --height=80% --layout=reverse --info=inline --border --margin=1 --padding=1'
+    function dark
+        export TERM_PROFILE="Dark"
+        export FZF_DEFAULT_OPTS='--color=bg+:#37343a,bg:#2d2a2e,border:#848089,spinner:#e5c463,hl:#9ecd6f,fg:#e3e1e4,header:#7accd7,info:#e5c463,pointer:#7accd7,marker:#7accd7,fg+:#e3e1e4,prompt:#f85e84,hl+:#9ecd6f --height=80% --layout=reverse --info=inline --border --margin=1 --padding=1'
+    end
+    function light
+        export TERM_PROFILE="Terminal"
+        export FZF_DEFAULT_OPTS='--color=bg+:#D9D9D9,bg:#E1E1E1,border:#C8C8C8,spinner:#719899,hl:#719872,fg:#616161,header:#719872,info:#727100,pointer:#E12672,marker:#E17899,fg+:#616161,preview-bg:#D9D9D9,prompt:#0099BD,hl+:#719899 --height=80% --layout=reverse --info=inline --border --margin=1 --padding=1'
+    end
+
+    function theme
+        switch (uname)
+            case Darwin
+                set -l val (defaults read -g AppleInterfaceStyle 2>/dev/null)
+                if test val = Dark
+                    dark
+                else
+                    light
+                end
+            case "*"
+                dark
+        end
+    end
 
     function goto
         cd (find ~ ~/src ~/go/src ~/src/kubecost -maxdepth 1 -type d | grep -v "/\." | sort -u | fzf)

@@ -1,0 +1,3 @@
+krew (then install ctx ns)
+setup for gcloud cli (make sure to use correct arch, scripts do not factor it in)
+setup for azure cli

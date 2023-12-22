@@ -4,29 +4,28 @@ read git_username
 echo git email
 read git_email
 
-#if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-#  sudo apt-get update
-#  sudo apt-get install zsh build-essential
-#  chsh -s /bin/zsh
-#fi
-
 echo Checking for brew...
 if ! [ command -v brew ] &>/dev/null; then
-	echo Installing brew...
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-		echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>~/.zprofile
-		eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-	elif [[ "$OSTYPE" == "darwin"* ]]; then
+	if [[ "$OSTYPE" == "darwin"* ]]; then
+		echo Installing brew...
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 		echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>~/.zprofile
 		eval "$(/opt/homebrew/bin/brew shellenv)"
+		echo Installing brew packages from Brewfile...
+		brew bundle
 	fi
 fi
 
-echo Installing brew packages from Brewfile...
-#  brew bundle;
-
 if [[ "$OSTYPE" == "darwin"* ]]; then
+
+	if ! [ command -v brew ] &>/dev/null; then
+		echo Installing brew...
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+		echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>~/.zprofile
+		eval "$(/opt/homebrew/bin/brew shellenv)"
+	fi
+	echo Installing brew packages from Brewfile...
+	brew bundle
 	echo Instaling Mac applications...
 	brew bundle --file=casks.Brewfile
 
@@ -69,6 +68,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
 	echo Copying Karabiner configuration...
 	cp -r ./karabiner ~/.config
+
+	echo Installing fzf...
+	yes | $(brew --prefix)/opt/fzf/install
 fi
 
 echo Moving .gitignore to .gitignore.pre_bootstrap...
@@ -95,9 +97,6 @@ sudo touch /usr/local/bin/cht.sh
 sudo curl -s https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh
 sudo chmod +x /usr/local/bin/cht.sh
 curl https://cheat.sh/:zsh --create-dirs >~/.zsh/_cht
-
-echo Installing fzf...
-yes | $(brew --prefix)/opt/fzf/install
 
 echo Moving .tmux.conf to .tmux_conf.pre_bootstrap...
 mv ~/.tmux.conf ~/.tmux_conf.pre_bootstrap
