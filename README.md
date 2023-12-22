@@ -17,25 +17,16 @@ Personal setup for MacOS and Linux Development Environments
 
 ### Manual Imports
 
-- Iterm2
-  - Import `iterm2/iterm2_profile.json`
-  - Import `iterm2/monokai-pro-spectrum.itermcolors`
-  - Import `iterm2/night-owl-light.itermcolors`
-  - [light/dark theme switching](https://gist.github.com/jamesmacfie/2061023e5365e8b6bfbbc20792ac90f8)
-  - Theme : minimal
-  - Profiles -> Keys -> Left + Right Option -> Set to `Esc+`
 - `kubectl krew completion zsh >> ~/.zsh/_krew`
-- pprof - `go install github.com/google/pprof@latest`
 - go pseudo-monorepos - `go work init`
 - neovim
-  - [packer.nvim](https://github.com/wbthomason/packer.nvim)
   - `pip3 install pynvim`
   - `npx npm i -g neovim`
 - tmux italics
   - `/usr/bin/tic -x -o $HOME/.local/share/terminfo tmux-256color.src`
   - edit pairs value in `tmux-256color.src` to `pairs#32767` on macOS
   - `/opt/homebrew/Cellar/ncurses/6.4/bin/infocmp -x tmux-256color > ~/tmux-256color.src`
-  - [skhd/yabai - fix slow response](https://github.com/koekeishiya/skhd/issues/150)
+- [skhd/yabai - fix slow response](https://github.com/koekeishiya/skhd/issues/150)
 - k9s - dump skin.yml in config directory from `k9s info`
 
 ### Opinionated MacOS Personal Preferences (that are not scripted)
@@ -58,9 +49,11 @@ Personal setup for MacOS and Linux Development Environments
   - [Arial font kerning fix](https://bugzilla.mozilla.org/show_bug.cgi?id=1366880)
 - Amethyst
 
-## Known Limitations
+## Fedora
 
-- Linux - Brewfile may fail to install some packages, a manual re-run with `brew install` or `brew reinstall` should fix it.
+- enable coprs
+- install dnf packages
+- run manual and go installs if arm64, otherwise strip down brewfile
 
 ## Credits
 

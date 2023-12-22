@@ -1,2 +1,3 @@
 go install sigs.k8s.io/kind@v0.20.0
 go install github.com/peak/s5cmd/v2@master
+go install github.com/google/pprof@latest
