@@ -18,7 +18,7 @@ fi
 
 PATH="$PATH:/$HOME/.local/bin"
 # for versioned duckdb executable
-PATH="$PATH:/$HOME/src/kubecost"
+PATH="$PATH:/$HOME/src/bin"
 
 # powerlevel10k theme
 source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme
