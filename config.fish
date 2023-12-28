@@ -12,7 +12,7 @@ if status is-interactive
     #         set TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo
     # end
 
-    fish_add_path $HOME/src/bin/ $HOME/.local/bin /opt/homebrew/bin/ $HOME/go/bin
+    fish_add_path $HOME/src/bin/ $HOME/.local/bin /opt/homebrew/bin/ $HOME/go/bin $HOME/.local/bin
 
     set EDITOR nvim
     alias vim="nvim"
