@@ -1,7 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
   keys = {
-    { "<leader>ff", require("telescope.builtin").find_files, desc = "Find Files" },
     {
       "<leader>fp",
       function()
