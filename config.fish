@@ -14,7 +14,7 @@ if status is-interactive
 
     set -U fish_greeting # set greeting to empty
 
-    fish_add_path $HOME/src/bin/ $HOME/.local/bin /opt/homebrew/bin/ $HOME/go/bin $HOME/.local/bin $HOME/.krew/bin
+    fish_add_path $HOME/src/bin/ $HOME/.local/bin /opt/homebrew/bin/ /home/linuxbrew/.linuxbrew/bin $HOME/go/bin $HOME/.local/bin $HOME/.krew/bin
 
     set EDITOR nvim
     alias vim="nvim"
