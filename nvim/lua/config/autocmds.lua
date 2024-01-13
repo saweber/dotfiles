@@ -8,5 +8,5 @@ vim.api.nvim_create_user_command("Dark", function()
 end, {})
 vim.api.nvim_create_user_command("Light", function()
   vim.o.background = "light"
-  vim.cmd("colorscheme github_light")
+  vim.cmd("colorscheme onedark")
 end, {})

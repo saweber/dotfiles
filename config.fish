@@ -21,7 +21,9 @@ if status is-interactive
 
     abbr --add --position command k kubectl
     alias kubectx="kubectl ctx"
+    alias kctx="kubectl ctx"
     alias kubens="kubectl ns"
+    alias kns="kubectl ns"
 
     set AWS_PROFILE default
     alias awsp='export AWS_PROFILE=$(aws configure list-profiles | fzf)' # switch aws profiles

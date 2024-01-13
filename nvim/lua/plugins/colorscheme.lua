@@ -1,28 +1,42 @@
 if vim.env.TERM_PROFILE == "Terminal" then
   return {
-    { "projekt0n/github-nvim-theme" },
     {
       "loctvl842/monokai-pro.nvim",
       opts = {
         filter = "spectrum",
+      },
+    },
+    { "sainnhe/sonokai" },
+    {
+      "navarasu/onedark.nvim",
+      opts = {
+        style = "cool",
       },
     },
     {
       "LazyVim/LazyVim",
       opts = {
-        colorscheme = "github_light",
+        colorscheme = "onedark",
       },
     },
   }
 else
   return {
-    { "projekt0n/github-nvim-theme" },
     {
       "loctvl842/monokai-pro.nvim",
       opts = {
         filter = "spectrum",
       },
     },
+    { "sainnhe/sonokai" },
+    {
+      "navarasu/onedark.nvim",
+      opts = {
+        style = "light",
+      },
+    },
+    { "rebelot/kanagawa.nvim" },
+    { "navarasu/onedark.nvim" },
     {
       "LazyVim/LazyVim",
       opts = {
