@@ -14,7 +14,6 @@ if wezterm.config_builder then
 end
 
 -- UI
--- config.enable_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 
 -- Fonts
@@ -24,7 +23,7 @@ config.warn_about_missing_glyphs = false -- turn off annoying notifications abou
 
 config.font_size = 14.0
 if is_fedora then
-	config.font_size = 10.0
+	config.font_size = 12.0
 elseif is_asahi then
 	config.font_size = 11.0
 end
@@ -52,7 +51,7 @@ config.color_scheme = scheme_for_appearance(get_appearance())
 if is_fedora then
 	local gpus = wezterm.gui.enumerate_gpus()
 	config.webgpu_preferred_adapter = gpus[2]
-	config.front_end = "WebGpu"
+	config.front_end = "OpenGL"
 	config.enable_wayland = true
 end
 

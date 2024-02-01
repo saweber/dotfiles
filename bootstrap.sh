@@ -76,7 +76,7 @@ fi
 echo Moving .gitignore to .gitignore.pre_bootstrap...
 mv ~/.gitignore ~/.gitignore.pre_bootstrap
 echo Linking .gitignore...
-ln -sf ~/$(pwd)/gitignore $(echo $HOME)/.gitignore
+ln -sf $(pwd)/gitignore $(echo $HOME)/.gitignore
 
 echo Configuring git...
 git config --global core.editor nvim
@@ -88,15 +88,10 @@ git config --global user.name $git_username
 git config --global user.email $git_email
 git config --global core.excludesfile ~/.gitignore
 
-echo Downloading docker completions...
-curl -L https://raw.githubusercontent.com/docker/compose/1.29.2/contrib/completion/zsh/_docker-compose -o ~/.zsh/_docker-compose --create-dirs
-curl -L https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker -o ~/.zsh/_docker --create-dirs
-
 echo Downloading cht.sh with completions...
 sudo touch /usr/local/bin/cht.sh
 sudo curl -s https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh
 sudo chmod +x /usr/local/bin/cht.sh
-curl https://cheat.sh/:zsh --create-dirs >~/.zsh/_cht
 
 echo Moving .tmux.conf to .tmux_conf.pre_bootstrap...
 mv ~/.tmux.conf ~/.tmux_conf.pre_bootstrap
@@ -106,37 +101,15 @@ echo Linking .tmux.conf...
 mkdir -p ~/.config/tmux
 ln -sf $(pwd)/tmux.conf $(echo $HOME)/.config/tmux/tmux.conf
 
-echo Moving .zshrc to .zsrhc.pre_bootstrap...
-mv ~/.zshrc ~/.zshrc.pre_bootstrap
-echo Linking .zshrc...
-ln -sf $(pwd)/zshrc $(echo $HOME)/.zshrc
-
-echo Moving .p10k.zsh to .p10k_zsh.pre_bootstrap...
-mv ~/.p10k.zsh ~/.p10k_zsh.pre_bootstrap
-echo Linking .p10k.zsh...
-ln -sf $(pwd)/p10k.zsh $(echo $HOME)/.p10k.zsh
-
 echo Moving .config/wezterm to .config/wezterm.pre_boostrap...
 mv -r ~/.config/wezterm ~/.config/wezterm.pre_boostrap
 echo Linking .config/wezterm.lua to wezterm
 ln -sf $(pwd)/wezterm.lua $(echo $HOME)/.config/wezterm/wezterm.lua
 
 echo Moving .config/fish/config.fish to .config/fish/config_fish.pre_boostrap...
-mv -r ~/.config/fish/config.fish ~/.config/fish/config_fish.pre_boostrap
+mv ~/.config/fish/config.fish ~/.config/fish/config_fish.pre_boostrap
 echo Linking .config/fish/config.fish to config.fish
 ln -sf $(pwd)/config.fish $(echo $HOME)/.config/fish/config.fish
-
-if [[ "$OSTYPE" == "darwin"* ]]; then
-	echo Moving .config/yabai to .config/yabai.pre_boostrap...
-	mv -r ~/.config/yabai ~/.config/yabairc.pre_boostrap
-	echo Linking .config/yabai.lua to yabai
-	ln -sf $(pwd)/yabairc $(echo $HOME)/.config/yabai/yabairc
-
-	echo Moving .config/skhd to .config/skhd.pre_boostrap...
-	mv -r ~/.config/skhd ~/.config/skhd.pre_boostrap
-	echo Linking .config/skhd/skhdrc to skhd
-	ln -sf $(pwd)/skhdrc $(echo $HOME)/.config/skhd/skhdrc
-fi
 
 echo Moving .config/nvim to .config/nvim.pre_boostrap...
 mv -r ~/.config/nvim ~/.config/nvim.pre_boostrap
@@ -148,9 +121,9 @@ mv ~/.ideavimrc ~/.ideavimrc.pre_bootstrap
 echo Linking .ideavimrc for IntelliJ...
 ln -sf $(pwd)/ideavimrc $(echo $HOME)/.ideavimrc
 
-if ! test -f "~/.credentials"]; then
+if ! test -f "~/.credentials"; then
 	echo No .credentials file found, creating empty .credentials file...
 	touch ~/.credentials
 fi
 
-echo Done. Run "source ~/.zshrc" or open a new terminal.
+echo Done.
