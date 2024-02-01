@@ -16,7 +16,7 @@ if status is-interactive
 
     fish_add_path $HOME/src/bin/ $HOME/.local/bin /opt/homebrew/bin/ /home/linuxbrew/.linuxbrew/bin $HOME/go/bin $HOME/.local/bin $HOME/.krew/bin
 
-    set EDITOR nvim
+    set -gx EDITOR nvim
     alias vim="nvim"
 
     abbr --add --position command k kubectl
@@ -29,11 +29,11 @@ if status is-interactive
     alias awsp='export AWS_PROFILE=$(aws configure list-profiles | fzf)' # switch aws profiles
     # alias awsls="aws --endpoint-url=http://localhost:4566" # aws cli shortcut for working with localstack
 
-    # set GO111MODULE on
+    set -gx GO111MODULE on
     # set GOHOME $HOME/go
     # set GOPATH $HOME/go
     # set GOBIN $GOPATH/bin
-    set GOPRIVATE github.com
+    set -gx GOPRIVATE github.com
 
     source ~/.credentials
 
