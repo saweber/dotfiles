@@ -20,12 +20,14 @@ if status is-interactive
     alias vim="nvim"
 
     abbr --add --position command k kubectl
-    alias kubectx="kubectl ctx"
     alias kctx="kubectl ctx"
-    alias kubens="kubectl ns"
     alias kns="kubectl ns"
+    alias kd="kubctl describe"
+    alias kg="kubectl get"
+    alias kl="kubectl logs"
 
-    set AWS_PROFILE default
+    set AWS_PROFILE 297945954695_Engineering_Developers
+
     alias awsp='export AWS_PROFILE=$(aws configure list-profiles | fzf)' # switch aws profiles
     # alias awsls="aws --endpoint-url=http://localhost:4566" # aws cli shortcut for working with localstack
 
