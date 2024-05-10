@@ -21,7 +21,7 @@ config.font = wezterm.font("JetBrains Mono")
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" } -- disable ligatures
 config.warn_about_missing_glyphs = false -- turn off annoying notifications about a missing glyph
 
-config.font_size = 14.0
+config.font_size = 13.0
 if is_fedora then
 	config.font_size = 12.0
 elseif is_asahi then
@@ -46,13 +46,5 @@ local function scheme_for_appearance(appearance)
 end
 
 config.color_scheme = scheme_for_appearance(get_appearance())
-
--- hack around bad NVIDIA / Wayland support (probably NVIDIA's fault)
-if is_fedora then
-	local gpus = wezterm.gui.enumerate_gpus()
-	config.webgpu_preferred_adapter = gpus[2]
-	config.front_end = "OpenGL"
-	config.enable_wayland = true
-end
 
 return config

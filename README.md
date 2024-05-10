@@ -28,6 +28,9 @@ Personal setup for MacOS and Linux Development Environments
   - `/opt/homebrew/Cellar/ncurses/6.4/bin/infocmp -x tmux-256color > ~/tmux-256color.src`
 - [skhd/yabai - fix slow response](https://github.com/koekeishiya/skhd/issues/150)
 - k9s - dump skin.yml in config directory from `k9s info`
+- fisher
+  - fisher install evanlucas/fish-kubectl-completions
+  - fisher install lgathy/google-cloud-sdk-fish-completion
 
 ### Opinionated MacOS Personal Preferences (that are not scripted)
 
