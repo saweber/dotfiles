@@ -22,13 +22,12 @@ if status is-interactive
     alias kd="kubctl describe"
     alias kg="kubectl get"
     alias kl="kubectl logs"
-    alias kgc="~/src/kgc/kgc.sh"
+    # alias kgc="~/src/kgc/kgc.sh"
 
     # Enable AWS CLI autocompletion: github.com/aws/aws-cli/issues/1079
     complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
     alias awsp='export AWS_PROFILE=$(aws configure list-profiles | fzf)' # switch aws profiles
     # alias awsls="aws --endpoint-url=http://localhost:4566" # aws cli shortcut for working with localstack
-    set -gx AWS_PROFILE 297945954695_Engineering_Developers
 
     # depot does not install to a standard directory
     set DEPOT_INSTALL_DIR /home/steven/.depot/bin
@@ -68,7 +67,7 @@ if status is-interactive
     theme
 
     function goto
-        cd (find ~ ~/src ~/go/src ~/src/kubecost -maxdepth 1 -type d | grep -v "/\." | sort -u | fzf)
+        cd (find ~ ~/src ~/go/src -maxdepth 1 -type d | grep -v "/\." | sort -u | fzf)
     end
     bind \cg "goto; commandline -f repaint"
 
@@ -76,4 +75,5 @@ if status is-interactive
         cht.sh $argv | bat -p
     end
 
+    # starship init fish | source
 end

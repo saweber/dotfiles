@@ -27,6 +27,7 @@ nodejs
 ripgrep
 rlwrap
 rust
+starship
 tig
 tldr
 tmux
