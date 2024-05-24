@@ -1,13 +1,21 @@
 if status is-interactive
 
-    if test $TERM_PROGRAM = WezTerm
+    if test "$TERM_PROGRAM" = WezTerm
         tmux
         commandline -f repaint
     end
 
     set -U fish_greeting # set greeting to empty
 
-    fish_add_path $HOME/src/bin/ $HOME/.local/bin /opt/homebrew/bin/ /home/linuxbrew/.linuxbrew/bin $HOME/go/bin $HOME/.local/bin $HOME/.krew/bin
+    fish_add_path $HOME/src/bin/ $HOME/.local/bin /opt/homebrew/bin/ /home/linuxbrew/.linuxbrew/bin $HOME/go/bin $HOME/.local/bin $HOME/.krew/bind
+
+    if status --is-login
+        eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    end
+
+    if test -d /home/linuxbrew/.linuxbrew/share/fish/vendor_completions.d
+        set -gx fish_complete_path $fish_complete_path /home/linuxbrew/.linuxbrew/share/fish/vendor_completions.d
+    end
 
     set -gx EDITOR nvim
     alias vim="nvim"
@@ -29,17 +37,11 @@ if status is-interactive
     alias awsp='export AWS_PROFILE=$(aws configure list-profiles | fzf)' # switch aws profiles
     # alias awsls="aws --endpoint-url=http://localhost:4566" # aws cli shortcut for working with localstack
 
-    # depot does not install to a standard directory
-    set DEPOT_INSTALL_DIR /home/steven/.depot/bin
-    fish_add_path $DEPOT_INSTALL_DIR
-
     set -gx GO111MODULE on
     # set GOHOME $HOME/go
     # set GOPATH $HOME/go
     # set GOBIN $GOPATH/bin
     set -gx GOPRIVATE github.com
-
-    # source ~/.credentials
 
     function dark
         set -gx TERM_PROFILE Dark
@@ -75,5 +77,8 @@ if status is-interactive
         cht.sh $argv | bat -p
     end
 
-    # starship init fish | source
+    zoxide init fish | source
+
+    starship init fish | source
+    enable_transience # transient prompt for starship
 end

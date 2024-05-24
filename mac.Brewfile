@@ -22,8 +22,8 @@ cask "karabiner-elements"
 #cask "keepassxc"
 #cask "monitorcontrol"
 #cask "rectangle"
-cask "koekeishiya/formulae/skhd"
-cask "koekeishiya/formulae/yabai"
+# cask "koekeishiya/formulae/skhd"
+# cask "koekeishiya/formulae/yabai"
 
 # dependencies
 # brew "blueutil" # for alfred airpod plugin
@@ -46,8 +46,8 @@ cask "spotify"
 
 # communications
 # cask "tuple"
-cask "slack"
-cask "zoom"
+# cask "slack"
+# cask "zoom"
 
 # productivity
 cask "obsidian"

@@ -66,7 +66,7 @@ brew "kubectl"
 brew "kubectx"
 tap "derailed/k9s"
 brew "derailed/k9s/k9s"
-brew "hidetatz/tap/kubecolor"
+brew "kubecolor"
 
 # github cli
 # brew "act" # for testing github actions
