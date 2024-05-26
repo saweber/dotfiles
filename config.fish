@@ -86,6 +86,10 @@ if status is-interactive
         cht.sh $argv | bat -p
     end
 
+    #if test -f "$(brew --prefix)/share/google-cloud-sdk/path.fish.inc"
+    #    source "$(brew --prefix)/share/google-cloud-sdk/path.fish.inc"
+    #end
+
     zoxide init fish | source
 
     starship init fish | source
