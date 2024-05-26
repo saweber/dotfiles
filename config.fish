@@ -10,11 +10,20 @@ if status is-interactive
     fish_add_path $HOME/src/bin/ $HOME/.local/bin /opt/homebrew/bin/ /home/linuxbrew/.linuxbrew/bin $HOME/go/bin $HOME/.local/bin $HOME/.krew/bind
 
     if status --is-login
-        eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+        if test -d /home/linuxbrew/.linuxbrew/
+            eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+        end
+        if test -d /opt/homebrew/
+            eval (/opt/homebrew/bin/brew shellenv)
+        end
     end
 
     if test -d /home/linuxbrew/.linuxbrew/share/fish/vendor_completions.d
         set -gx fish_complete_path $fish_complete_path /home/linuxbrew/.linuxbrew/share/fish/vendor_completions.d
+    end
+
+    if test -d /opt/homebrew/share/fish/vendor_completions.d
+        set -gx fish_complete_path $fish_complete_path /opt/homebrew/share/fish/vendor_completions.d
     end
 
     set -gx EDITOR nvim
