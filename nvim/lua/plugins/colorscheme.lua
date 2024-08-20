@@ -29,12 +29,7 @@ return {
     },
   },
   { "sainnhe/sonokai" },
-  {
-    "navarasu/onedark.nvim",
-    opts = {
-      style = "light",
-    },
-  },
+  { "projekt0n/github-nvim-theme" },
   {
     "LazyVim/LazyVim",
     opts = {

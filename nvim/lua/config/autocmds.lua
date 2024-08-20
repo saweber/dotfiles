@@ -6,7 +6,11 @@ vim.api.nvim_create_user_command("Dark", function()
   vim.o.background = "dark"
   vim.cmd("colorscheme monokai-pro")
 end, {})
+vim.api.nvim_create_user_command("Medium", function()
+  vim.o.background = "dark"
+  vim.cmd("colorscheme sonokai")
+end, {})
 vim.api.nvim_create_user_command("Light", function()
   vim.o.background = "light"
-  vim.cmd("colorscheme onedark")
+  vim.cmd("colorscheme github_light")
 end, {})
