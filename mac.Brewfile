@@ -16,14 +16,13 @@ cask "google-cloud-sdk" # glcloud installer
 
 # useful macOS utilities
 cask "alfred"
-cask "bartender" 
-#cask "bettertouchtool"
+# cask "bettertouchtool"
+cask "hiddenbar"
 cask "karabiner-elements"
 #cask "keepassxc"
-#cask "monitorcontrol"
-#cask "rectangle"
-# cask "koekeishiya/formulae/skhd"
-# cask "koekeishiya/formulae/yabai"
+cask "monitorcontrol"
+cask "nikitabobko/tap/aerospace"
+# cask "rectangle"
 
 # dependencies
 # brew "blueutil" # for alfred airpod plugin
@@ -31,7 +30,6 @@ cask "karabiner-elements"
 # software dev applications
 cask "docker"
 #cask "podman-desktop"
-#cask "iterm2"
 cask "jetbrains-toolbox"
 cask "postman"
 cask "visual-studio-code"

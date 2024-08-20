@@ -21,7 +21,7 @@ config.font = wezterm.font("JetBrains Mono")
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" } -- disable ligatures
 config.warn_about_missing_glyphs = false -- turn off annoying notifications about a missing glyph
 
-config.font_size = 13.0
+config.font_size = 14.0
 if is_fedora then
 	config.font_size = 12.0
 elseif is_asahi then
