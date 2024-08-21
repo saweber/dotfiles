@@ -26,7 +26,6 @@ Personal setup for MacOS and Linux Development Environments
   - `/usr/bin/tic -x -o $HOME/.local/share/terminfo tmux-256color.src`
   - edit pairs value in `tmux-256color.src` to `pairs#32767` on macOS
   - `/opt/homebrew/Cellar/ncurses/6.4/bin/infocmp -x tmux-256color > ~/tmux-256color.src`
-- [skhd/yabai - fix slow response](https://github.com/koekeishiya/skhd/issues/150)
 - k9s - dump skin.yml in config directory from `k9s info`
 - fisher
   - fisher install evanlucas/fish-kubectl-completions
@@ -39,7 +38,6 @@ Personal setup for MacOS and Linux Development Environments
     - Modifier Keys -> Set Caps Lock to Escape
     - Check `Use F1, F2, etc. keys as Function Keys`
     - Shortcuts - go through and disable unused shortcuts - reduce conflicts with IntelliJ and VS Code
-    - Mission Control - Switch to Desktop {n} - Ctrl Alt Shift {n}
   - Mouse
     - Uncheck Scroll direction: Natural
   - Spotlight
@@ -47,10 +45,6 @@ Personal setup for MacOS and Linux Development Environments
     - Use Alfred instead
 - Desktop
   - Put Screenshots folder in dock
-- Firefox
-  - Set fixed-width font to 'JetBrains Mono'
-  - [Arial font kerning fix](https://bugzilla.mozilla.org/show_bug.cgi?id=1366880)
-- Amethyst
 
 ## Fedora
 

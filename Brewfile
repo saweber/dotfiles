@@ -5,19 +5,11 @@ tap "homebrew/core"
 brew "make" # required by powerlevel10k on linux
 brew "gcc" # required by powerlevel10k, zsh on linux
 
-# zsh
-# tap "romkatv/powerlevel10k"
-# brew "romkatv/powerlevel10k/powerlevel10k"
-# brew "zsh" # macOS ships with an ancient version by default
-# brew "zsh-autosuggestions"
-# brew "zsh-completions"
-# brew "zsh-syntax-highlighting"
-# brew "zsh-vi-mode"
-
 # cli tools
 brew "bat" # colorize man pages
 brew "fd" # for telescope.nvim # fd-find
 brew "fish"
+brew "fisher" # fish package manager
 brew "fzf"
 brew "fx" # for json viewing
 brew "git"
@@ -49,11 +41,13 @@ brew "go"
 brew "delve"
 
 # node
-# brew "volta"
+brew "node"
+brew "volta"
 # brew "pnpm"
 
 # python
-# brew "pyenv"
+brew "python3"
+brew "pyenv"
 
 # rust
 brew "rustup"
@@ -68,9 +62,9 @@ tap "derailed/k9s"
 brew "derailed/k9s/k9s"
 brew "kubecolor"
 
-# github cli
+# github
 # brew "act" # for testing github actions
-# brew "gh"
+brew "gh"
 
 # infrastructure
 # brew "terraform"
