@@ -1,28 +1,25 @@
 # homebrew taps
 tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/core"
 
 # set arguments for all 'brew install --cask' commands
 cask_args appdir: "/Applications", require_sha: false
 
 # fonts
-tap "homebrew/cask-fonts"
 cask "font-jetbrains-mono"
 
 # cli tools
-cask "session-manager-plugin" # AWS session manager
+# cask "session-manager-plugin" # AWS session manager
 cask "google-cloud-sdk" # glcloud installer
 
 # useful macOS utilities
 cask "alfred"
-# cask "bettertouchtool"
-cask "hiddenbar"
+cask "bettertouchtool"
+cask "istat-menus"
+cask "jordanbaird-ice"
 cask "karabiner-elements"
-#cask "keepassxc"
 cask "monitorcontrol"
 cask "nikitabobko/tap/aerospace"
-# cask "rectangle"
+cask "rectangle"
 
 # dependencies
 # brew "blueutil" # for alfred airpod plugin
@@ -39,20 +36,13 @@ cask "wezterm"
 cask "firefox"
 cask "google-chrome"
 
-# other macOS applications
-cask "spotify"
-
 # communications
 # cask "tuple"
-# cask "slack"
+cask "slack"
 # cask "zoom"
 
 # productivity
 cask "obsidian"
-
-# security
-cask "authy"
-cask "bitwarden"
 
 # jmeter
 # brew "jmeter"

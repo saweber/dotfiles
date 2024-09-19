@@ -5,8 +5,8 @@
 # But the feature is very helpful.
 # Normalizations eliminate all sorts of weird tree configurations that don't make sense.
 # Give normalizations a chance and enable them back.
-enable-normalization-flatten-containers = false
-enable-normalization-opposite-orientation-for-nested-containers = false
+# enable-normalization-flatten-containers = false
+# enable-normalization-opposite-orientation-for-nested-containers = false
 
 # Mouse follows focus when focused monitor changes
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
@@ -30,17 +30,17 @@ alt-shift-e = 'move down'
 alt-shift-i = 'move up'
 alt-shift-o = 'move right'
 
+alt-shift-m = ['join-with left', 'mode main']
+alt-shift-comma = ['join-with down', 'mode main']
+alt-shift-period = ['join-with up', 'mode main']
+alt-shift-slash = ['join-with right', 'mode main']
+
 # Consider using 'join-with' command as a 'split' replacement if you want to enable normalizations
-alt-h = 'split horizontal'
-alt-j = 'split vertical'
-
-alt-k = 'fullscreen'
-
-alt-l = 'layout v_accordion'               # 'layout stacking' in i3
-alt-u = 'layout h_accordion'               # 'layout tabbed' in i3
-alt-y = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
-
-alt-semicolon = 'layout floating tiling' # 'floating toggle' in i3
+alt-j = 'fullscreen'
+alt-l = 'layout floating tiling'               # 'floating toggle' in i3
+alt-u = 'layout accordion horizontal vertical'
+alt-y = 'layout tiles horizontal vertical'     # 'layout toggle split' in i3
+alt-semicolon = 'layout v_accordion'           # 'layout stacking' in i3
 
 # Not supported, because this command is redundant in AeroSpace mental model.
 # See: https://nikitabobko.github.io/AeroSpace/guide#floating-windows
@@ -73,6 +73,9 @@ alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-0 = 'move-node-to-workspace 10'
 
 alt-shift-c = 'reload-config'
+
+alt-shift-minus = 'resize smart -50'
+alt-shift-equal = 'resize smart +50'
 
 alt-r = 'mode resize'
 

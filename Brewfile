@@ -1,12 +1,9 @@
 # homebrew taps
 tap "homebrew/bundle"
-tap "homebrew/core"
-
-brew "make" # required by powerlevel10k on linux
-brew "gcc" # required by powerlevel10k, zsh on linux
 
 # cli tools
 brew "bat" # colorize man pages
+brew "bottom"
 brew "fd" # for telescope.nvim # fd-find
 brew "fish"
 brew "fisher" # fish package manager
@@ -20,20 +17,21 @@ brew "just"
 tap "jesseduffield/lazygit/lazygit"
 brew "lazygit"
 brew "neovim"
-brew "peak/tap/s5cmd" #s3 faster + sync
+# brew "peak/tap/s5cmd" #s3 faster + sync
 brew "ripgrep"
 brew "rlwrap" # for cht.sh
+brew "starship"
 brew "tig" # git history cli
 brew "tldr"
 brew "tmux"
 brew "tree" # for showing recursive directory structure
 brew "wget"
-brew "bottom"
+brew "zoxide"
 
 # cloud clis
-brew "azure-cli"
-brew "awscli"
-tap "aws/tap"
+# brew "azure-cli"
+# brew "awscli"
+# tap "aws/tap"
 # brew "eks-node-viewer"
 
 # golang

@@ -12,24 +12,34 @@ Personal setup for MacOS and Linux Development Environments
 
 ### Install from Mac App Store
 
+- Bitwarden
+- Dark Reader
 - Overcast
-- HotKey
+- Vimari
+- ZSA Keymapp
 
-### Manual Imports
+### Manual Steps
 
-- `kubectl krew completion zsh >> ~/.zsh/_krew`
 - go pseudo-monorepos - `go work init`
 - neovim
   - `pip3 install pynvim`
   - `npx npm i -g neovim`
+- fisher
+  - fisher install evanlucas/fish-kubectl-completions
+  - fisher install lgathy/google-cloud-sdk-fish-completion
+- fish
+  - `sudo vim /etc/shells`
+  - add fish
+  - `chsh -s $(which fish)`
+- better touch tool import settings
+
+### Maybe not needed anymore?
+
 - tmux italics
   - `/usr/bin/tic -x -o $HOME/.local/share/terminfo tmux-256color.src`
   - edit pairs value in `tmux-256color.src` to `pairs#32767` on macOS
   - `/opt/homebrew/Cellar/ncurses/6.4/bin/infocmp -x tmux-256color > ~/tmux-256color.src`
 - k9s - dump skin.yml in config directory from `k9s info`
-- fisher
-  - fisher install evanlucas/fish-kubectl-completions
-  - fisher install lgathy/google-cloud-sdk-fish-completion
 
 ### Opinionated MacOS Personal Preferences (that are not scripted)
 

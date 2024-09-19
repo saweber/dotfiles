@@ -27,7 +27,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   echo Installing brew packages from Brewfile...
   brew bundle
   echo Instaling Mac applications...
-  brew bundle --file=casks.Brewfile
+  brew bundle --file=mac.Brewfile
 
   echo Changing macOS defaults...
 
@@ -88,7 +88,7 @@ git config --global core.excludesfile ~/.gitignore
 
 echo Downloading cht.sh with completions...
 sudo touch /usr/local/bin/cht.sh
-sudo curl -s https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh
+curl -s https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh && sudo chmod +x /usr/local/bin/cht.sh
 sudo chmod +x /usr/local/bin/cht.sh
 
 echo Linking .tmux.conf...
@@ -96,10 +96,11 @@ mkdir -p ~/.config/tmux
 ln -sf $(pwd)/tmux.conf $(echo $HOME)/.config/tmux/tmux.conf
 
 echo Linking .config/wezterm.lua to wezterm
+mkdir -p ~/.config/wezterm
 ln -sf $(pwd)/wezterm.lua $(echo $HOME)/.config/wezterm/wezterm.lua
 
 echo Linking .config/fish/config.fish to config.fish
-mkdir -p ~/config/fish
+mkdir -p ~/.config/fish
 ln -sf $(pwd)/config.fish $(echo $HOME)/.config/fish/config.fish
 
 echo Linking .config/nvim directory to nvim
@@ -109,7 +110,7 @@ echo Linking .ideavimrc for IntelliJ...
 ln -sf $(pwd)/ideavimrc $(echo $HOME)/.ideavimrc
 
 echo Linking .config/aerospace/aerospace.toml...
-mkdir -p ~/config/aerospace
+mkdir -p ~/.config/aerospace
 ln -sf $(pwd)/aerospace.toml $(echo $HOME)/.config/aerospace/aerospace.toml
 
 if ! test -f "~/.credentials"; then
