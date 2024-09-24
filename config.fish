@@ -46,8 +46,12 @@ if status is-interactive
     alias awsp='export AWS_PROFILE=$(aws configure list-profiles | fzf)' # switch aws profiles
     # alias awsls="aws --endpoint-url=http://localhost:4566" # aws cli shortcut for working with localstack
 
-    set -gx GO111MODULE on
-    # set GOHOME $HOME/go
+    # copilot
+    alias suggest='gh copilot suggest'
+    alias explain='gh copilot explain'
+
+    set -gx GO111MODULE on1
+    set GOHOME $HOME/go
     # set GOPATH $HOME/go
     # set GOBIN $GOPATH/bin
     set -gx GOPRIVATE github.com
