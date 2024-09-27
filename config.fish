@@ -7,7 +7,7 @@ if status is-interactive
 
     set -U fish_greeting # set greeting to empty
 
-    fish_add_path $HOME/src/bin/ $HOME/.local/bin /opt/homebrew/bin/ /home/linuxbrew/.linuxbrew/bin $HOME/go/bin $HOME/.local/bin $HOME/.krew/bind
+    fish_add_path $HOME/.volta/bin/ $HOME/src/bin/ $HOME/.local/bin /opt/homebrew/bin/ /home/linuxbrew/.linuxbrew/bin $HOME/go/bin $HOME/.local/bin $HOME/.krew/bind
 
     if status --is-login
         if test -d /home/linuxbrew/.linuxbrew/
@@ -17,6 +17,8 @@ if status is-interactive
             eval (/opt/homebrew/bin/brew shellenv)
         end
     end
+
+    fish_add_path -m $HOME/.volta/bin/ # ensure volta is checked before homebrew
 
     if test -d /home/linuxbrew/.linuxbrew/share/fish/vendor_completions.d
         set -gx fish_complete_path $fish_complete_path /home/linuxbrew/.linuxbrew/share/fish/vendor_completions.d
@@ -93,6 +95,8 @@ if status is-interactive
     #if test -f "$(brew --prefix)/share/google-cloud-sdk/path.fish.inc"
     #    source "$(brew --prefix)/share/google-cloud-sdk/path.fish.inc"
     #end
+
+    set -gx VOLTA_HOME "$HOME/.volta"
 
     zoxide init fish | source
 
