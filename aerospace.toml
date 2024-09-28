@@ -1,24 +1,7 @@
-
-# Reference: https://github.com/i3/i3/blob/next/etc/config
-
-# i3 doesn't have "normalizations" feature that why we disable them here.
-# But the feature is very helpful.
-# Normalizations eliminate all sorts of weird tree configurations that don't make sense.
-# Give normalizations a chance and enable them back.
-# enable-normalization-flatten-containers = false
-# enable-normalization-opposite-orientation-for-nested-containers = false
-
 # Mouse follows focus when focused monitor changes
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 [mode.main.binding]
-# See: https://nikitabobko.github.io/AeroSpace/goodness#open-a-new-window-with-applescript
-# alt-enter = '''exec-and-forget osascript -e '
-# tell application "Terminal"
-#     do script
-#     activate
-# end tell'
-# '''
 
 alt-n = 'focus left'
 alt-e = 'focus down'
@@ -30,25 +13,15 @@ alt-shift-e = 'move down'
 alt-shift-i = 'move up'
 alt-shift-o = 'move right'
 
-alt-shift-m = ['join-with left', 'mode main']
-alt-shift-comma = ['join-with down', 'mode main']
-alt-shift-period = ['join-with up', 'mode main']
-alt-shift-slash = ['join-with right', 'mode main']
+alt-m = ['join-with left', 'mode main']
+alt-comma = ['join-with down', 'mode main']
+alt-period = ['join-with up', 'mode main']
+alt-slash = ['join-with right', 'mode main']
 
-# Consider using 'join-with' command as a 'split' replacement if you want to enable normalizations
-alt-j = 'fullscreen'
-alt-l = 'layout floating tiling'               # 'floating toggle' in i3
-alt-u = 'layout accordion horizontal vertical'
-alt-y = 'layout tiles horizontal vertical'     # 'layout toggle split' in i3
-alt-semicolon = 'layout v_accordion'           # 'layout stacking' in i3
-
-# Not supported, because this command is redundant in AeroSpace mental model.
-# See: https://nikitabobko.github.io/AeroSpace/guide#floating-windows
-#alt-space = 'focus toggle_tiling_floating'
-
-# `focus parent`/`focus child` are not yet supported, and it's not clear whether they
-# should be supported at all https://github.com/nikitabobko/AeroSpace/issues/5
-# alt-a = 'focus parent'
+alt-l = 'fullscreen'
+alt-u = 'layout v_accordion'
+alt-y = 'layout tiles horizontal vertical'
+alt-semicolon = 'layout floating tiling'
 
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
@@ -72,17 +45,5 @@ alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-0 = 'move-node-to-workspace 10'
 
-alt-shift-c = 'reload-config'
-
 alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
-
-alt-r = 'mode resize'
-
-[mode.resize.binding]
-n = 'resize width -50'
-e = 'resize height +50'
-i = 'resize height -50'
-o = 'resize width +50'
-enter = 'mode main'
-esc = 'mode main'
