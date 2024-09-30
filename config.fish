@@ -52,11 +52,9 @@ if status is-interactive
     alias suggest='gh copilot suggest'
     alias explain='gh copilot explain'
 
-    set -gx GO111MODULE on1
+    set -gx GO111MODULE on
     set GOHOME $HOME/go
-    # set GOPATH $HOME/go
-    # set GOBIN $GOPATH/bin
-    set -gx GOPRIVATE github.com
+    set -gx GOPRIVATE github.com/hailtrace/\*,github.com/canopyweather/\*
 
     function dark
         set -gx TERM_PROFILE Dark
