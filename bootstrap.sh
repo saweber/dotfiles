@@ -85,6 +85,7 @@ git config --global --add --bool push.autoSetupRemote true
 git config --global user.name $git_username
 git config --global user.email $git_email
 git config --global core.excludesfile ~/.gitignore
+git config --global url."ssh://git@github.com/".insteadOf "https://github.com/"
 
 echo Downloading cht.sh with completions...
 sudo touch /usr/local/bin/cht.sh

@@ -32,10 +32,6 @@ Personal setup for MacOS and Linux Development Environments
   - add fish
   - `chsh -s $(which fish)`
 - better touch tool import settings
-- github
-  - add to .gitconfig:
-  [url "ssh://git@github.com/"]
-    insteadOf = <https://github.com/>
 
 ### Maybe not needed anymore?
 
