@@ -10,6 +10,7 @@ brew "fisher" # fish package manager
 brew "fzf"
 brew "fx" # for json viewing
 brew "git"
+brew "git-crypt"
 brew "gpg" # for signing git commits
 brew "htop"
 brew "jq"
