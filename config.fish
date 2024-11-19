@@ -7,7 +7,7 @@ if status is-interactive
 
     set -U fish_greeting # set greeting to empty
 
-    fish_add_path $HOME/.volta/bin/ $HOME/src/bin/ $HOME/.local/bin /opt/homebrew/bin/ /home/linuxbrew/.linuxbrew/bin $HOME/go/bin $HOME/.local/bin $HOME/.krew/bind
+    fish_add_path $HOME/src/bin/ $HOME/.local/bin /opt/homebrew/bin/ /home/linuxbrew/.linuxbrew/bin $HOME/go/bin $HOME/.local/bin $HOME/.krew/bind
 
     if status --is-login
         if test -d /home/linuxbrew/.linuxbrew/
@@ -17,8 +17,6 @@ if status is-interactive
             eval (/opt/homebrew/bin/brew shellenv)
         end
     end
-
-    fish_add_path -m $HOME/.volta/bin/ # ensure volta is checked before homebrew
 
     if test -d /home/linuxbrew/.linuxbrew/share/fish/vendor_completions.d
         set -gx fish_complete_path $fish_complete_path /home/linuxbrew/.linuxbrew/share/fish/vendor_completions.d
@@ -44,17 +42,25 @@ if status is-interactive
     # alias kgc="~/src/kgc/kgc.sh"
 
     # Enable AWS CLI autocompletion: github.com/aws/aws-cli/issues/1079
-    complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
-    alias awsp='export AWS_PROFILE=$(aws configure list-profiles | fzf)' # switch aws profiles
+    #complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
+    #alias awsp='export AWS_PROFILE=$(aws configure list-profiles | fzf)' # switch aws profiles
     # alias awsls="aws --endpoint-url=http://localhost:4566" # aws cli shortcut for working with localstack
+
+    # node
+    fish_add_path -m $HOME/.volta/bin/ # ensure volta is checked before homebrew
 
     # copilot
     alias suggest='gh copilot suggest'
     alias explain='gh copilot explain'
 
+    # go
     set -gx GO111MODULE on
     set GOHOME $HOME/go
     set -gx GOPRIVATE github.com/hailtrace/\*,github.com/canopyweather/\*
+
+    # python
+    set -gx PYENV_ROOT "$HOME/.pyenv"
+    fish_add_path $PYENV_ROOT/bin $PYENV_ROOT/shims
 
     function dark
         set -gx TERM_PROFILE Dark
