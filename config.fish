@@ -46,6 +46,15 @@ if status is-interactive
     #alias awsp='export AWS_PROFILE=$(aws configure list-profiles | fzf)' # switch aws profiles
     # alias awsls="aws --endpoint-url=http://localhost:4566" # aws cli shortcut for working with localstack
 
+    function gcp
+        set -l project (gcloud projects list --format="value(projectId)" | fzf)
+
+        if test -n "$project"
+            gcloud config set project "$project"
+            echo "Switched to project: $project"
+        end
+    end
+
     # node
     fish_add_path -m $HOME/.volta/bin/ # ensure volta is checked before homebrew
 
