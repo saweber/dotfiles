@@ -78,14 +78,13 @@ ln -sf $(pwd)/gitignore $(echo $HOME)/.gitignore
 
 echo Configuring git...
 git config --global core.editor nvim
-git config --global push.default simple
 git config --global core.autocrlf input
-git config --global pull.rebase false
+git config --global core.excludesfile ~/.gitignore
+git config --global push.default simple
 git config --global --add --bool push.autoSetupRemote true
+git config --global pull.rebase false
 git config --global user.name $git_username
 git config --global user.email $git_email
-git config --global core.excludesfile ~/.gitignore
-git config --global url."ssh://git@github.com/".insteadOf "https://github.com/"
 
 echo Downloading cht.sh with completions...
 sudo touch /usr/local/bin/cht.sh
