@@ -109,9 +109,11 @@ ln -sf $(pwd)/nvim $(echo $HOME)/.config/nvim
 echo Linking .ideavimrc for IntelliJ...
 ln -sf $(pwd)/ideavimrc $(echo $HOME)/.ideavimrc
 
-echo Linking .config/aerospace/aerospace.toml...
-mkdir -p ~/.config/aerospace
-ln -sf $(pwd)/aerospace.toml $(echo $HOME)/.config/aerospace/aerospace.toml
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  echo Linking .config/aerospace/aerospace.toml...
+  mkdir -p ~/.config/aerospace
+  ln -sf $(pwd)/aerospace.toml $(echo $HOME)/.config/aerospace/aerospace.toml
+fi
 
 if ! test -f "~/.credentials"; then
   echo No .credentials file found, creating empty .credentials file...
