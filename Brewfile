@@ -60,6 +60,7 @@ brew "kubectx"
 tap "derailed/k9s"
 brew "derailed/k9s/k9s"
 brew "kubecolor"
+brew "telepresenceio/telepresence/telepresence-oss"
 
 # github
 # brew "act" # for testing github actions

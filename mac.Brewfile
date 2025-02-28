@@ -25,12 +25,14 @@ cask "rectangle"
 # brew "blueutil" # for alfred airpod plugin
 
 # software dev applications
-cask "docker"
-#cask "podman-desktop"
+#cask "docker"
+cask "podman-desktop"
 cask "jetbrains-toolbox"
+cask "proxyman"
 cask "postman"
 cask "visual-studio-code"
 cask "wezterm"
+cask "zed"
 
 # web browsers
 cask "firefox"
