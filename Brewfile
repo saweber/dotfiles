@@ -4,6 +4,8 @@ tap "homebrew/bundle"
 # cli tools
 brew "bat" # colorize man pages
 brew "bottom"
+brew "btop"
+brew "eza"
 brew "fd" # for telescope.nvim # fd-find
 brew "fish"
 brew "fisher" # fish package manager

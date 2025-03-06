@@ -112,6 +112,9 @@ if status is-interactive
     set -gx VOLTA_HOME "$HOME/.volta"
 
     zoxide init fish | source
+    alias cd="z"
+
+    alias ls="eza"
 
     starship init fish | source
     enable_transience # transient prompt for starship
