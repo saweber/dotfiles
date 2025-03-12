@@ -41,6 +41,9 @@ if status is-interactive
     alias kl="kubectl logs"
     # alias kgc="~/src/kgc/kgc.sh"
 
+    alias tc="telepresence connect"
+    alias tq="telepresence quit"
+
     # Enable AWS CLI autocompletion: github.com/aws/aws-cli/issues/1079
     #complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
     #alias awsp='export AWS_PROFILE=$(aws configure list-profiles | fzf)' # switch aws profiles
