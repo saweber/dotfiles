@@ -27,10 +27,10 @@ Switch One Desktop Down=Meta+Ctrl+Down
 Switch One Desktop Up=Meta+Ctrl+Up
 Switch One Desktop to the Left=Meta+Ctrl+Left
 Switch One Desktop to the Right=Meta+Ctrl+Right
-Switch Window Down=Meta+Alt+Down
-Switch Window Left=Meta+Alt+Left
-Switch Window Right=Meta+Alt+Right
-Switch Window Up=Meta+Alt+Up
+Switch Window Down=Ctrl+Alt+Shift+R
+Switch Window Left=Ctrl+Alt+Shift+A
+Switch Window Right=Ctrl+Alt+Shift+T
+Switch Window Up=Ctrl+Alt+Shift+S
 Switch to Desktop 1=Meta+1
 Switch to Desktop 10=
 Switch to Desktop 11=
@@ -156,7 +156,7 @@ Window to Screen 6=
 Window to Screen 7=
 disableInputCapture=Meta+Shift+Esc
 view_actual_size=Meta+0
-view_zoom_in=Meta+=; Meta++
+view_zoom_in=Meta++; Meta+=
 view_zoom_out=Meta+-
 
 [plasmashell][Global Shortcuts]
