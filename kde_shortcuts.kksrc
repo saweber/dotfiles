@@ -88,7 +88,7 @@ Window Fullscreen=
 Window Grow Horizontal=
 Window Grow Vertical=
 Window Lower=
-Window Maximize=Meta+PgUp
+Window Maximize=Ctrl+Alt+Shift+F
 Window Maximize Horizontal=
 Window Maximize Vertical=
 Window Minimize=Meta+PgDown
@@ -114,7 +114,7 @@ Window Quick Tile Bottom Left=Ctrl+Alt+Shift+Esc
 Window Quick Tile Bottom Right=Ctrl+Alt+Shift+D
 Window Quick Tile Left=Ctrl+Alt+Shift+Q
 Window Quick Tile Right=Ctrl+Alt+Shift+P
-Window Quick Tile Top=Ctrl+Alt+Shift+F
+Window Quick Tile Top=
 Window Quick Tile Top Left=Ctrl+Alt+Shift+Tab
 Window Quick Tile Top Right=Ctrl+Alt+Shift+G
 Window Raise=
@@ -156,17 +156,17 @@ Window to Screen 6=
 Window to Screen 7=
 disableInputCapture=Meta+Shift+Esc
 view_actual_size=Meta+0
-view_zoom_in=Meta++; Meta+=
+view_zoom_in=Meta+=; Meta++
 view_zoom_out=Meta+-
 
 [plasmashell][Global Shortcuts]
 activate application launcher=Meta
-activate task manager entry 1=
+activate task manager entry 1=Ctrl+Alt+!
 activate task manager entry 10=
-activate task manager entry 2=
-activate task manager entry 3=
-activate task manager entry 4=
-activate task manager entry 5=
+activate task manager entry 2=Ctrl+Alt+@
+activate task manager entry 3=Ctrl+Alt+#
+activate task manager entry 4=Ctrl+Alt+$
+activate task manager entry 5=Ctrl+Alt+%
 activate task manager entry 6=
 activate task manager entry 7=
 activate task manager entry 8=
