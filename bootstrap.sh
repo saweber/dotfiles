@@ -85,6 +85,7 @@ git config --global --add --bool push.autoSetupRemote true
 git config --global pull.rebase false
 git config --global user.name $git_username
 git config --global user.email $git_email
+git config --global --add url."git@github.com:".insteadOf "https://github.com/" # fix issues with go get
 
 echo Downloading cht.sh with completions...
 sudo touch /usr/local/bin/cht.sh
