@@ -26,12 +26,12 @@ cask "rectangle"
 
 # software dev applications
 #cask "docker"
+cask "ghostty"
 cask "podman-desktop"
 cask "jetbrains-toolbox"
 cask "proxyman"
 cask "postman"
 cask "visual-studio-code"
-cask "wezterm"
 cask "zed"
 
 # web browsers
