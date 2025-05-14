@@ -8,7 +8,6 @@ if status is-interactive
     set -U fish_greeting # set greeting to empty
 
     fish_add_path $HOME/src/bin/ $HOME/.local/bin /opt/homebrew/bin/ /home/linuxbrew/.linuxbrew/bin $HOME/go/bin $HOME/.local/bin $HOME/.lmstudio/bin
-
     if status --is-login
         if test -d /home/linuxbrew/.linuxbrew/
             eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)

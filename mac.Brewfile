@@ -23,6 +23,7 @@ cask "rectangle"
 
 # dependencies
 # brew "blueutil" # for alfred airpod plugin
+brew "displaypacer" # for alfred resolution changer
 
 # software dev applications
 #cask "docker"
