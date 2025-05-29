@@ -75,8 +75,10 @@ if status is-interactive
 
     # go
     set -gx GO111MODULE on
-    set GOHOME $HOME/go
-    set -gx GOPRIVATE github.com/hailtrace/\*,github.com/canopyweather/\*
+    set -gx GOHOME $HOME/go
+    set -gx GOPROXY 'https://us-central1-go.pkg.dev/hailtrace-host-project/go-packages,https://proxy.golang.org,direct'
+    set -gx GONOPROXY 'github.com/*,golang.org/*'
+    set -gx GOPRIVATE 'hailtrace.com/*'
 
     # python
     set -gx PYENV_ROOT "$HOME/.pyenv"
