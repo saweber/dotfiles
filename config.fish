@@ -77,8 +77,10 @@ if status is-interactive
     set -gx GO111MODULE on
     set -gx GOHOME $HOME/go
     set -gx GOPROXY 'https://us-central1-go.pkg.dev/hailtrace-host-project/go-packages,https://proxy.golang.org,direct'
-    set -gx GONOPROXY 'github.com/*,golang.org/*'
+    set -gx GONOPROXY none
     set -gx GOPRIVATE 'hailtrace.com/*'
+
+    alias gref='GOPROXY=proxy.golang.org go run github.com/GoogleCloudPlatform/artifact-registry-go-tools/cmd/auth@v0.4.0 refresh'
 
     # python
     set -gx PYENV_ROOT "$HOME/.pyenv"
