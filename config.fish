@@ -120,6 +120,25 @@ if status is-interactive
         cht.sh $argv | bat -p
     end
 
+    function envfile
+        set filename ".env"
+        if test (count $argv) -ge 1
+            set filename $argv[1]
+        end
+
+        if not test -f $filename
+            echo "File '$filename' does not exist"
+            return 1
+        end
+
+        for line in (cat $filename | grep -v '^\s*#' | grep -v '^\s*$')
+            set item (string split -m 1 '=' $line)
+            if test (count $item) -eq 2
+                set -gx $item[1] $item[2]
+            end
+        end
+    end
+
     #if test -f "$(brew --prefix)/share/google-cloud-sdk/path.fish.inc"
     #    source "$(brew --prefix)/share/google-cloud-sdk/path.fish.inc"
     #end
