@@ -139,6 +139,8 @@ if status is-interactive
         end
     end
 
+    alias gorefresh='GOPROXY=proxy.golang.org go run github.com/GoogleCloudPlatform/artifact-registry-go-tools/cmd/auth@v0.4.0 refresh'
+
     #if test -f "$(brew --prefix)/share/google-cloud-sdk/path.fish.inc"
     #    source "$(brew --prefix)/share/google-cloud-sdk/path.fish.inc"
     #end
