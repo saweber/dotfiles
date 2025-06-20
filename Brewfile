@@ -40,6 +40,7 @@ brew "zoxide"
 # golang
 brew "go"
 brew "delve"
+brew "protobuf"
 
 # node
 brew "node"
