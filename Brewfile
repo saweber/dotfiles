@@ -34,6 +34,7 @@ brew "zoxide"
 brew "go"
 brew "delve"
 brew "protobuf"
+brew "bufbuild/buf/buf"
 
 # node
 brew "node"

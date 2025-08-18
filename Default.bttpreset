@@ -45,14 +45,14 @@
     "BTTNotchBarNotchMenubarModeHideLeftFixed" : true,
     "BTTMovePastedToTop" : true,
     "BTTMaxAllowedDrawingRotation" : 30,
-    "BTTDidRegisterForUpdateStats" : "4.707",
+    "BTTDidRegisterForUpdateStats" : "5.444",
     "BTTNotchBarNotchWidgetModeHideRightFixed" : false,
     "BTTStageManagerLeaveGap" : true,
     "BTTStageManagerLeftSnappingAreaIncreasePercentage" : 0.125,
     "BTTTpFourFingerSwipeSensitivity" : 0.40000000000000002,
     "BSTMoveTreshold" : 2,
     "BTTHideFomControlStripWhenOpen" : false,
-    "BTTNumberOfStarts" : 5,
+    "BTTNumberOfStarts" : 76,
     "BTTForceNormalClickPressure3F" : 150,
     "showSiriRemoteTab" : true,
     "SIRIScrollSpeed" : 1,
@@ -116,7 +116,7 @@
     "BTTAlwaysShowPresetIndicators" : true,
     "BTTStageManagerIncreaseEvenIfHiding" : true,
     "BTTForcedHidden" : false,
-    "showTouchBarTab" : true,
+    "showTouchBarTab" : false,
     "BTTFreeSpaceAfterBTT" : 20,
     "BTTNotchBarStandardWidgetModeHideRightFixed" : false,
     "BTTTwoFingerTipTapMinSpread" : 0.029999999999999999,
@@ -140,7 +140,7 @@
     "BTTTpThreeFingerSwipeSensitivity" : 0.29999999999999999,
     "BTTCopyImgurURLToClipboard" : true,
     "BTTForceNormalHapticResponse" : 12,
-    "BTTTouchBarSupportEnabled" : true,
+    "BTTTouchBarSupportEnabled" : false,
     "BTTDaysToKeepHistory" : 14,
     "BTTNotchBarNotchMenubarModeHideRightFixed" : true,
     "BTTDefaultTBIconHeight" : 22,
@@ -158,8 +158,24 @@
     "BTTNotchBarNotchMenubarModeHideRightScrollable" : true,
     "BSTSnapAreaDefaultPictoDistanceFromLeft" : 0.10000000149011612
   },
-  "BTTPresetUUID" : "076A33C3-37EA-4F93-85C3-B8009E2B9B2D",
+  "BTTPresetUUID" : "2D5A783D-DE14-4BBA-A040-EC0FBAF7609C",
   "BTTPresetContent" : [
+    {
+      "BTTAppBundleIdentifier" : "com.apple.finder",
+      "BTTAppName" : "Finder",
+      "BTTAppAutoInvertIcon" : 1,
+      "BTTTriggers" : [
+
+      ]
+    },
+    {
+      "BTTAppBundleIdentifier" : "BT.L",
+      "BTTAppName" : "Recently Used",
+      "BTTAppAutoInvertIcon" : 1,
+      "BTTTriggers" : [
+
+      ]
+    },
     {
       "BTTAppBundleIdentifier" : "BT.G",
       "BTTAppName" : "Global",
@@ -170,9 +186,264 @@
       "BTTTriggers" : [
         {
           "BTTActionCategory" : 0,
-          "BTTLastUpdatedAt" : 1726762419.5483119,
+          "BTTLastUpdatedAt" : 1743518973.58585,
+          "BTTTriggerType" : 101,
+          "BTTTriggerTypeDescriptionReadOnly" : "3 Finger Swipe Right",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTUUID" : "6C444BD0-4C5D-4834-AF98-6847463CEC28",
+          "BTTPredefinedActionType" : 366,
+          "BTTPredefinedActionName" : "Empty Placeholder",
+          "BTTEnabled" : 1,
+          "BTTEnabled2" : 1,
+          "BTTOrder" : 1,
+          "BTTAdditionalActions" : [
+            {
+              "BTTActionCategory" : 0,
+              "BTTLastUpdatedAt" : 1743518973.5868421,
+              "BTTTriggerParentUUID" : "6C444BD0-4C5D-4834-AF98-6847463CEC28",
+              "BTTIsPureAction" : true,
+              "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+              "BTTUUID" : "E3125637-8F25-43BF-B281-EB1A49A99992",
+              "BTTEnabled" : 1,
+              "BTTEnabled2" : 1,
+              "BTTOrder" : 6
+            },
+            {
+              "BTTActionCategory" : 3,
+              "BTTLastUpdatedAt" : 1743518986.4255481,
+              "BTTTriggerParentUUID" : "6C444BD0-4C5D-4834-AF98-6847463CEC28",
+              "BTTIsPureAction" : true,
+              "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+              "BTTUUID" : "280CBA6E-3938-4824-932B-8092372F428B",
+              "BTTPredefinedActionType" : 137,
+              "BTTPredefinedActionName" : "Execute Terminal Command (Async, non-blocking)",
+              "BTTTerminalCommand" : "\/opt\/homebrew\/bin\/aerospace workspace \"$(\/\/opt\/homebrew\/bin\/aerospace list-workspaces --monitor mouse --visible)\" && \/\/opt\/homebrew\/bin\/aerospace workspace next",
+              "BTTEnabled" : 1,
+              "BTTEnabled2" : 1,
+              "BTTOrder" : 8
+            }
+          ]
+        },
+        {
+          "BTTActionCategory" : 0,
+          "BTTLastUpdatedAt" : 1743194936.2603731,
+          "BTTTriggerType" : 0,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTUUID" : "73BBE1D7-48D2-4D60-9E81-2FAEE4584285",
+          "BTTPredefinedActionType" : 366,
+          "BTTPredefinedActionName" : "Empty Placeholder",
+          "BTTAdditionalConfiguration" : "393219",
+          "BTTKeyboardShortcutKeyboardType" : 0,
+          "BTTTriggerOnDown" : 1,
+          "BTTLayoutIndependentChar" : "1",
+          "BTTEnabled" : 0,
+          "BTTEnabled2" : 1,
+          "BTTShortcutKeyCode" : 18,
+          "BTTShortcutModifierKeys" : 393216,
+          "BTTOrder" : 0,
+          "BTTAutoAdaptToKeyboardLayout" : 0,
+          "BTTAdditionalActions" : [
+            {
+              "BTTActionCategory" : 0,
+              "BTTLastUpdatedAt" : 1742225633.3753471,
+              "BTTTriggerParentUUID" : "73BBE1D7-48D2-4D60-9E81-2FAEE4584285",
+              "BTTIsPureAction" : true,
+              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+              "BTTUUID" : "94CC9CC7-83B4-4528-B168-A6AB35E4E52F",
+              "BTTPredefinedActionType" : 216,
+              "BTTPredefinedActionName" : "Move Window To Desktop 1",
+              "BTTKeyboardShortcutKeyboardType" : 0,
+              "BTTEnabled" : 1,
+              "BTTEnabled2" : 1,
+              "BTTShortcutKeyCode" : -1,
+              "BTTOrder" : 4,
+              "BTTAutoAdaptToKeyboardLayout" : 0
+            }
+          ]
+        },
+        {
+          "BTTActionCategory" : 0,
+          "BTTLastUpdatedAt" : 1743194937.8003559,
+          "BTTTriggerType" : 0,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTUUID" : "0C45BE88-A72C-4783-BF4B-00A072BBB0E4",
+          "BTTPredefinedActionType" : 366,
+          "BTTPredefinedActionName" : "Empty Placeholder",
+          "BTTAdditionalConfiguration" : "393219",
+          "BTTKeyboardShortcutKeyboardType" : 0,
+          "BTTTriggerOnDown" : 1,
+          "BTTLayoutIndependentChar" : "2",
+          "BTTEnabled" : 0,
+          "BTTEnabled2" : 1,
+          "BTTShortcutKeyCode" : 19,
+          "BTTShortcutModifierKeys" : 393216,
+          "BTTOrder" : 1,
+          "BTTAutoAdaptToKeyboardLayout" : 0,
+          "BTTAdditionalActions" : [
+            {
+              "BTTActionCategory" : 0,
+              "BTTLastUpdatedAt" : 1742225701.466243,
+              "BTTTriggerParentUUID" : "0C45BE88-A72C-4783-BF4B-00A072BBB0E4",
+              "BTTIsPureAction" : true,
+              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+              "BTTUUID" : "3A97679F-A74B-40A6-9532-95561F88D1BA",
+              "BTTPredefinedActionType" : 217,
+              "BTTPredefinedActionName" : "Move Window To Desktop 2",
+              "BTTKeyboardShortcutKeyboardType" : 0,
+              "BTTEnabled" : 1,
+              "BTTEnabled2" : 1,
+              "BTTShortcutKeyCode" : -1,
+              "BTTOrder" : 5,
+              "BTTAutoAdaptToKeyboardLayout" : 0
+            }
+          ]
+        },
+        {
+          "BTTActionCategory" : 0,
+          "BTTLastUpdatedAt" : 1743518979.096652,
+          "BTTTriggerType" : 100,
+          "BTTTriggerTypeDescriptionReadOnly" : "3 Finger Swipe Left",
+          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+          "BTTUUID" : "102DED39-8765-4C75-9950-CE5D20CA6AF2",
+          "BTTPredefinedActionType" : 366,
+          "BTTPredefinedActionName" : "Empty Placeholder",
+          "BTTEnabled" : 1,
+          "BTTEnabled2" : 1,
+          "BTTOrder" : 0,
+          "BTTAdditionalActions" : [
+            {
+              "BTTActionCategory" : 3,
+              "BTTLastUpdatedAt" : 1743518970.9917841,
+              "BTTTriggerParentUUID" : "102DED39-8765-4C75-9950-CE5D20CA6AF2",
+              "BTTIsPureAction" : true,
+              "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
+              "BTTUUID" : "50E1777F-0DB4-4A54-BE85-0FEA12801743",
+              "BTTPredefinedActionType" : 137,
+              "BTTPredefinedActionName" : "Execute Terminal Command (Async, non-blocking)",
+              "BTTTerminalCommand" : "\/opt\/homebrew\/bin\/aerospace workspace \"$(\/\/opt\/homebrew\/bin\/aerospace list-workspaces --monitor mouse --visible)\" && \/\/opt\/homebrew\/bin\/aerospace workspace prev",
+              "BTTEnabled" : 1,
+              "BTTEnabled2" : 1,
+              "BTTOrder" : 8
+            }
+          ]
+        },
+        {
+          "BTTActionCategory" : 0,
+          "BTTLastUpdatedAt" : 1743194939.146872,
+          "BTTTriggerType" : 0,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTUUID" : "BD789317-9F23-443A-B719-62768D9A0336",
+          "BTTPredefinedActionType" : 366,
+          "BTTPredefinedActionName" : "Empty Placeholder",
+          "BTTAdditionalConfiguration" : "393219",
+          "BTTKeyboardShortcutKeyboardType" : 0,
+          "BTTTriggerOnDown" : 1,
+          "BTTLayoutIndependentChar" : "3",
+          "BTTEnabled" : 0,
+          "BTTEnabled2" : 1,
+          "BTTShortcutKeyCode" : 20,
+          "BTTShortcutModifierKeys" : 393216,
+          "BTTOrder" : 2,
+          "BTTAutoAdaptToKeyboardLayout" : 0,
+          "BTTAdditionalActions" : [
+            {
+              "BTTActionCategory" : 0,
+              "BTTLastUpdatedAt" : 1742225729.16271,
+              "BTTTriggerParentUUID" : "BD789317-9F23-443A-B719-62768D9A0336",
+              "BTTIsPureAction" : true,
+              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+              "BTTUUID" : "A0B49161-0FB9-4D32-8A4C-CD2BE72DE75F",
+              "BTTPredefinedActionType" : 218,
+              "BTTPredefinedActionName" : "Move Window To Desktop 3",
+              "BTTKeyboardShortcutKeyboardType" : 0,
+              "BTTEnabled" : 1,
+              "BTTEnabled2" : 1,
+              "BTTShortcutKeyCode" : -1,
+              "BTTOrder" : 6,
+              "BTTAutoAdaptToKeyboardLayout" : 0
+            }
+          ]
+        },
+        {
+          "BTTActionCategory" : 0,
+          "BTTLastUpdatedAt" : 1743194942.6403131,
+          "BTTTriggerType" : 0,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTUUID" : "D1070E28-8B64-4A4B-B96A-BF098F51DD97",
+          "BTTPredefinedActionType" : 366,
+          "BTTPredefinedActionName" : "Empty Placeholder",
+          "BTTAdditionalConfiguration" : "393219",
+          "BTTKeyboardShortcutKeyboardType" : 0,
+          "BTTTriggerOnDown" : 1,
+          "BTTLayoutIndependentChar" : "5",
+          "BTTEnabled" : 0,
+          "BTTEnabled2" : 1,
+          "BTTShortcutKeyCode" : 23,
+          "BTTShortcutModifierKeys" : 393216,
+          "BTTOrder" : 4,
+          "BTTAutoAdaptToKeyboardLayout" : 0,
+          "BTTAdditionalActions" : [
+            {
+              "BTTActionCategory" : 0,
+              "BTTLastUpdatedAt" : 1742225746.863646,
+              "BTTTriggerParentUUID" : "D1070E28-8B64-4A4B-B96A-BF098F51DD97",
+              "BTTIsPureAction" : true,
+              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+              "BTTUUID" : "480951C7-D44A-48D8-A4DA-572A05F27FB4",
+              "BTTPredefinedActionType" : 220,
+              "BTTPredefinedActionName" : "Move Window To Desktop 5",
+              "BTTKeyboardShortcutKeyboardType" : 0,
+              "BTTEnabled" : 1,
+              "BTTEnabled2" : 1,
+              "BTTShortcutKeyCode" : -1,
+              "BTTOrder" : 8,
+              "BTTAutoAdaptToKeyboardLayout" : 0
+            }
+          ]
+        },
+        {
+          "BTTActionCategory" : 0,
+          "BTTLastUpdatedAt" : 1743194944.5349932,
+          "BTTTriggerType" : 0,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTUUID" : "B48FB983-D63F-414C-9611-3CD80A1AC68A",
+          "BTTPredefinedActionType" : 366,
+          "BTTPredefinedActionName" : "Empty Placeholder",
+          "BTTAdditionalConfiguration" : "393219",
+          "BTTKeyboardShortcutKeyboardType" : 0,
+          "BTTTriggerOnDown" : 1,
+          "BTTLayoutIndependentChar" : "6",
+          "BTTEnabled" : 0,
+          "BTTEnabled2" : 1,
+          "BTTShortcutKeyCode" : 22,
+          "BTTShortcutModifierKeys" : 393216,
+          "BTTOrder" : 5,
+          "BTTAutoAdaptToKeyboardLayout" : 0,
+          "BTTAdditionalActions" : [
+            {
+              "BTTActionCategory" : 0,
+              "BTTLastUpdatedAt" : 1742225754.5548949,
+              "BTTTriggerParentUUID" : "B48FB983-D63F-414C-9611-3CD80A1AC68A",
+              "BTTIsPureAction" : true,
+              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+              "BTTUUID" : "5177EE1E-1154-4C3C-B1EA-E04EED27C78A",
+              "BTTPredefinedActionType" : 222,
+              "BTTPredefinedActionName" : "Move Window To Desktop 6",
+              "BTTKeyboardShortcutKeyboardType" : 0,
+              "BTTEnabled" : 1,
+              "BTTEnabled2" : 1,
+              "BTTShortcutKeyCode" : -1,
+              "BTTOrder" : 9,
+              "BTTAutoAdaptToKeyboardLayout" : 0
+            }
+          ]
+        },
+        {
+          "BTTActionCategory" : 0,
+          "BTTLastUpdatedAt" : 1747057955.6648111,
           "BTTTriggerType" : 1004,
           "BTTTriggerTypeDescriptionReadOnly" : "Button 4",
+          "BTTTriggerTypeDescription" : "Safari Forward",
           "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
           "BTTUUID" : "9C1BB663-F118-44EE-A8F8-DB53F9C6068B",
           "BTTPredefinedActionType" : 366,
@@ -194,6 +465,192 @@
               "BTTEnabled2" : 1,
               "BTTOrder" : 3
             }
+          ],
+          "BTTGestureNotes" : "Safari Forward"
+        },
+        {
+          "BTTActionCategory" : 0,
+          "BTTLastUpdatedAt" : 1743194946.1829081,
+          "BTTTriggerType" : 0,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTUUID" : "B01A1E5D-FEB2-4716-9777-5FA0B2232279",
+          "BTTPredefinedActionType" : 366,
+          "BTTPredefinedActionName" : "Empty Placeholder",
+          "BTTAdditionalConfiguration" : "393219",
+          "BTTKeyboardShortcutKeyboardType" : 0,
+          "BTTTriggerOnDown" : 1,
+          "BTTLayoutIndependentChar" : "7",
+          "BTTEnabled" : 0,
+          "BTTEnabled2" : 1,
+          "BTTShortcutKeyCode" : 26,
+          "BTTShortcutModifierKeys" : 393216,
+          "BTTOrder" : 6,
+          "BTTAutoAdaptToKeyboardLayout" : 0,
+          "BTTAdditionalActions" : [
+            {
+              "BTTActionCategory" : 0,
+              "BTTLastUpdatedAt" : 1742225762.814219,
+              "BTTTriggerParentUUID" : "B01A1E5D-FEB2-4716-9777-5FA0B2232279",
+              "BTTIsPureAction" : true,
+              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+              "BTTUUID" : "11246137-4D06-4761-A075-0783D6D0BB7B",
+              "BTTPredefinedActionType" : 223,
+              "BTTPredefinedActionName" : "Move Window To Desktop 7",
+              "BTTKeyboardShortcutKeyboardType" : 0,
+              "BTTEnabled" : 1,
+              "BTTEnabled2" : 1,
+              "BTTShortcutKeyCode" : -1,
+              "BTTOrder" : 10,
+              "BTTAutoAdaptToKeyboardLayout" : 0
+            }
+          ]
+        },
+        {
+          "BTTActionCategory" : 0,
+          "BTTLastUpdatedAt" : 1743194947.7836771,
+          "BTTTriggerType" : 0,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTUUID" : "F465EC3F-7922-40B1-9641-0772A4305EC3",
+          "BTTPredefinedActionType" : 366,
+          "BTTPredefinedActionName" : "Empty Placeholder",
+          "BTTAdditionalConfiguration" : "393219",
+          "BTTKeyboardShortcutKeyboardType" : 0,
+          "BTTTriggerOnDown" : 1,
+          "BTTLayoutIndependentChar" : "8",
+          "BTTEnabled" : 0,
+          "BTTEnabled2" : 1,
+          "BTTShortcutKeyCode" : 28,
+          "BTTShortcutModifierKeys" : 393216,
+          "BTTOrder" : 7,
+          "BTTAutoAdaptToKeyboardLayout" : 0,
+          "BTTAdditionalActions" : [
+            {
+              "BTTActionCategory" : 0,
+              "BTTLastUpdatedAt" : 1742225769.562891,
+              "BTTTriggerParentUUID" : "F465EC3F-7922-40B1-9641-0772A4305EC3",
+              "BTTIsPureAction" : true,
+              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+              "BTTUUID" : "5CC53FC4-5647-4AAA-B49D-434C6EF84C06",
+              "BTTPredefinedActionType" : 224,
+              "BTTPredefinedActionName" : "Move Window To Desktop 8",
+              "BTTKeyboardShortcutKeyboardType" : 0,
+              "BTTEnabled" : 1,
+              "BTTEnabled2" : 1,
+              "BTTShortcutKeyCode" : -1,
+              "BTTOrder" : 11,
+              "BTTAutoAdaptToKeyboardLayout" : 0
+            }
+          ]
+        },
+        {
+          "BTTActionCategory" : 0,
+          "BTTLastUpdatedAt" : 1743194949.6683691,
+          "BTTTriggerType" : 0,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTUUID" : "E23E0556-D61C-42F0-A022-15B61EA3BC24",
+          "BTTPredefinedActionType" : 366,
+          "BTTPredefinedActionName" : "Empty Placeholder",
+          "BTTAdditionalConfiguration" : "393219",
+          "BTTKeyboardShortcutKeyboardType" : 0,
+          "BTTTriggerOnDown" : 1,
+          "BTTLayoutIndependentChar" : "9",
+          "BTTEnabled" : 0,
+          "BTTEnabled2" : 1,
+          "BTTShortcutKeyCode" : 25,
+          "BTTShortcutModifierKeys" : 393216,
+          "BTTOrder" : 8,
+          "BTTAutoAdaptToKeyboardLayout" : 0,
+          "BTTAdditionalActions" : [
+            {
+              "BTTActionCategory" : 0,
+              "BTTLastUpdatedAt" : 1742225778.1128058,
+              "BTTTriggerParentUUID" : "E23E0556-D61C-42F0-A022-15B61EA3BC24",
+              "BTTIsPureAction" : true,
+              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+              "BTTUUID" : "A3C7B903-6448-40B1-8AA7-04780DF02919",
+              "BTTPredefinedActionType" : 225,
+              "BTTPredefinedActionName" : "Move Window To Desktop 9",
+              "BTTKeyboardShortcutKeyboardType" : 0,
+              "BTTEnabled" : 1,
+              "BTTEnabled2" : 1,
+              "BTTShortcutKeyCode" : -1,
+              "BTTOrder" : 12,
+              "BTTAutoAdaptToKeyboardLayout" : 0
+            }
+          ]
+        },
+        {
+          "BTTActionCategory" : 0,
+          "BTTLastUpdatedAt" : 1743194951.731015,
+          "BTTTriggerType" : 0,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTUUID" : "80941E23-64FF-40DC-9A59-C900E2CC674C",
+          "BTTPredefinedActionType" : 366,
+          "BTTPredefinedActionName" : "Empty Placeholder",
+          "BTTAdditionalConfiguration" : "393219",
+          "BTTKeyboardShortcutKeyboardType" : 0,
+          "BTTTriggerOnDown" : 1,
+          "BTTLayoutIndependentChar" : "0",
+          "BTTEnabled" : 0,
+          "BTTEnabled2" : 1,
+          "BTTShortcutKeyCode" : 29,
+          "BTTShortcutModifierKeys" : 393216,
+          "BTTOrder" : 9,
+          "BTTAutoAdaptToKeyboardLayout" : 0,
+          "BTTAdditionalActions" : [
+            {
+              "BTTActionCategory" : 0,
+              "BTTLastUpdatedAt" : 1742225783.411829,
+              "BTTTriggerParentUUID" : "80941E23-64FF-40DC-9A59-C900E2CC674C",
+              "BTTIsPureAction" : true,
+              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+              "BTTUUID" : "33DED5AD-7D18-4511-A837-DFEB9C3B1051",
+              "BTTPredefinedActionType" : 236,
+              "BTTPredefinedActionName" : "Move Window To Desktop 10",
+              "BTTKeyboardShortcutKeyboardType" : 0,
+              "BTTEnabled" : 1,
+              "BTTEnabled2" : 1,
+              "BTTShortcutKeyCode" : -1,
+              "BTTOrder" : 13,
+              "BTTAutoAdaptToKeyboardLayout" : 0
+            }
+          ]
+        },
+        {
+          "BTTActionCategory" : 0,
+          "BTTLastUpdatedAt" : 1743194941.0122418,
+          "BTTTriggerType" : 0,
+          "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+          "BTTUUID" : "25ADB207-16B3-41AD-8120-0B08D41DF9BA",
+          "BTTPredefinedActionType" : 366,
+          "BTTPredefinedActionName" : "Empty Placeholder",
+          "BTTAdditionalConfiguration" : "393219",
+          "BTTKeyboardShortcutKeyboardType" : 0,
+          "BTTTriggerOnDown" : 1,
+          "BTTLayoutIndependentChar" : "4",
+          "BTTEnabled" : 0,
+          "BTTEnabled2" : 1,
+          "BTTShortcutKeyCode" : 21,
+          "BTTShortcutModifierKeys" : 393216,
+          "BTTOrder" : 3,
+          "BTTAutoAdaptToKeyboardLayout" : 0,
+          "BTTAdditionalActions" : [
+            {
+              "BTTActionCategory" : 0,
+              "BTTLastUpdatedAt" : 1742225736.0859752,
+              "BTTTriggerParentUUID" : "25ADB207-16B3-41AD-8120-0B08D41DF9BA",
+              "BTTIsPureAction" : true,
+              "BTTTriggerClass" : "BTTTriggerTypeKeyboardShortcut",
+              "BTTUUID" : "03760235-FCDA-4E6D-9703-45C41FF8727A",
+              "BTTPredefinedActionType" : 219,
+              "BTTPredefinedActionName" : "Move Window To Desktop 4",
+              "BTTKeyboardShortcutKeyboardType" : 0,
+              "BTTEnabled" : 1,
+              "BTTEnabled2" : 1,
+              "BTTShortcutKeyCode" : -1,
+              "BTTOrder" : 7,
+              "BTTAutoAdaptToKeyboardLayout" : 0
+            }
           ]
         },
         {
@@ -201,6 +658,7 @@
           "BTTLastUpdatedAt" : 1726762333.322238,
           "BTTTriggerType" : 1003,
           "BTTTriggerTypeDescriptionReadOnly" : "Button 3",
+          "BTTTriggerTypeDescription" : "Safari Back",
           "BTTTriggerClass" : "BTTTriggerTypeNormalMouse",
           "BTTUUID" : "15E187FE-1763-417E-AC76-19C8591F19C0",
           "BTTPredefinedActionType" : 366,
@@ -222,93 +680,9 @@
               "BTTEnabled2" : 1,
               "BTTOrder" : 2
             }
-          ]
-        },
-        {
-          "BTTActionCategory" : 0,
-          "BTTLastUpdatedAt" : 1726713450.958935,
-          "BTTTriggerType" : 100,
-          "BTTTriggerTypeDescriptionReadOnly" : "3 Finger Swipe Left",
-          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
-          "BTTUUID" : "AEF1517D-60A4-439E-B3AC-E2D0B9F64F75",
-          "BTTPredefinedActionType" : 366,
-          "BTTPredefinedActionName" : "Empty Placeholder",
-          "BTTEnabled" : 1,
-          "BTTEnabled2" : 1,
-          "BTTOrder" : 1,
-          "BTTAdditionalActions" : [
-            {
-              "BTTActionCategory" : 0,
-              "BTTLastUpdatedAt" : 1726713518.495225,
-              "BTTTriggerParentUUID" : "AEF1517D-60A4-439E-B3AC-E2D0B9F64F75",
-              "BTTIsPureAction" : true,
-              "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
-              "BTTUUID" : "B2DF1391-C2D5-4599-8DB2-AEFA6BACF957",
-              "BTTPredefinedActionType" : 246,
-              "BTTPredefinedActionName" : "Execute Terminal Command (Synchronous, blocking)",
-              "BTTTerminalCommand" : "\/opt\/homebrew\/bin\/aerospace workspace \"$(\/opt\/homebrew\/bin\/aerospace  list-workspaces --monitor mouse --visible)\" && \/opt\/homebrew\/bin\/aerospace  workspace prev",
-              "BTTEnabled" : 1,
-              "BTTEnabled2" : 1,
-              "BTTOrder" : 2
-            }
-          ]
-        },
-        {
-          "BTTActionCategory" : 0,
-          "BTTLastUpdatedAt" : 1726713396.7059979,
-          "BTTTriggerType" : 101,
-          "BTTTriggerTypeDescriptionReadOnly" : "3 Finger Swipe Right",
-          "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
-          "BTTUUID" : "448EBA5C-1910-4495-98E3-2A91AF094452",
-          "BTTPredefinedActionType" : 366,
-          "BTTPredefinedActionName" : "Empty Placeholder",
-          "BTTEnabled" : 1,
-          "BTTEnabled2" : 1,
-          "BTTOrder" : 0,
-          "BTTAdditionalActions" : [
-            {
-              "BTTActionCategory" : 0,
-              "BTTLastUpdatedAt" : 1726713381.6214728,
-              "BTTTriggerParentUUID" : "448EBA5C-1910-4495-98E3-2A91AF094452",
-              "BTTIsPureAction" : true,
-              "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
-              "BTTUUID" : "AC281987-5CB1-482B-AF16-23D02FD98C77",
-              "BTTPredefinedActionType" : 246,
-              "BTTPredefinedActionName" : "Execute Terminal Command (Synchronous, blocking)",
-              "BTTTerminalCommand" : "\/opt\/homebrew\/bin\/aerospace workspace \"$(\/opt\/homebrew\/bin\/aerospace list-workspaces --monitor mouse --visible)\" && \/opt\/homebrew\/bin\/aerospace workspace next",
-              "BTTEnabled" : 1,
-              "BTTEnabled2" : 1,
-              "BTTOrder" : 1
-            },
-            {
-              "BTTActionCategory" : 0,
-              "BTTLastUpdatedAt" : 1726713396.705338,
-              "BTTTriggerParentUUID" : "448EBA5C-1910-4495-98E3-2A91AF094452",
-              "BTTIsPureAction" : true,
-              "BTTTriggerClass" : "BTTTriggerTypeTouchpadAll",
-              "BTTUUID" : "52E4F508-6AB8-48E1-8A7C-87895F41ED7E",
-              "BTTEnabled" : 1,
-              "BTTEnabled2" : 1,
-              "BTTOrder" : 2
-            }
-          ]
+          ],
+          "BTTGestureNotes" : "Safari Back"
         }
-      ]
-    },
-    {
-      "BTTAppBundleIdentifier" : "BT.L",
-      "BTTAppName" : "Recently Used",
-      "BTTAppAutoInvertIcon" : 1,
-      "BTTTriggers" : [
-
-      ]
-    },
-    {
-      "BTTAppBundleIdentifier" : "com.apple.finder",
-      "BTTAppName" : "Finder",
-      "BTTAppAutoInvertIcon" : 1,
-      "BTTTriggers" : [
-
       ]
     }
   ],
