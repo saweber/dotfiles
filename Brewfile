@@ -1,6 +1,3 @@
-# homebrew taps
-tap "homebrew/bundle"
-
 # cli tools
 brew "bat" # colorize man pages
 brew "bottom"
@@ -12,12 +9,8 @@ brew "fisher" # fish package manager
 brew "fzf"
 brew "fx" # for json viewing
 brew "git"
-brew "git-crypt"
-brew "gpg" # for signing git commits
-brew "htop"
 brew "jq"
 brew "just"
-tap "jesseduffield/lazygit/lazygit"
 brew "lazygit"
 brew "neovim"
 # brew "peak/tap/s5cmd" #s3 faster + sync
@@ -45,14 +38,13 @@ brew "protobuf"
 # node
 brew "node"
 brew "volta"
-# brew "pnpm"
 
 # python
 brew "python3"
 brew "pyenv"
 
 # rust
-brew "rustup"
+# brew "rustup"
 
 # k8s
 brew "helm"

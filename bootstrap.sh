@@ -5,19 +5,8 @@ echo git email
 read git_email
 
 echo Checking for brew...
-if ! [ command -v brew ] &>/dev/null; then
-  if [[ "$OSTYPE" == "darwin"* ]]; then
-    echo Installing brew...
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>~/.zprofile
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-    echo Installing brew packages from Brewfile...
-    brew bundle
-  fi
-fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-
   if ! [ command -v brew ] &>/dev/null; then
     echo Installing brew...
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -42,7 +31,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   echo Configuring Dock and Mission Control.
   defaults write com.apple.dock no-bouncing -bool true
-  defaults write com.apple.dock orientation left
   defaults write com.apple.dock autohide -bool true
   defaults write com.apple.dock show-recents -bool false
   defaults write com.apple.dock tilesize -int 48
@@ -50,7 +38,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # Turns off misson control rearrange spaces
   defaults write com.apple.dock mru-spaces -bool false
   # disable hot corners
-  defaults write com.apple.dock wvous-tl-corner -int 0
   defaults write com.apple.dock wvous-tr-corner -int 0
   defaults write com.apple.dock wvous-bl-corner -int 0
   defaults write com.apple.dock wvous-br-corner -int 0
@@ -62,12 +49,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   echo Setting screenshots to jpg and disabling shadows.
   defaults write com.apple.screencapture disable-shadow -bool true
   defaults write com.apple.screencapture type jpg
-  mkdir ~/Screenshots
-  defaults write com.apple.screencapture "location" -string "~/Screenshots"
   killall SystemUIServer
-
-  echo Copying Karabiner configuration...
-  cp -r ./karabiner ~/.config
 
   echo Installing fzf...
   yes | $(brew --prefix)/opt/fzf/install
@@ -96,10 +78,6 @@ echo Linking .tmux.conf...
 mkdir -p ~/.config/tmux
 ln -sf $(pwd)/tmux.conf $(echo $HOME)/.config/tmux/tmux.conf
 
-echo Linking .config/wezterm.lua to wezterm
-mkdir -p ~/.config/wezterm
-ln -sf $(pwd)/wezterm.lua $(echo $HOME)/.config/wezterm/wezterm.lua
-
 echo Linking .config/fish/config.fish to config.fish
 mkdir -p ~/.config/fish
 ln -sf $(pwd)/config.fish $(echo $HOME)/.config/fish/config.fish
@@ -111,20 +89,17 @@ echo Linking .ideavimrc for IntelliJ...
 ln -sf $(pwd)/ideavimrc $(echo $HOME)/.ideavimrc
 
 echo Linking Zed settings...
+mkdir -p ~/.config/zed
 ln -sf $(pwd)/zed_settings.json $(echo $HOME)/.config/zed/settings.json
 
-echo Linking Ghostty settings...
-ln -sf $(pwd)/ghostty-config $(echo $HOME)/.config/ghostty/config
-
 if [[ "$OSTYPE" == "darwin"* ]]; then
+  echo Linking Ghostty settings...
+  mkdir -p ~/.config/ghostty
+  ln -sf $(pwd)/ghostty-config $(echo $HOME)/.config/ghostty/config
+
   echo Linking .config/aerospace/aerospace.toml...
   mkdir -p ~/.config/aerospace
   ln -sf $(pwd)/aerospace.toml $(echo $HOME)/.config/aerospace/aerospace.toml
-fi
-
-if ! test -f "~/.credentials"; then
-  echo No .credentials file found, creating empty .credentials file...
-  touch ~/.credentials
 fi
 
 echo Done.

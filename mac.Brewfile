@@ -16,19 +16,17 @@ cask "alfred"
 cask "bettertouchtool"
 cask "istat-menus"
 cask "jordanbaird-ice"
-cask "karabiner-elements"
 cask "monitorcontrol"
 cask "nikitabobko/tap/aerospace"
-cask "rectangle"
+#cask "rectangle"
 
 # dependencies
-# brew "blueutil" # for alfred airpod plugin
 brew "displayplacer" # for alfred resolution changer
 
 # software dev applications
-#cask "docker"
+cask "docker"
 cask "ghostty"
-cask "podman-desktop"
+#cask "podman-desktop"
 cask "jetbrains-toolbox"
 cask "proxyman"
 cask "postman"
