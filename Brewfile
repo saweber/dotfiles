@@ -2,6 +2,7 @@
 brew "bat" # colorize man pages
 brew "bottom"
 brew "btop"
+brew "cheat"
 brew "eza"
 brew "fd" # for telescope.nvim # fd-find
 brew "fish"
@@ -15,7 +16,6 @@ brew "lazygit"
 brew "neovim"
 # brew "peak/tap/s5cmd" #s3 faster + sync
 brew "ripgrep"
-brew "rlwrap" # for cht.sh
 brew "starship"
 brew "tig" # git history cli
 brew "tldr"
