@@ -12,6 +12,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>~/.zprofile
     eval "$(/opt/homebrew/bin/brew shellenv)"
+    sudo -k
   fi
   echo Installing brew packages from Brewfile...
   brew bundle
@@ -114,6 +115,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   echo Linking .config/aerospace/aerospace.toml...
   mkdir -p ~/.config/aerospace
   ln -sf $(pwd)/aerospace.toml $(echo $HOME)/.config/aerospace/aerospace.toml
+
+  echo Changing default shell to fish...
+  # if fish is not in listed shells, add fish to accpted shells
+  which fish | grep -qxFf /etc/shells || echo "$(which fish)" | sudo tee -a /etc/shells
+  chsh -s $(which fish)
+  sudo -k
 fi
 
 echo Done.

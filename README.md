@@ -18,14 +18,10 @@ Personal setup for MacOS and Linux Development Environments
 - fisher
   - fisher install evanlucas/fish-kubectl-completions
   - fisher install lgathy/google-cloud-sdk-fish-completion
-- fish
-  - `sudo vim /etc/shells`
-  - add fish
-  - `chsh -s $(which fish)`
 - better touch tool import settings
 - k9s - dump skin.yml in config directory from `k9s info`
-- Ice
-- iStat Menus
+- Configure Ice.app
+- Configure iStat Menus
 
 ### Opinionated MacOS Personal Preferences (that are not scripted)
 
