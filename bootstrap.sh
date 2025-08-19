@@ -20,35 +20,52 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   echo Changing macOS defaults...
 
+  # faster animation
   defaults write com.apple.Accessibility ReduceMotionEnabled -bool true
 
-  echo Configuring finder and hiding unwanted desktop items.
+  # configure finder
+  # hide icons on desktop
   defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
   defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
   defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
   defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
-  killall Finder
 
-  echo Configuring Dock and Mission Control.
+  # show hidden files
+  defaults write com.apple.finder "AppleShowAllFiles" -bool "true"
+
+  # list view by default in finder
+  defaults write com.apple.finder "FXPreferredViewStyle" -string "Nlsv"
+
+  # configure dock
   defaults write com.apple.dock no-bouncing -bool true
   defaults write com.apple.dock autohide -bool true
   defaults write com.apple.dock show-recents -bool false
   defaults write com.apple.dock tilesize -int 48
   defaults write com.apple.dock "mineffect" -string "scale"
+
   # Turns off misson control rearrange spaces
   defaults write com.apple.dock mru-spaces -bool false
+
   # disable hot corners
+  # defaults write com.apple.dock wvous-tl-corner -int 0
   defaults write com.apple.dock wvous-tr-corner -int 0
   defaults write com.apple.dock wvous-bl-corner -int 0
   defaults write com.apple.dock wvous-br-corner -int 0
-  killall Dock
 
-  echo Fixing mouse scroll direction.
+  # fixing mouse scroll direction.
   defaults write -g com.apple.swipescrolldirection -bool false
 
-  echo Setting screenshots to jpg and disabling shadows.
+  # setting screenshots to jpg and disabling shadows.
   defaults write com.apple.screencapture disable-shadow -bool true
   defaults write com.apple.screencapture type jpg
+
+  # set globe key to change input sources (swap between QWERTY and Colemak)
+  defaults write com.apple.HIToolbox AppleFnUsageType -int "1"
+
+  # fn keys work as fn keys by default
+  defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
+
+  killall Dock
   killall SystemUIServer
 
   echo Installing fzf...
@@ -69,10 +86,10 @@ git config --global user.name $git_username
 git config --global user.email $git_email
 git config --global --add url."git@github.com:".insteadOf "https://github.com/" # fix issues with go get
 
-echo Downloading cht.sh with completions...
-sudo touch /usr/local/bin/cht.sh
-curl -s https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh && sudo chmod +x /usr/local/bin/cht.sh
-sudo chmod +x /usr/local/bin/cht.sh
+# echo Downloading cht.sh with completions...
+# sudo touch /usr/local/bin/cht.sh
+# curl -s https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh && sudo chmod +x /usr/local/bin/cht.sh
+# sudo chmod +x /usr/local/bin/cht.sh
 
 echo Linking .tmux.conf...
 mkdir -p ~/.config/tmux
