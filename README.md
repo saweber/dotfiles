@@ -10,17 +10,8 @@ Personal setup for MacOS and Linux Development Environments
 
 ## MacOS
 
-### Install from Mac App Store
-
-- Bitwarden
-- Dark Reader
-- Overcast
-- Vimari
-- ZSA Keymapp
-
 ### Manual Steps
 
-- go pseudo-monorepos - `go work init`
 - neovim
   - `pip3 install pynvim`
   - `npx npm i -g neovim`
@@ -32,35 +23,26 @@ Personal setup for MacOS and Linux Development Environments
   - add fish
   - `chsh -s $(which fish)`
 - better touch tool import settings
-
-### Maybe not needed anymore?
-
-- tmux italics
-  - `/usr/bin/tic -x -o $HOME/.local/share/terminfo tmux-256color.src`
-  - edit pairs value in `tmux-256color.src` to `pairs#32767` on macOS
-  - `/opt/homebrew/Cellar/ncurses/6.4/bin/infocmp -x tmux-256color > ~/tmux-256color.src`
 - k9s - dump skin.yml in config directory from `k9s info`
+- Ice
+- iStat Menus
 
 ### Opinionated MacOS Personal Preferences (that are not scripted)
 
 - System Preferences
   - Keyboard
     - Modifier Keys -> Set Caps Lock to Escape
-    - Check `Use F1, F2, etc. keys as Function Keys`
     - Shortcuts - go through and disable unused shortcuts - reduce conflicts with IntelliJ and VS Code
-  - Mouse
-    - Uncheck Scroll direction: Natural
   - Spotlight
     - Keyboard Shortcuts -> Uncheck Show Spotlight Search ⌘Space
     - Use Alfred instead
-- Desktop
-  - Put Screenshots folder in dock
+  - Desktop and Dock
+    - Windows -> Tiled Windows have margins -> Off
 
 ## Fedora
 
 - enable coprs
 - install dnf packages
-- run manual and go installs if arm64, otherwise strip down brewfile
 
 ## Credits
 

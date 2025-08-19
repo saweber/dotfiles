@@ -1,6 +1,6 @@
 if status is-interactive
 
-    if test "$TERM_PROGRAM" = WezTerm
+    if test "$TERM_PROGRAM" = ghostty
         tmux
         commandline -f repaint
     end
@@ -24,9 +24,6 @@ if status is-interactive
     if test -d /opt/homebrew/share/fish/vendor_completions.d
         set -gx fish_complete_path $fish_complete_path /opt/homebrew/share/fish/vendor_completions.d
     end
-
-    set -gx EDITOR nvim
-    alias vim="nvim"
 
     function kubectl
         kubecolor $argv
@@ -111,15 +108,6 @@ if status is-interactive
     end
     theme
 
-    function goto
-        cd (find ~ ~/src ~/go/src -maxdepth 1 -type d | grep -v "/\." | sort -u | fzf)
-    end
-    bind \cg "goto; commandline -f repaint"
-
-    function cht
-        cht.sh $argv | bat -p
-    end
-
     function envfile
         set filename ".env"
         if test (count $argv) -ge 1
@@ -147,10 +135,14 @@ if status is-interactive
 
     set -gx VOLTA_HOME "$HOME/.volta"
 
+    # override default cli commands
     zoxide init fish | source
     alias cd="z"
 
     alias ls="eza"
+
+    set -gx EDITOR nvim
+    alias vim="nvim"
 
     starship init fish | source
     enable_transience # transient prompt for starship

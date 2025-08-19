@@ -65,6 +65,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # fn keys work as fn keys by default
   defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
 
+  echo Restarting Finder, Dock, SystemUIServer...
+  killall Finder
   killall Dock
   killall SystemUIServer
 
@@ -85,11 +87,6 @@ git config --global pull.rebase false
 git config --global user.name $git_username
 git config --global user.email $git_email
 git config --global --add url."git@github.com:".insteadOf "https://github.com/" # fix issues with go get
-
-# echo Downloading cht.sh with completions...
-# sudo touch /usr/local/bin/cht.sh
-# curl -s https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh && sudo chmod +x /usr/local/bin/cht.sh
-# sudo chmod +x /usr/local/bin/cht.sh
 
 echo Linking .tmux.conf...
 mkdir -p ~/.config/tmux
