@@ -13,6 +13,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>~/.zprofile
     eval "$(/opt/homebrew/bin/brew shellenv)"
     sudo -k
+    echo Exited sudo.
   fi
   echo Installing brew packages from Brewfile...
   brew bundle
@@ -30,10 +31,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
   defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
   defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
-
   # show hidden files
   defaults write com.apple.finder "AppleShowAllFiles" -bool "true"
-
   # list view by default in finder
   defaults write com.apple.finder "FXPreferredViewStyle" -string "Nlsv"
 
@@ -93,11 +92,11 @@ echo Linking .tmux.conf...
 mkdir -p ~/.config/tmux
 ln -sf $(pwd)/tmux.conf $(echo $HOME)/.config/tmux/tmux.conf
 
-echo Linking .config/fish/config.fish to config.fish
+echo Linking .config/fish/config.fish...
 mkdir -p ~/.config/fish
 ln -sf $(pwd)/config.fish $(echo $HOME)/.config/fish/config.fish
 
-echo Linking .config/nvim directory to nvim
+echo Linking .config/nvim...
 ln -sf $(pwd)/nvim $(echo $HOME)/.config/nvim
 
 echo Linking .ideavimrc for IntelliJ...
@@ -121,6 +120,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   which fish | grep -qxFf /etc/shells || echo "$(which fish)" | sudo tee -a /etc/shells
   chsh -s $(which fish)
   sudo -k
+  echo Exited sudo.
 fi
 
 echo Done.
