@@ -35,6 +35,11 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   defaults write com.apple.finder "AppleShowAllFiles" -bool "true"
   # list view by default in finder
   defaults write com.apple.finder "FXPreferredViewStyle" -string "Nlsv"
+  # show ~/Library and /Volumes
+  chflags nohidden ~/Library
+  sudo chflags nohidden /Volumes
+  echo Exited sudo.
+  sudo -k
 
   # configure dock
   defaults write com.apple.dock no-bouncing -bool true
@@ -42,6 +47,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   defaults write com.apple.dock show-recents -bool false
   defaults write com.apple.dock tilesize -int 48
   defaults write com.apple.dock "mineffect" -string "scale"
+  # disable autohide dock animation
+  defaults write com.apple.dock "autohide-time-modifier" -float "0"
 
   # Turns off misson control rearrange spaces
   defaults write com.apple.dock mru-spaces -bool false
@@ -52,7 +59,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   defaults write com.apple.dock wvous-bl-corner -int 0
   defaults write com.apple.dock wvous-br-corner -int 0
 
-  # fixing mouse scroll direction.
+  # fix mouse scroll direction.
   defaults write -g com.apple.swipescrolldirection -bool false
 
   # setting screenshots to jpg and disabling shadows.
@@ -61,9 +68,28 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   # set globe key to change input sources (swap between QWERTY and Colemak)
   defaults write com.apple.HIToolbox AppleFnUsageType -int "1"
-
   # fn keys work as fn keys by default
   defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
+  # remap Caps Lock to Escape
+  hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x700000029}]}'
+  # enable QWERTY and Colemak keyboard layouts
+  defaults write com.apple.HIToolbox AppleEnabledInputSources -array \
+    '{ InputSourceKind = "Keyboard Layout"; "KeyboardLayout ID" = 0; "KeyboardLayout Name" = "U.S."; }' \
+    '{ InputSourceKind = "Keyboard Layout"; "KeyboardLayout ID" = 12825; "KeyboardLayout Name" = "Colemak"; }' \
+    '{ "Bundle ID" = "com.apple.CharacterPaletteIM"; InputSourceKind = "Non Keyboard Input Method"; }' \
+    '{ "Bundle ID" = "com.apple.PressAndHold"; InputSourceKind = "Non Keyboard Input Method"; }'
+
+  # disable features that make writing code annoying
+  # disable automatic capitalization
+  defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+  # disable smart dashes
+  defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+  # disable automatic period substitution
+  defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+  # disable smart quotes
+  defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+  # disable auto-correct
+  defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
   echo Restarting Finder, Dock, SystemUIServer...
   killall Finder

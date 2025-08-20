@@ -27,13 +27,14 @@ Personal setup for MacOS and Linux Development Environments
 
 - System Preferences
   - Keyboard
-    - Modifier Keys -> Set Caps Lock to Escape
     - Shortcuts - go through and disable unused shortcuts - reduce conflicts with IntelliJ and VS Code
   - Spotlight
     - Keyboard Shortcuts -> Uncheck Show Spotlight Search ⌘Space
-    - Use Alfred instead
+    - Set Alfred to use ⌘Space
   - Desktop and Dock
     - Windows -> Tiled Windows have margins -> Off
+  - Date and Time
+    - Enable 24 hour time
 
 ## Fedora
 
@@ -49,3 +50,4 @@ Personal setup for MacOS and Linux Development Environments
 - <https://gpanders.com/blog/the-definitive-guide-to-using-tmux-256color-on-macos/>
 - <https://medium.com/@dubistkomisch/how-to-actually-get-italics-and-true-colour-to-work-in-iterm-tmux-vim-9ebe55ebc2be>
 - <https://apas.gr/2018/11/dark-mode-macos-safari-iterm-vim/>
+- <https://github.com/mathiasbynens/dotfiles/blob/master/.macos>
