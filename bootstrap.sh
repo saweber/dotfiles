@@ -70,8 +70,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   defaults write com.apple.HIToolbox AppleFnUsageType -int "1"
   # fn keys work as fn keys by default
   defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
-  # remap Caps Lock to Escape
-  hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x700000029}]}'
   # enable QWERTY and Colemak keyboard layouts
   defaults write com.apple.HIToolbox AppleEnabledInputSources -array \
     '{ InputSourceKind = "Keyboard Layout"; "KeyboardLayout ID" = 0; "KeyboardLayout Name" = "U.S."; }' \

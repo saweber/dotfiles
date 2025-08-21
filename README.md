@@ -28,6 +28,7 @@ Personal setup for MacOS and Linux Development Environments
 - System Preferences
   - Keyboard
     - Shortcuts - go through and disable unused shortcuts - reduce conflicts with IntelliJ and VS Code
+    - Set Caps Lock to Escape
   - Spotlight
     - Keyboard Shortcuts -> Uncheck Show Spotlight Search ⌘Space
     - Set Alfred to use ⌘Space
