@@ -105,6 +105,7 @@ echo Configuring git...
 git config --global core.editor nvim
 git config --global core.autocrlf false
 git config --global core.excludesfile ~/.gitignore
+git config --global fetch.prune true
 git config --global push.default simple
 git config --global --add --bool push.autoSetupRemote true
 git config --global pull.rebase false
