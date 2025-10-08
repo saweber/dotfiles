@@ -37,6 +37,7 @@ if status is-interactive
     alias kg="kubectl get"
     alias kl="kubectl logs"
     # alias kgc="~/src/kgc/kgc.sh"
+    alias kgp="kubectl get pods"
 
     # telepresence aliases
     alias tc="telepresence connect"
