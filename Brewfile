@@ -17,6 +17,7 @@ brew "neovim"
 # brew "peak/tap/s5cmd" #s3 faster + sync
 brew "ripgrep"
 brew "starship"
+brew "tailscale"
 brew "tig" # git history cli
 brew "tldr"
 brew "tmux"

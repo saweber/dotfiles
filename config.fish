@@ -25,30 +25,14 @@ if status is-interactive
         set -gx fish_complete_path $fish_complete_path /opt/homebrew/share/fish/vendor_completions.d
     end
 
+    # kubectl aliases
     function kubectl
         kubecolor $argv
     end
 
-    # kubectl aliases
     abbr --add --position command k kubectl
     alias kctx="kubectl ctx"
     alias kns="kubectl ns"
-    alias kd="kubctl describe"
-    alias kg="kubectl get"
-    alias kl="kubectl logs"
-    # alias kgc="~/src/kgc/kgc.sh"
-    alias kgp="kubectl get pods"
-
-    # telepresence aliases
-    alias tc="telepresence connect"
-    alias tq="telepresence quit"
-
-    # git aliases
-    alias ga="git add"
-    alias gcm="git commit -m"
-    alias gd="git diff"
-    alias gdc="git diff --cached"
-    alias gs="git status"
 
     # Enable AWS CLI autocompletion: github.com/aws/aws-cli/issues/1079
     #complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
