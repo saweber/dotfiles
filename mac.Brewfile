@@ -46,7 +46,7 @@ cask "slack"
 cask "obsidian"
 
 # reading
-cask "netnewswire"
+# cask "netnewswire"
 
 # jmeter
 # brew "jmeter"
