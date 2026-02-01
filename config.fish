@@ -112,7 +112,7 @@ if status is-interactive
         end
     end
 
-    alias gorefresh='GOPROXY=proxy.golang.org go run github.com/GoogleCloudPlatform/artifact-registry-go-tools/cmd/auth@v0.4.0 refresh'
+    #alias gorefresh='GOPROXY=proxy.golang.org go run github.com/GoogleCloudPlatform/artifact-registry-go-tools/cmd/auth@v0.4.0 refresh'
 
     #if test -f "$(brew --prefix)/share/google-cloud-sdk/path.fish.inc"
     #    source "$(brew --prefix)/share/google-cloud-sdk/path.fish.inc"
@@ -129,6 +129,6 @@ if status is-interactive
     set -gx EDITOR nvim
     alias vim="nvim"
 
-    starship init fish | source
-    enable_transience # transient prompt for starship
+    #starship init fish | source
+    #enable_transience # transient prompt for starship
 end

@@ -1,28 +1,20 @@
 # cli tools
 brew "bat" # colorize man pages
-brew "bottom"
 brew "btop"
-brew "cheat"
 brew "eza"
 brew "fd" # for telescope.nvim # fd-find
 brew "fish"
 brew "fisher" # fish package manager
 brew "fzf"
-brew "fx" # for json viewing
 brew "git"
 brew "jq"
-brew "just"
 brew "lazygit"
 brew "neovim"
-# brew "peak/tap/s5cmd" #s3 faster + sync
 brew "ripgrep"
-brew "starship"
-brew "tailscale"
-brew "tig" # git history cli
-brew "tldr"
+#brew "starship"
+#brew "tailscale"
 brew "tmux"
 brew "tree" # for showing recursive directory structure
-brew "wget"
 brew "zoxide"
 
 # cloud clis
@@ -30,11 +22,13 @@ brew "zoxide"
 # brew "awscli"
 # tap "aws/tap"
 # brew "eks-node-viewer"
+# brew "cloud-sql-proxy" # GCP Cloud SQL
 
 # golang
 brew "go"
 brew "delve"
 brew "protobuf"
+tap "bufbuild/buf"
 brew "bufbuild/buf/buf"
 
 # node
@@ -42,8 +36,8 @@ brew "node"
 brew "volta"
 
 # python
-brew "python3"
-brew "pyenv"
+#brew "python3"
+#brew "pyenv"
 
 # rust
 # brew "rustup"
@@ -57,6 +51,7 @@ brew "kubectx"
 tap "derailed/k9s"
 brew "derailed/k9s/k9s"
 brew "kubecolor"
+tap "telepresenceio/telepresence"
 brew "telepresenceio/telepresence/telepresence-oss"
 
 # github

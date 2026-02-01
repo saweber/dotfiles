@@ -1,6 +1,3 @@
-# homebrew taps
-tap "homebrew/bundle"
-
 # set arguments for all 'brew install --cask' commands
 cask_args appdir: "/Applications", require_sha: false
 
@@ -9,28 +6,30 @@ cask "font-jetbrains-mono"
 
 # cli tools
 # cask "session-manager-plugin" # AWS session manager
-cask "google-cloud-sdk" # glcloud installer
+# cask "gcloud-cli"
 
 # useful macOS utilities
 cask "alfred"
-cask "bettertouchtool"
+# cask "bettertouchtool"
 cask "istat-menus"
 cask "jordanbaird-ice"
 cask "monitorcontrol"
 cask "nikitabobko/tap/aerospace"
-#cask "rectangle"
+# cask "rectangle"
 
 # dependencies
 brew "displayplacer" # for alfred resolution changer
 
 # software dev applications
-cask "docker"
+# cask "bruno"
+# cask "docker-desktop"
 cask "ghostty"
-#cask "podman-desktop"
+# cask "podman-desktop"
 cask "jetbrains-toolbox"
-cask "proxyman"
-cask "postman"
-cask "visual-studio-code"
+# cask "mongodb-compass"
+# cask "proxyman"
+# cask "postman"
+# cask "visual-studio-code"
 cask "zed"
 
 # web browsers
@@ -39,8 +38,9 @@ cask "google-chrome"
 
 # communications
 # cask "tuple"
-cask "slack"
+# cask "slack"
 # cask "zoom"
+# cask "zoho-cliq"
 
 # productivity
 cask "obsidian"

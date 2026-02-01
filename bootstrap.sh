@@ -41,6 +41,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   echo Exited sudo.
   sudo -k
 
+  echo Creating Screehsots folder...
+  mkdir -p ~/Screenshots
+
   # configure dock
   defaults write com.apple.dock no-bouncing -bool true
   defaults write com.apple.dock autohide -bool true
@@ -120,6 +123,9 @@ ln -sf $(pwd)/tmux.conf $(echo $HOME)/.config/tmux/tmux.conf
 echo Linking .config/fish/config.fish...
 mkdir -p ~/.config/fish
 ln -sf $(pwd)/config.fish $(echo $HOME)/.config/fish/config.fish
+
+echo Adding kubectl completions...
+kubectl completion fish >~/.config/fish/completions/kubectl.fish
 
 echo Linking .config/nvim...
 ln -sf $(pwd)/nvim $(echo $HOME)/.config/nvim

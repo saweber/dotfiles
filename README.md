@@ -12,12 +12,6 @@ Personal setup for MacOS and Linux Development Environments
 
 ### Manual Steps
 
-- neovim
-  - `pip3 install pynvim`
-  - `npx npm i -g neovim`
-- fisher
-  - fisher install evanlucas/fish-kubectl-completions
-  - fisher install lgathy/google-cloud-sdk-fish-completion
 - better touch tool import settings
 - k9s - dump skin.yml in config directory from `k9s info`
 - Configure Ice.app
@@ -29,6 +23,7 @@ Personal setup for MacOS and Linux Development Environments
   - Keyboard
     - Shortcuts - go through and disable unused shortcuts - reduce conflicts with IntelliJ and VS Code
     - Set Caps Lock to Escape
+    - Add Colemak
   - Spotlight
     - Keyboard Shortcuts -> Uncheck Show Spotlight Search ⌘Space
     - Set Alfred to use ⌘Space
@@ -36,6 +31,9 @@ Personal setup for MacOS and Linux Development Environments
     - Windows -> Tiled Windows have margins -> Off
   - Date and Time
     - Enable 24 hour time
+  - Open Screenshots (Cmd Shift 5)
+    - Set screenshots to save to 'Screenshots' folder
+    - Add Screenshots folder to Dock
 
 ## Fedora
 
