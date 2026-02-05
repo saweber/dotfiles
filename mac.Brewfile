@@ -28,7 +28,6 @@ cask "ghostty"
 cask "jetbrains-toolbox"
 # cask "mongodb-compass"
 # cask "proxyman"
-# cask "postman"
 # cask "visual-studio-code"
 cask "zed"
 
@@ -44,9 +43,6 @@ cask "google-chrome"
 
 # productivity
 cask "obsidian"
-
-# reading
-# cask "netnewswire"
 
 # jmeter
 # brew "jmeter"
@@ -69,3 +65,8 @@ cask "obsidian"
 # grpc
 # brew "grpc"
 # brew "protobuf"
+
+# AI
+# cask "codex"
+# cask "codex-app"
+# cask "claude-code"

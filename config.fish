@@ -36,8 +36,8 @@ if status is-interactive
 
     # Enable AWS CLI autocompletion: github.com/aws/aws-cli/issues/1079
     #complete --command aws --no-files --arguments '(begin; set --local --export COMP_SHELL fish; set --local --export COMP_LINE (commandline); aws_completer | sed \'s/ $//\'; end)'
+
     #alias awsp='export AWS_PROFILE=$(aws configure list-profiles | fzf)' # switch aws profiles
-    # alias awsls="aws --endpoint-url=http://localhost:4566" # aws cli shortcut for working with localstack
 
     function gcp
         set -l project (gcloud projects list --format="value(projectId)" | fzf)
@@ -56,13 +56,7 @@ if status is-interactive
     alias explain='gh copilot explain'
 
     # go
-    set -gx GO111MODULE on
-    set -gx GOHOME $HOME/go
-    set -gx GOPROXY 'https://us-central1-go.pkg.dev/hailtrace-host-project/go-packages,https://proxy.golang.org,direct'
-    set -gx GONOPROXY none
     set -gx GOPRIVATE 'hailtrace.com/*'
-
-    alias gref='GOPROXY=proxy.golang.org go run github.com/GoogleCloudPlatform/artifact-registry-go-tools/cmd/auth@v0.4.0 refresh'
 
     # python
     set -gx PYENV_ROOT "$HOME/.pyenv"
@@ -111,8 +105,6 @@ if status is-interactive
             end
         end
     end
-
-    #alias gorefresh='GOPROXY=proxy.golang.org go run github.com/GoogleCloudPlatform/artifact-registry-go-tools/cmd/auth@v0.4.0 refresh'
 
     #if test -f "$(brew --prefix)/share/google-cloud-sdk/path.fish.inc"
     #    source "$(brew --prefix)/share/google-cloud-sdk/path.fish.inc"

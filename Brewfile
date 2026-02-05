@@ -26,6 +26,7 @@ brew "zoxide"
 
 # golang
 brew "go"
+brew "golangci-lint"
 brew "delve"
 brew "protobuf"
 tap "bufbuild/buf"
@@ -63,3 +64,6 @@ brew "gh"
 
 # tilt
 # brew install "tilt-dev/tap/tilt"
+
+# AI
+brew install "ollama"

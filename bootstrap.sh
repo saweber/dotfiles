@@ -33,8 +33,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
   # show hidden files
   defaults write com.apple.finder "AppleShowAllFiles" -bool "true"
-  # list view by default in finder
-  defaults write com.apple.finder "FXPreferredViewStyle" -string "Nlsv"
+  # list view by default in finder (broken in macOS 26 Tahoe)
+  # defaults write com.apple.finder "FXPreferredViewStyle" -string "Nlsv"
   # show ~/Library and /Volumes
   chflags nohidden ~/Library
   sudo chflags nohidden /Volumes

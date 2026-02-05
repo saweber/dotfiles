@@ -9,10 +9,31 @@
 {
   // AI
   "edit_predictions": {
+    "provider": "ollama",
+    "ollama": {
+      "model": "qwen2.5-coder:3b",
+    },
     "mode": "subtle",
+    "disabled_globs": [
+      "~/.config/zed/settings.json",
+      "~/.netrc",
+      "~/.zshrc",
+      "~/.zshenv",
+      "*.env*",
+      "*.npmrc*",
+    ],
   },
-  "features": {
-    "edit_prediction_provider": "copilot",
+  "languages": {
+    "Proto": {
+      "language_servers": ["buf"],
+    },
+  },
+  "lsp": {
+    "buf": {
+      "initialization_options": {
+        "command": ["buf", "lsp", "serve", "--log-format", "json"],
+      },
+    },
   },
   "agent": {
     "always_allow_tool_actions": true,
