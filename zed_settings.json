@@ -11,7 +11,7 @@
   "edit_predictions": {
     "provider": "ollama",
     "ollama": {
-      "model": "qwen2.5-coder:3b",
+      "model": "qwen2.5-coder:3b"
     },
     "mode": "subtle",
     "disabled_globs": [
@@ -20,30 +20,30 @@
       "~/.zshrc",
       "~/.zshenv",
       "*.env*",
-      "*.npmrc*",
-    ],
-  },
-  "languages": {
-    "Proto": {
-      "language_servers": ["buf"],
-    },
-  },
-  "lsp": {
-    "buf": {
-      "initialization_options": {
-        "command": ["buf", "lsp", "serve", "--log-format", "json"],
-      },
-    },
+      "*.npmrc*"
+    ]
   },
   "agent": {
     "always_allow_tool_actions": true,
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.5",
+      "model": "claude-sonnet-4.5"
     },
     "default_profile": "write",
     "model_parameters": [],
-    "play_sound_when_agent_done": true,
+    "play_sound_when_agent_done": true
+  },
+  "languages": {
+    "Proto": {
+      "language_servers": ["buf"]
+    }
+  },
+  "lsp": {
+    "buf": {
+      "initialization_options": {
+        "command": ["buf", "lsp", "serve", "--log-format", "json"]
+      }
+    }
   },
   // fonts
   "buffer_font_family": "JetBrains Mono",
@@ -53,13 +53,13 @@
   "theme": {
     "mode": "system",
     "light": "Zedokai Light",
-    "dark": "Zedokai (Filter Spectrum)",
+    "dark": "Zedokai (Filter Spectrum)"
   },
   // vim mode
   "relative_line_numbers": "enabled",
   "vim_mode": true,
   // zed
   "telemetry": {
-    "metrics": false,
-  },
+    "metrics": false
+  }
 }

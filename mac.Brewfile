@@ -22,14 +22,16 @@ brew "displayplacer" # for alfred resolution changer
 
 # software dev applications
 # cask "bruno"
-# cask "docker-desktop"
 cask "ghostty"
-# cask "podman-desktop"
 cask "jetbrains-toolbox"
 # cask "mongodb-compass"
 # cask "proxyman"
 # cask "visual-studio-code"
 cask "zed"
+
+# containerization
+# cask "docker-desktop"
+# cask "podman-desktop"
 
 # web browsers
 cask "firefox"
@@ -70,3 +72,6 @@ cask "obsidian"
 # cask "codex"
 # cask "codex-app"
 # cask "claude-code"
+
+# database
+# cask "postgres-unofficial"

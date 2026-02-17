@@ -152,6 +152,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   chsh -s $(which fish)
   sudo -k
   echo Exited sudo.
+
+  echo Starting Ollama as a service...
+  brew services start ollama
 fi
 
 echo Done.
