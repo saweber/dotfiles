@@ -67,3 +67,7 @@ brew "gh"
 
 # AI
 brew install "ollama"
+
+# local databases
+brew install "redis"
+brew "kafka"
