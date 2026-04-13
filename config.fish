@@ -106,6 +106,12 @@ if status is-interactive
         end
     end
 
+    function tpc
+        telepresence quit
+        kubectl config set-context $argv[1]
+        telepresence connect --also-proxy 10.16.0.0/8
+    end
+
     #if test -f "$(brew --prefix)/share/google-cloud-sdk/path.fish.inc"
     #    source "$(brew --prefix)/share/google-cloud-sdk/path.fish.inc"
     #end
