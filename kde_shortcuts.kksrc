@@ -11,6 +11,41 @@ ExposeClassCurrentDesktop=
 Grid View=Meta+G
 Increase Opacity=
 Kill Window=Meta+Ctrl+Esc
+KrohnkiteBTreeLayout=
+KrohnkiteColumnsLayout=
+KrohnkiteDecrease=
+KrohnkiteFloatAll=Meta+Shift+F
+KrohnkiteFloatingLayout=
+KrohnkiteFocusDown=Meta+J
+KrohnkiteFocusLeft=Meta+H
+KrohnkiteFocusNext=
+KrohnkiteFocusPrev=Meta+,
+KrohnkiteFocusRight=
+KrohnkiteFocusUp=Meta+K
+KrohnkiteGrowHeight=Meta+Ctrl+J
+KrohnkiteIncrease=Meta+I
+KrohnkiteMonocleLayout=Meta+M
+KrohnkiteNextLayout=Meta+\\
+KrohnkitePreviousLayout=Meta+|
+KrohnkiteQuarterLayout=
+KrohnkiteRotate=
+KrohnkiteRotatePart=
+KrohnkiteSetMaster=Meta+Return
+KrohnkiteShiftDown=Meta+Shift+J
+KrohnkiteShiftLeft=Meta+Shift+H
+KrohnkiteShiftRight=Meta+Shift+L
+KrohnkiteShiftUp=Meta+Shift+K
+KrohnkiteShrinkHeight=Meta+Ctrl+K
+KrohnkiteShrinkWidth=Meta+Ctrl+H
+KrohnkiteSpiralLayout=
+KrohnkiteSpreadLayout=
+KrohnkiteStackedLayout=
+KrohnkiteStairLayout=
+KrohnkiteTileLayout=
+KrohnkiteToggleFloat=Meta+F
+KrohnkiteTreeColumnLayout=
+KrohnkitegrowWidth=Meta+Ctrl+L
+KrohnkitetoggleDock=
 MinimizeAll=
 Move Tablet to Next Output=
 MoveMouseToCenter=Meta+F6
@@ -159,8 +194,13 @@ view_actual_size=Meta+0
 view_zoom_in=Meta+=; Meta++
 view_zoom_out=Meta+-
 
+[org.kde.krunner.desktop][Global Shortcuts]
+RunClipboard=Alt+Shift+F2
+_launch=Meta+Space; Meta; Alt+Space; Alt+F2; Search
+
 [plasmashell][Global Shortcuts]
-activate application launcher=Meta
+Slideshow Wallpaper Next Image=
+activate application launcher=
 activate task manager entry 1=Ctrl+Alt+!
 activate task manager entry 10=
 activate task manager entry 2=Ctrl+Alt+@
