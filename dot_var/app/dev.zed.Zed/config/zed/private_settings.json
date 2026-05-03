@@ -9,40 +9,24 @@
 {
   "agent": {
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-4.1",
-      "enable_thinking": false,
+      "provider": "ollama",
+      "model": "qwen3.5:9b",
+      "enable_thinking": true
     },
-    "favorite_models": [
-      {
-        "provider": "copilot_chat",
-        "model": "gpt-4.1",
-        "enable_thinking": false,
-      },
-      {
-        "provider": "copilot_chat",
-        "model": "gpt-5.4",
-        "enable_thinking": false,
-      },
-      {
-        "provider": "openai",
-        "model": "gpt-5.4",
-        "enable_thinking": false,
-      },
-    ],
-    "model_parameters": [],
+    "favorite_models": [],
+    "model_parameters": []
   },
   "languages": {
     "Proto": {
-      "language_servers": ["buf"],
-    },
+      "language_servers": ["buf"]
+    }
   },
   "lsp": {
     "buf": {
       "initialization_options": {
-        "command": ["buf", "lsp", "serve", "--log-format", "json"],
-      },
-    },
+        "command": ["buf", "lsp", "serve", "--log-format", "json"]
+      }
+    }
   },
   // fonts
   "buffer_font_family": "JetBrains Mono",
@@ -52,14 +36,14 @@
   "theme": {
     "mode": "system",
     "light": "Zedokai Light",
-    "dark": "Zedokai (Filter Spectrum)",
+    "dark": "Zedokai (Filter Spectrum)"
   },
   // vim mode
   "relative_line_numbers": "enabled",
   "vim_mode": true,
   // zed
   "telemetry": {
-    "metrics": false,
+    "metrics": false
   },
-  "use_system_window_tabs": true,
+  "use_system_window_tabs": true
 }

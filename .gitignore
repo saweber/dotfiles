@@ -1,8 +1,0 @@
-*.swp
-*.DS_Store
-Brewfile.lock.json
-mac.Brewfile.lock.json
-.credentials
-.idea/*
-karabiner/automatic_backups
-nvim/lazy-lock.json
