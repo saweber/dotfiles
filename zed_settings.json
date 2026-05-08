@@ -7,35 +7,48 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "edit_predictions": {
+    "open_ai_compatible_api": {
+      "model": "",
+    },
+    "ollama": {
+      "model": "qwen2.5-coder:7b",
+    },
+    "mode": "subtle",
+    "provider": "ollama",
+  },
+  "proxy": "",
+  "base_keymap": "VSCode",
+  "agent_servers": {
+    "cursor": {
+      "type": "registry",
+    },
+    "codex-acp": {
+      "favorite_config_option_values": {
+        "mode": ["full-access"],
+      },
+      "type": "registry",
+    },
+  },
   "agent": {
+    "tool_permissions": {
+      "default": "allow",
+      "tools": {},
+    },
+    "default_profile": "ask",
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-4.1",
-      "enable_thinking": false,
+      "provider": "ollama",
+      "model": "qwen3.6:27b-coding-nvfp4",
+      "enable_thinking": true,
     },
     "favorite_models": [
       {
-        "provider": "copilot_chat",
-        "model": "gpt-4.1",
-        "enable_thinking": false,
-      },
-      {
-        "provider": "copilot_chat",
-        "model": "gpt-5.4",
-        "enable_thinking": false,
-      },
-      {
-        "provider": "openai",
-        "model": "gpt-5.4",
-        "enable_thinking": false,
+        "provider": "ollama",
+        "model": "qwen3.6:27b-coding-nvfp4",
+        "enable_thinking": true,
       },
     ],
     "model_parameters": [],
-  },
-  "languages": {
-    "Proto": {
-      "language_servers": ["buf"],
-    },
   },
   "lsp": {
     "buf": {
@@ -61,5 +74,4 @@
   "telemetry": {
     "metrics": false,
   },
-  "use_system_window_tabs": true,
 }
