@@ -22,10 +22,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   echo Setting Zed as default editor for text files...
   duti -s dev.zed.Zed public.plain-text all
-  duti -s dev.zed.Zed public.source-code all
-  for extension in txt md markdown json jsonc yaml yml toml xml csv log conf config env sh zsh bash fish py js jsx ts tsx css scss html htm; do
+  for extension in txt md markdown json jsonc yaml yml toml xml csv log conf config env sh zsh bash fish py js jsx ts tsx css scss; do
     duti -s dev.zed.Zed ".$extension" all
   done
+
+  echo Setting Chrome as default browser for web links and HTML files...
+  duti -s com.google.Chrome http
 
   echo Changing macOS defaults...
 
