@@ -56,6 +56,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # Turns off misson control rearrange spaces
   defaults write com.apple.dock mru-spaces -bool false
 
+  # Mission control - Group windows by application (fix for Aerospace)
+  defaults write com.apple.dock "expose-group-apps" -bool "true"
+
   # disable hot corners
   # defaults write com.apple.dock wvous-tl-corner -int 0
   defaults write com.apple.dock wvous-tr-corner -int 0
