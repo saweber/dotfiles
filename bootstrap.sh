@@ -20,6 +20,13 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   echo Instaling Mac applications...
   brew bundle --file=mac.Brewfile
 
+  echo Setting Zed as default editor for text files...
+  duti -s dev.zed.Zed public.plain-text all
+  duti -s dev.zed.Zed public.source-code all
+  for extension in txt md markdown json jsonc yaml yml toml xml csv log conf config env sh zsh bash fish py js jsx ts tsx css scss html htm; do
+    duti -s dev.zed.Zed ".$extension" all
+  done
+
   echo Changing macOS defaults...
 
   # faster animation
@@ -102,6 +109,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
   echo Installing fzf...
   yes | $(brew --prefix)/opt/fzf/install
+
+  # keep olama in memory to reduce annoying ollama ui popups
+  launchctl setenv OLLAMA_KEEP_ALIVE "1h"
 fi
 
 echo Linking .gitignore...

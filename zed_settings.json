@@ -9,53 +9,69 @@
 {
   "edit_predictions": {
     "open_ai_compatible_api": {
-      "model": "",
+      "model": ""
     },
     "ollama": {
-      "model": "qwen2.5-coder:7b",
+      "api_url": "http://localhost:11434",
+      "model": "qwen2.5-coder:7b-base",
+      "prompt_format": "infer",
+      "max_output_tokens": 256
     },
     "mode": "subtle",
-    "provider": "ollama",
+    "provider": "ollama"
+  },
+  "language_models": {
+    "ollama": {
+      "api_url": "http://localhost:11434",
+      "available_models": [
+        {
+          "name": "qwen2.5-coder:7b-base",
+          "max_tokens": 32768,
+          "max_output_tokens": 2048,
+          "keep_alive": "1h"
+        }
+      ]
+    }
   },
   "proxy": "",
   "base_keymap": "VSCode",
   "agent_servers": {
     "cursor": {
-      "type": "registry",
+      "type": "registry"
     },
     "codex-acp": {
       "favorite_config_option_values": {
-        "mode": ["full-access"],
+        "mode": ["full-access"]
       },
-      "type": "registry",
-    },
+      "type": "registry"
+    }
   },
   "agent": {
     "tool_permissions": {
       "default": "allow",
-      "tools": {},
+      "tools": {}
     },
     "default_profile": "ask",
     "default_model": {
       "provider": "ollama",
       "model": "qwen3.6:27b-coding-nvfp4",
-      "enable_thinking": true,
+      "enable_thinking": true
     },
     "favorite_models": [
       {
         "provider": "ollama",
         "model": "qwen3.6:27b-coding-nvfp4",
-        "enable_thinking": true,
-      },
+        "enable_thinking": true
+      }
     ],
-    "model_parameters": [],
+    "model_parameters": []
   },
   "lsp": {
     "buf": {
       "initialization_options": {
-        "command": ["buf", "lsp", "serve", "--log-format", "json"],
-      },
-    },
+        "command": ["buf", "lsp", "serve", "--log-format", "json"]
+      }
+    }
   },
   // fonts
   "buffer_font_family": "JetBrains Mono",
@@ -65,13 +81,13 @@
   "theme": {
     "mode": "system",
     "light": "Zedokai Light",
-    "dark": "Zedokai (Filter Spectrum)",
+    "dark": "Zedokai (Filter Spectrum)"
   },
   // vim mode
   "relative_line_numbers": "enabled",
   "vim_mode": true,
   // zed
   "telemetry": {
-    "metrics": false,
-  },
+    "metrics": false
+  }
 }

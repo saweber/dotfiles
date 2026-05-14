@@ -7,6 +7,7 @@ cask "font-jetbrains-mono"
 # cli tools
 # cask "session-manager-plugin" # AWS session manager
 # cask "gcloud-cli"
+brew "duti" # for setting default macOS file handlers
 
 # useful macOS utilities
 cask "alfred"

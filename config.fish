@@ -112,10 +112,6 @@ if status is-interactive
         telepresence connect --also-proxy 10.16.0.0/8
     end
 
-    #if test -f "$(brew --prefix)/share/google-cloud-sdk/path.fish.inc"
-    #    source "$(brew --prefix)/share/google-cloud-sdk/path.fish.inc"
-    #end
-
     set -gx VOLTA_HOME "$HOME/.volta"
 
     # override default cli commands
@@ -127,6 +123,6 @@ if status is-interactive
     set -gx EDITOR nvim
     alias vim="nvim"
 
-    #starship init fish | source
-    #enable_transience # transient prompt for starship
+    starship init fish | source
+    enable_transience # transient prompt for starship
 end
