@@ -129,6 +129,8 @@ git config --global pull.rebase false
 git config --global user.name $git_username
 git config --global user.email $git_email
 git config --global --add url."git@github.com:".insteadOf "https://github.com/" # fix issues with go get
+git config --global commit.gpgsign true
+git config --global tag.gpgSign true
 
 echo Linking .tmux.conf...
 mkdir -p ~/.config/tmux
@@ -152,6 +154,14 @@ mkdir -p ~/.config/zed
 ln -sf $(pwd)/zed_settings.json $(echo $HOME)/.config/zed/settings.json
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
+  echo Linking .gnupg/gpg-agent.conf...
+  mkdir -p ~/.gnupg
+  chmod 700 ~/.gnupg
+  ln -sf $(pwd)/gpg-agent.conf $(echo $HOME)/.gnupg/gpg-agent.conf
+  if command -v gpgconf >/dev/null 2>&1; then
+    gpgconf --kill gpg-agent
+  fi
+
   echo Linking Ghostty settings...
   mkdir -p ~/.config/ghostty
   ln -sf $(pwd)/ghostty-config $(echo $HOME)/.config/ghostty/config

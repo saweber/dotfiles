@@ -76,3 +76,7 @@ cask "obsidian"
 
 # database
 # cask "postgres-unofficial"
+
+# signed commits
+brew "gnupg"
+brew "pinentry-mac"
