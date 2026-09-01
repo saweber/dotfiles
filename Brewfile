@@ -1,3 +1,6 @@
+# set arguments for all 'brew install --cask' commands
+cask_args appdir: "/Applications", require_sha: false
+
 # cli tools
 brew "bat" # colorize man pages
 brew "btop"
@@ -11,8 +14,7 @@ brew "jq"
 brew "lazygit"
 brew "neovim"
 brew "ripgrep"
-#brew "starship"
-#brew "tailscale"
+brew "starship"
 brew "tmux"
 brew "tree" # for showing recursive directory structure
 brew "zoxide"
@@ -65,35 +67,30 @@ brew "gh"
 # tilt
 # brew install "tilt-dev/tap/tilt"
 
-# AI
-brew install "ollama"
-
 # local databases
 brew install "redis"
 brew "kafka"
 
-# set arguments for all 'brew install --cask' commands
-cask_args appdir: "/Applications", require_sha: false
-
 # fonts
 cask "font-jetbrains-mono"
 
-# cli tools
+# macOS only cli tools
 # cask "session-manager-plugin" # AWS session manager
 # cask "gcloud-cli"
 brew "duti" # for setting default macOS file handlers
 
 # useful macOS utilities
 cask "alfred"
+brew "displayplacer" # for alfred resolution changer
 # cask "bettertouchtool"
 cask "istat-menus"
 cask "jordanbaird-ice"
 cask "monitorcontrol"
 cask "nikitabobko/tap/aerospace"
 # cask "rectangle"
+cask "tailscale-app"
 
 # dependencies
-brew "displayplacer" # for alfred resolution changer
 
 # software dev applications
 # cask "bruno"

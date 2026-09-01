@@ -1,32 +1,29 @@
+config-version = 2
+
 # Mouse follows focus when focused monitor changes
 # on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
-[[on-window-detected]]
-if.app-id = 'com.tinyspeck.slackmacgap'
-if.window-title-regex-substring = 'huddle'
-run = 'layout tiling'
-
 [mode.main.binding]
 
-alt-n = 'focus left'
-alt-e = 'focus down'
-alt-i = 'focus up'
-alt-o = 'focus right'
+alt-h = 'focus left'
+alt-n = 'focus down'
+alt-e = 'focus up'
+alt-i = 'focus right'
 
-alt-shift-n = 'move left'
-alt-shift-e = 'move down'
-alt-shift-i = 'move up'
-alt-shift-o = 'move right'
+alt-shift-h = 'move left'
+alt-shift-n = 'move down'
+alt-shift-e = 'move up'
+alt-shift-i = 'move right'
 
-alt-m = ['join-with left', 'mode main']
-alt-comma = ['join-with down', 'mode main']
-alt-period = ['join-with up', 'mode main']
-alt-slash = ['join-with right', 'mode main']
+alt-k = ['join-with left', 'mode main']
+alt-m = ['join-with down', 'mode main']
+alt-comma = ['join-with up', 'mode main']
+alt-period = ['join-with right', 'mode main']
 
-alt-l = 'fullscreen'
-alt-u = 'layout v_accordion'
-alt-y = 'layout tiles horizontal vertical'
-alt-semicolon = 'layout floating tiling'
+alt-j = 'fullscreen'
+alt-l = 'layout v_accordion'
+alt-u = 'layout tiles horizontal vertical'
+alt-y = 'layout floating tiling'
 
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
@@ -68,5 +65,74 @@ ctrl-shift-equal = 'resize smart +50'
 8 = 'main'
 9 = 'main'
 10 = 'main'
-11 = ['lg','secondary', 'main']
-12 = ['^built-in retina display$', 'secondary', 'main']
+11 = 'main'
+12 = 'main'
+
+# Slack Huddle
+# Specific Slack Huddle windows are handled first and stop here.
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+if.window-title-regex-substring = 'huddle'
+run = ['move-node-to-workspace 9', 'layout tiling']
+check-further-callbacks = false
+
+# Slack
+# Regular Slack windows fall through to this general Slack rule.
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = ['move-node-to-workspace 8', 'layout tiling']
+
+# Chrome
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = ['move-node-to-workspace 1', 'layout tiling']
+
+# Ghostty
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = ['move-node-to-workspace 2', 'layout tiling']
+
+# Codex
+[[on-window-detected]]
+if.app-id = 'com.openai.codex'
+run = ['move-node-to-workspace 3', 'layout tiling']
+
+# Zed
+[[on-window-detected]]
+if.app-id = 'dev.zed.Zed'
+run = ['move-node-to-workspace 4', 'layout tiling']
+
+# GoLand
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.goland'
+run = ['move-node-to-workspace 5', 'layout tiling']
+
+# MongoDB Compass
+[[on-window-detected]]
+if.app-id = 'com.mongodb.compass'
+run = ['move-node-to-workspace 6', 'layout tiling']
+
+# TablePro
+[[on-window-detected]]
+if.app-id = 'com.TablePro'
+run = ['move-node-to-workspace 6', 'layout tiling']
+
+# Bruno
+[[on-window-detected]]
+if.app-id = 'com.usebruno.app'
+run = ['move-node-to-workspace 7', 'layout tiling']
+
+# Cliq
+[[on-window-detected]]
+if.app-id = 'com.zoho.cliq'
+run = ['move-node-to-workspace 8', 'layout tiling']
+
+# Calendar
+[[on-window-detected]]
+if.app-id = 'com.apple.iCal'
+run = ['move-node-to-workspace 11', 'layout tiling']
+
+# Obsidian
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = ['move-node-to-workspace 12', 'layout tiling']

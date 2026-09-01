@@ -7,8 +7,30 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "status_bar": {
+    "show_active_file": false
+  },
   "cli_default_open_behavior": "new_window",
   "edit_predictions": {
+    "disabled_globs": [
+        "**/*.toml",
+        "**/*.yml",
+        "**/*.yaml",
+        "**/*.json",
+        "**/*.jsonc",
+        "**/*.env",
+        "**/*.ini",
+        "**/*.conf",
+        "**/*.config",
+        "**/*.properties",
+        "**/.editorconfig",
+        "**/.gitconfig",
+        "**/.npmrc",
+        "**/.yarnrc",
+        "**/.prettierrc",
+        "**/.eslintrc",
+        "**/.stylelintrc",
+      ],
     "open_ai_compatible_api": {
       "prompt_format": "qwen",
       "api_url": "http://localhost:8000/v1/completions",
@@ -39,16 +61,6 @@
           },
         ],
       },
-    },
-    "ollama": {
-      "api_url": "http://localhost:11434",
-      "available_models": [
-        {
-          "name": "qwen2.5-coder:7b-base",
-          "max_tokens": 32768,
-          "keep_alive": "1h",
-        },
-      ],
     },
   },
   "proxy": "",
