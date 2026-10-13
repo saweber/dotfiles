@@ -123,6 +123,10 @@ if status is-interactive
     set -gx EDITOR nvim
     alias vim="nvim"
 
+    set -gx OMLX_API_KEY 1234
+    # Use Podman as the kind provider.
+    set -gx KIND_EXPERIMENTAL_PROVIDER podman
+
     starship init fish | source
     enable_transience # transient prompt for starship
 end

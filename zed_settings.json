@@ -66,8 +66,12 @@
   "proxy": "",
   "base_keymap": "VSCode",
   "agent_servers": {
-    "cursor": {
-      "type": "registry",
+    "claude-acp": {
+      "default_config_options": {
+        "agent": "default",
+        "fast": false
+      },
+      "type": "registry"
     },
     "codex-acp": {
       "favorite_config_option_values": {

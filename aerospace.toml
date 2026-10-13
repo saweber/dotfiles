@@ -92,9 +92,12 @@ run = ['move-node-to-workspace 1', 'layout tiling']
 if.app-id = 'com.mitchellh.ghostty'
 run = ['move-node-to-workspace 2', 'layout tiling']
 
-# Codex
+# Codex / Claude
 [[on-window-detected]]
 if.app-id = 'com.openai.codex'
+run = ['move-node-to-workspace 3', 'layout tiling']
+[[on-window-detected]]
+if.app-id = 'com.anthropic.claudefordesktop'
 run = ['move-node-to-workspace 3', 'layout tiling']
 
 # Zed
@@ -107,12 +110,10 @@ run = ['move-node-to-workspace 4', 'layout tiling']
 if.app-id = 'com.jetbrains.goland'
 run = ['move-node-to-workspace 5', 'layout tiling']
 
-# MongoDB Compass
+# MongoDB Compass / TablePro
 [[on-window-detected]]
 if.app-id = 'com.mongodb.compass'
 run = ['move-node-to-workspace 6', 'layout tiling']
-
-# TablePro
 [[on-window-detected]]
 if.app-id = 'com.TablePro'
 run = ['move-node-to-workspace 6', 'layout tiling']
@@ -126,6 +127,11 @@ run = ['move-node-to-workspace 7', 'layout tiling']
 [[on-window-detected]]
 if.app-id = 'com.zoho.cliq'
 run = ['move-node-to-workspace 8', 'layout tiling']
+
+# Proxyman
+[[on-window-detected]]
+if.app-id = 'com.proxyman.NSProxy'
+run = ['move-node-to-workspace 10', 'layout tiling']
 
 # Calendar
 [[on-window-detected]]

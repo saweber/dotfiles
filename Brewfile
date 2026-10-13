@@ -4,49 +4,45 @@ cask_args appdir: "/Applications", require_sha: false
 # cli tools
 brew "bat" # colorize man pages
 brew "btop"
+brew "csvkit"
+brew "duti" # for setting default macOS file handlers
 brew "eza"
 brew "fd" # for telescope.nvim # fd-find
 brew "fish"
 brew "fisher" # fish package manager
 brew "fzf"
+brew "gh"
 brew "git"
 brew "jq"
 brew "lazygit"
 brew "neovim"
 brew "ripgrep"
+brew "rtk" # for AI
 brew "starship"
 brew "tmux"
 brew "tree" # for showing recursive directory structure
 brew "zoxide"
 
-# cloud clis
-# brew "azure-cli"
-# brew "awscli"
-# tap "aws/tap"
-# brew "eks-node-viewer"
-# brew "cloud-sql-proxy" # GCP Cloud SQL
+# GCP
+brew "cloud-sql-proxy" # HT GCP Cloud SQL
+cask "gcloud-cli"
 
-# golang
+# go
 brew "go"
 brew "golangci-lint"
 brew "delve"
-brew "protobuf"
-tap "bufbuild/buf"
-brew "bufbuild/buf/buf"
 
 # node
 brew "node"
-brew "volta"
+brew "volta" # HT has legacy repos not migrated to mise
 
 # python
-#brew "python3"
-#brew "pyenv"
-
-# rust
-# brew "rustup"
+brew "python3"
+brew "pipx"
 
 # k8s
 brew "helm"
+brew "istioctl"
 brew "kind"
 brew "krew"
 brew "kubectl"
@@ -54,100 +50,67 @@ brew "kubectx"
 tap "derailed/k9s"
 brew "derailed/k9s/k9s"
 brew "kubecolor"
-tap "telepresenceio/telepresence"
-brew "telepresenceio/telepresence/telepresence-oss"
-
-# github
-# brew "act" # for testing github actions
-brew "gh"
 
 # infrastructure
-# brew "terraform"
+tap "hashicorp/tap"
+brew "hashicorp/tap/terraform"
 
-# tilt
-# brew install "tilt-dev/tap/tilt"
-
-# local databases
-brew install "redis"
+# local infrastructure
+brew "duckdb"
+brew "redis"
 brew "kafka"
+cask "podman-desktop"
+cask "postgres-unofficial"
+tap "tilt-dev/tap"
+brew "tilt-dev/tap/tilt"
 
 # fonts
 cask "font-jetbrains-mono"
 
-# macOS only cli tools
-# cask "session-manager-plugin" # AWS session manager
-# cask "gcloud-cli"
-brew "duti" # for setting default macOS file handlers
-
 # useful macOS utilities
 cask "alfred"
-brew "displayplacer" # for alfred resolution changer
-# cask "bettertouchtool"
 cask "istat-menus"
-cask "jordanbaird-ice"
 cask "monitorcontrol"
 cask "nikitabobko/tap/aerospace"
-# cask "rectangle"
 cask "tailscale-app"
-
-# dependencies
+cask "thaw@beta" # beta needed for 3.0 for macOS 27 support
 
 # software dev applications
-# cask "bruno"
+cask "bruno"
+brew "bruno-cli" # for validation, AI agents
+cask "codex"
+cask "claude"
+cask "claude-code" # required for TablePro
 cask "ghostty"
+cask "homebrew-app"
 cask "jetbrains-toolbox"
-# cask "mongodb-compass"
-# cask "proxyman"
-# cask "visual-studio-code"
+cask "mongodb-compass"
+cask "proxyman"
+cask "tablepro"
 cask "zed"
-
-# containerization
-# cask "docker-desktop"
-# cask "podman-desktop"
 
 # web browsers
 cask "firefox"
 cask "google-chrome"
 
 # communications
-# cask "tuple"
-# cask "slack"
-# cask "zoom"
-# cask "zoho-cliq"
+cask "slack"
+cask "zoho-cliq"
 
 # productivity
 cask "obsidian"
 
-# jmeter
-# brew "jmeter"
-
-# k8s
-# tap "derailed/popeye"
-# tap "tilt-dev/tap"
-# brew "aws-iam-authenticator"
-# brew "derailed/popeye/popeye"
-# brew "skaffold"
-# brew "stern"
-# brew "tilt-dev/tap/tilt"
-# cask "kubernetic"
-
-# infrastructure
-# brew "opa"
-# brew "terraform"
-# brew "terragrunt"
-
 # grpc
-# brew "grpc"
-# brew "protobuf"
+brew "grpc"
+brew "protobuf"
+tap "bufbuild/buf"
+brew "bufbuild/buf/buf"
 
-# AI
-# cask "codex"
-# cask "codex-app"
-# cask "claude-code"
-
-# database
-# cask "postgres-unofficial"
-
-# signed commits
+# github signed commits
 brew "gnupg"
 brew "pinentry-mac"
+
+# HT specific
+brew "svu"
+tap "ariga/tap"
+brew "ariga/tap/atlas"
