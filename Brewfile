@@ -25,6 +25,7 @@ brew "zoxide"
 
 # GCP
 brew "cloud-sql-proxy" # HT GCP Cloud SQL
+brew "python@3.13" # gcloud-cli requires 3.13
 cask "gcloud-cli"
 
 # go
@@ -60,7 +61,7 @@ brew "duckdb"
 brew "redis"
 brew "kafka"
 cask "podman-desktop"
-cask "postgres-unofficial"
+cask "postgres-app"
 tap "tilt-dev/tap"
 brew "tilt-dev/tap/tilt"
 
